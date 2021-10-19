@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Hackney.Shared.HousingSearch.Gateways.Models.Tenures;
-using Hackney.Shared.HousingSearch.Helper;
+using Hackney.Shared.Tenure.Domain;
 
 namespace Hackney.Shared.HousingSearch.Domain.Tenure
 {

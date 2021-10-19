@@ -15,7 +15,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Persons
             var listOfTenures = Tenures == null ? new List<PersonTenure>() :
                 Tenures.Select(x => PersonTenure.Create(x?.Id, x?.Type, x.TotalBalance, x?.StartDate, x?.EndDate, x?.AssetFullAddress, x?.PostCode, x?.PaymentReference)).ToList();
 
-            return Person.Create(Id, Title, Firstname, MiddleName, Surname, PreferredFirstname,
+            return Person.Create(Id, Title, Firstname, Middlename, Surname, PreferredFirstname,
                 PreferredSurname, TotalBalance, Ethinicity, Nationality, PlaceOfBirth, DateOfBirth, Gender, listOfIdentifications,
                 PersonTypes, IsPersonCautionaryAlert, IsTenureCautionaryAlert, listOfTenures);
         }
@@ -29,8 +29,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Persons
         [Keyword(Name = "firstname")]
         public string Firstname { get; set; }
 
-        [Text(Name = "middleName")]
-        public string MiddleName { get; set; }
+        [Text(Name = "middlename")]
+        public string Middlename { get; set; }
 
         [Keyword(Name = "surname")]
         public string Surname { get; set; }

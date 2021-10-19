@@ -1,4 +1,4 @@
-using Hackney.Shared.HousingSearch.Helper;
+using Hackney.Shared.Tenure.Domain;
 
 namespace Hackney.Shared.HousingSearch.Domain.Asset
 {
