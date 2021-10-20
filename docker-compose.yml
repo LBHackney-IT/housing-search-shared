@@ -1,0 +1,10 @@
+version: "3.2"
+
+services:
+  hackney-shared-housing-search-test:
+    image: hackney-shared-housing-search-test
+    build:
+      context: .
+      dockerfile: Hackney.Shared.HousingSearch.Tests/Dockerfile
+      args:
+        - LBHPACKAGESTOKEN=${LBHPACKAGESTOKEN}

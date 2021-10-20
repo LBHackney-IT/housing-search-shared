@@ -9,4 +9,10 @@
    <Description>Shared Library for Housing Search service</Description>
    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
  </PropertyGroup>
+
+ <ItemGroup>
+   <PackageReference Include="Hackney.Shared.Tenure" Version="0.9.0" />
+   <PackageReference Include="NEST" Version="7.11.1" />
+ </ItemGroup>
+
 </Project>
