@@ -7,20 +7,18 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
         public Person() { }
 
         public static Person Create(string id, string title, string firstname, string middleName, string surname,
-            string preferredFirstname, string preferredSurname, string dateOfBirth,
-            List<Identification> identifications,
+            string preferredFirstname, string preferredSurname, string dateOfBirth, decimal totalBalance,
             List<string> personTypes, bool isPersonCautionaryAlert, bool isTenureCautionaryAlert,
             List<PersonTenure> tenures)
         {
             return new Person(id, title, firstname, middleName, surname,
-                preferredFirstname, preferredSurname, dateOfBirth,
-                identifications, personTypes, isPersonCautionaryAlert,
+                preferredFirstname, preferredSurname, dateOfBirth, totalBalance,
+                personTypes, isPersonCautionaryAlert,
                 isTenureCautionaryAlert, tenures);
         }
 
         private Person(string id, string title, string firstname, string middleName, string surname,
-            string preferredFirstname, string preferredSurname, string dateOfBirth,
-            List<Identification> identifications,
+            string preferredFirstname, string preferredSurname, string dateOfBirth, decimal totalBalance,
             List<string> personTypes, bool isPersonCautionaryAlert, bool isTenureCautionaryAlert,
             List<PersonTenure> tenures)
         {
@@ -32,8 +30,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
             PreferredFirstname = preferredFirstname;
             PreferredSurname = preferredSurname;
             DateOfBirth = dateOfBirth;
+            TotalBalance = totalBalance;
             PersonTypes = personTypes;
-            Identification = identifications;
             IsPersonCautionaryAlert = isPersonCautionaryAlert;
             IsTenureCautionaryAlert = isTenureCautionaryAlert;
             Tenures = tenures;
@@ -55,7 +53,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
 
         public string DateOfBirth { get; set; }
 
-        public List<Identification> Identification { get; set; }
+        public decimal TotalBalance { get; set; }
 
         public List<string> PersonTypes { get; set; }
 
