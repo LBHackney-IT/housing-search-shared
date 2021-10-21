@@ -9,7 +9,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Persons
     {
         public Person Create()
         {
-            
+
             var listOfTenures = Tenures == null ? new List<PersonTenure>() :
                 Tenures.Select(x => PersonTenure.Create(x?.Id, x?.Type, x.TotalBalance, x?.StartDate, x?.EndDate, x?.AssetFullAddress, x?.PostCode, x?.PaymentReference)).ToList();
 
