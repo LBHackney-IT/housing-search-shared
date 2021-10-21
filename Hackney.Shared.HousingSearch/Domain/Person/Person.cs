@@ -14,7 +14,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
         {
             return new Person(id, title, firstname, middleName, surname,
                 preferredFirstname, preferredSurname, dateOfBirth,
-                identifications,personTypes, isPersonCautionaryAlert, 
+                identifications, personTypes, isPersonCautionaryAlert,
                 isTenureCautionaryAlert, tenures);
         }
 
