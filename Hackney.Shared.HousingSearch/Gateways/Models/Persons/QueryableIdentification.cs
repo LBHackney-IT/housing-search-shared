@@ -7,17 +7,17 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Persons
 
         }
 
-        public static QueryableIdentification Create(string identificationType, string value, bool originalDocumentSeen,
+        public static QueryableIdentification Create(string identificationType, string value, bool isOriginalDocumentSeen,
             string linkToDocument)
         {
-            return new QueryableIdentification(identificationType, value, originalDocumentSeen, linkToDocument);
+            return new QueryableIdentification(identificationType, value, isOriginalDocumentSeen, linkToDocument);
         }
 
-        private QueryableIdentification(string identificationType, string value, bool originalDocumentSeen, string linkToDocument)
+        private QueryableIdentification(string identificationType, string value, bool isOriginalDocumentSeen, string linkToDocument)
         {
             IdentificationType = identificationType;
             Value = value;
-            OriginalDocumentSeen = originalDocumentSeen;
+            IsOriginalDocumentSeen = isOriginalDocumentSeen;
             LinkToDocument = linkToDocument;
         }
 
@@ -25,7 +25,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Persons
 
         public string Value { get; set; }
 
-        public bool OriginalDocumentSeen { get; set; }
+        public bool IsOriginalDocumentSeen { get; set; }
 
         public string LinkToDocument { get; set; }
 

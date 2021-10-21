@@ -10,9 +10,6 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Persons
         [Text(Name = "type")]
         public string Type { get; set; }
 
-        [Text(Name = "totalBalance")]
-        public decimal TotalBalance { get; set; }
-
         [Text(Name = "startDate")]
         public string StartDate { get; set; }
 

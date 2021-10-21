@@ -4,17 +4,17 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
     {
         public Identification() { }
 
-        public static Identification Create(string identificationType, string value, bool originalDocumentSeen,
+        public static Identification Create(string identificationType, string value, bool isOriginalDocumentSeen,
             string linkToDocument)
         {
-            return new Identification(identificationType, value, originalDocumentSeen, linkToDocument);
+            return new Identification(identificationType, value, isOriginalDocumentSeen, linkToDocument);
         }
 
-        private Identification(string identificationType, string value, bool originalDocumentSeen, string linkToDocument)
+        private Identification(string identificationType, string value, bool isOriginalDocumentSeen, string linkToDocument)
         {
             IdentificationType = identificationType;
             Value = value;
-            OriginalDocumentSeen = originalDocumentSeen;
+            IsOriginalDocumentSeen = isOriginalDocumentSeen;
             LinkToDocument = linkToDocument;
         }
 
@@ -22,7 +22,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
 
         public string Value { get; set; }
 
-        public bool OriginalDocumentSeen { get; set; }
+        public bool IsOriginalDocumentSeen { get; set; }
 
         public string LinkToDocument { get; set; }
 
