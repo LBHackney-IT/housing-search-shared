@@ -9,12 +9,12 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Persons
     {
         public Person Create()
         {
-
+            
             var listOfTenures = Tenures == null ? new List<PersonTenure>() :
-                Tenures.Select(x => PersonTenure.Create(x?.Id, x?.Type, x?.StartDate, x?.EndDate, x?.AssetFullAddress, x?.PostCode, x?.PaymentReference)).ToList();
+                Tenures.Select(x => PersonTenure.Create(x?.Id, x?.Type, x.TotalBalance, x?.StartDate, x?.EndDate, x?.AssetFullAddress, x?.PostCode, x?.PaymentReference)).ToList();
 
             return Person.Create(Id, Title, Firstname, Middlename, Surname, PreferredFirstname,
-                PreferredSurname, DateOfBirth, TotalBalance,
+                PreferredSurname, TotalBalance, DateOfBirth,
                 PersonTypes, IsPersonCautionaryAlert, IsTenureCautionaryAlert, listOfTenures);
         }
 
@@ -39,11 +39,11 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Persons
         [Text(Name = "preferredSurname")]
         public string PreferredSurname { get; set; }
 
-        [Text(Name = "dateOfBirth")]
-        public string DateOfBirth { get; set; }
-
         [Text(Name = "totalBalance")]
         public decimal TotalBalance { get; set; }
+
+        [Text(Name = "dateOfBirth")]
+        public string DateOfBirth { get; set; }
 
         [Text(Name = "personTypes")]
         public List<string> PersonTypes { get; set; }

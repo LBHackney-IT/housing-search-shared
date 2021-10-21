@@ -7,18 +7,18 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
         public Person() { }
 
         public static Person Create(string id, string title, string firstname, string middleName, string surname,
-            string preferredFirstname, string preferredSurname, string dateOfBirth, decimal totalBalance,
+            string preferredFirstname, string preferredSurname, decimal totalBalance, string dateOfBirth,
             List<string> personTypes, bool isPersonCautionaryAlert, bool isTenureCautionaryAlert,
             List<PersonTenure> tenures)
         {
             return new Person(id, title, firstname, middleName, surname,
-                preferredFirstname, preferredSurname, dateOfBirth, totalBalance,
-                personTypes, isPersonCautionaryAlert,
-                isTenureCautionaryAlert, tenures);
+                preferredFirstname, preferredSurname, totalBalance, dateOfBirth,
+                personTypes, isPersonCautionaryAlert, isTenureCautionaryAlert,
+                tenures);
         }
 
         private Person(string id, string title, string firstname, string middleName, string surname,
-            string preferredFirstname, string preferredSurname, string dateOfBirth, decimal totalBalance,
+            string preferredFirstname, string preferredSurname, decimal totalBalance, string dateOfBirth,
             List<string> personTypes, bool isPersonCautionaryAlert, bool isTenureCautionaryAlert,
             List<PersonTenure> tenures)
         {
@@ -29,8 +29,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
             Surname = surname;
             PreferredFirstname = preferredFirstname;
             PreferredSurname = preferredSurname;
-            DateOfBirth = dateOfBirth;
             TotalBalance = totalBalance;
+            DateOfBirth = dateOfBirth;
             PersonTypes = personTypes;
             IsPersonCautionaryAlert = isPersonCautionaryAlert;
             IsTenureCautionaryAlert = isTenureCautionaryAlert;
@@ -51,9 +51,9 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
 
         public string PreferredSurname { get; set; }
 
-        public string DateOfBirth { get; set; }
-
         public decimal TotalBalance { get; set; }
+
+        public string DateOfBirth { get; set; }
 
         public List<string> PersonTypes { get; set; }
 
