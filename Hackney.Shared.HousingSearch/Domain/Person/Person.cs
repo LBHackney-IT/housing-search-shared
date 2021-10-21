@@ -7,23 +7,18 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
         public Person() { }
 
         public static Person Create(string id, string title, string firstname, string middleName, string surname,
-            string preferredFirstname, string preferredSurname, decimal totalBalance, string ethinicity, string nationality,
-            string placeOfBirth, string dateOfBirth, string gender,
-            List<Identification> identifications,
+            string preferredFirstname, string preferredSurname, decimal totalBalance, string dateOfBirth,
             List<string> personTypes, bool isPersonCautionaryAlert, bool isTenureCautionaryAlert,
             List<PersonTenure> tenures)
         {
             return new Person(id, title, firstname, middleName, surname,
-                preferredFirstname, preferredSurname, totalBalance, ethinicity, nationality,
-                placeOfBirth, dateOfBirth, gender,
-                identifications,
+                preferredFirstname, preferredSurname, totalBalance, dateOfBirth,
                 personTypes, isPersonCautionaryAlert, isTenureCautionaryAlert,
                 tenures);
         }
 
         private Person(string id, string title, string firstname, string middleName, string surname,
-            string preferredFirstname, string preferredSurname, decimal totalBalance, string ethinicity, string nationality, string placeOfBirth, string dateOfBirth, string gender,
-            List<Identification> identification,
+            string preferredFirstname, string preferredSurname, decimal totalBalance, string dateOfBirth,
             List<string> personTypes, bool isPersonCautionaryAlert, bool isTenureCautionaryAlert,
             List<PersonTenure> tenures)
         {
@@ -35,12 +30,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
             PreferredFirstname = preferredFirstname;
             PreferredSurname = preferredSurname;
             TotalBalance = totalBalance;
-            Ethinicity = ethinicity;
-            Nationality = nationality;
-            PlaceOfBirth = placeOfBirth;
             DateOfBirth = dateOfBirth;
-            Gender = gender;
-            Identification = identification;
             PersonTypes = personTypes;
             IsPersonCautionaryAlert = isPersonCautionaryAlert;
             IsTenureCautionaryAlert = isTenureCautionaryAlert;
@@ -63,17 +53,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
 
         public decimal TotalBalance { get; set; }
 
-        public string Ethinicity { get; set; }
-
-        public string Nationality { get; set; }
-
-        public string PlaceOfBirth { get; set; }
-
         public string DateOfBirth { get; set; }
-
-        public string Gender { get; set; }
-
-        public List<Identification> Identification { get; set; }
 
         public List<string> PersonTypes { get; set; }
 

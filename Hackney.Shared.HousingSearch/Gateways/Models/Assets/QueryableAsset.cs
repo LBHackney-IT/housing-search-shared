@@ -55,6 +55,6 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
 
         public QueryableAssetAddress AssetAddress { get; set; }
 
-        public QueryableTenure Tenure { get; set; }
+        public QueryableAssetTenure Tenure { get; set; }
     }
 }

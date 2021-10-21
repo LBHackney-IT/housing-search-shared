@@ -9,14 +9,12 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Persons
     {
         public Person Create()
         {
-            var listOfIdentifications = Identification != null ? Identification.Select(x => Domain.Person.Identification.Create(x?.IdentificationType,
-                x?.Value, x.OriginalDocumentSeen, x?.LinkToDocument)).ToList() : new List<Domain.Person.Identification>();
 
             var listOfTenures = Tenures == null ? new List<PersonTenure>() :
                 Tenures.Select(x => PersonTenure.Create(x?.Id, x?.Type, x.TotalBalance, x?.StartDate, x?.EndDate, x?.AssetFullAddress, x?.PostCode, x?.PaymentReference)).ToList();
 
             return Person.Create(Id, Title, Firstname, Middlename, Surname, PreferredFirstname,
-                PreferredSurname, TotalBalance, Ethinicity, Nationality, PlaceOfBirth, DateOfBirth, Gender, listOfIdentifications,
+                PreferredSurname, TotalBalance, DateOfBirth,
                 PersonTypes, IsPersonCautionaryAlert, IsTenureCautionaryAlert, listOfTenures);
         }
 
@@ -44,23 +42,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Persons
         [Text(Name = "totalBalance")]
         public decimal TotalBalance { get; set; }
 
-        [Text(Name = "ethinicity")]
-        public string Ethinicity { get; set; }
-
-        [Text(Name = "nationality")]
-        public string Nationality { get; set; }
-
-        [Text(Name = "placeOfBirth")]
-        public string PlaceOfBirth { get; set; }
-
         [Text(Name = "dateOfBirth")]
         public string DateOfBirth { get; set; }
-
-        [Text(Name = "gender")]
-        public string Gender { get; set; }
-
-        [Text(Name = "identification")]
-        public List<QueryableIdentification> Identification { get; set; }
 
         [Text(Name = "personTypes")]
         public List<string> PersonTypes { get; set; }
