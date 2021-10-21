@@ -2,7 +2,7 @@ using Nest;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
 {
-    public class QueryableTenure
+    public class QueryableAssetTenure
     {
         public Domain.Asset.Tenure Create()
         {
