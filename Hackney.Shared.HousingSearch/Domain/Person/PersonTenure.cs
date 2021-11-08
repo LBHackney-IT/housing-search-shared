@@ -21,7 +21,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
             AssetFullAddress = assetFullAddress;
             PostCode = postCode;
             PaymentReference = paymentReference;
-
         }
 
         public string Id { get; set; }
