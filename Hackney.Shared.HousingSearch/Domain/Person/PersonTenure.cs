@@ -1,3 +1,5 @@
+using Hackney.Shared.Tenure.Domain;
+
 namespace Hackney.Shared.HousingSearch.Domain.Person
 {
     public class PersonTenure
@@ -19,6 +21,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
             AssetFullAddress = assetFullAddress;
             PostCode = postCode;
             PaymentReference = paymentReference;
+
         }
 
         public string Id { get; set; }
@@ -36,5 +39,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Person
         public string PostCode { get; set; }
 
         public string PaymentReference { get; set; }
+
+        public bool IsActive => TenureHelpers.IsTenureActive(EndDate);
     }
 }
