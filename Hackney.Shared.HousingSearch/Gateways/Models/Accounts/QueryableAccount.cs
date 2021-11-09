@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Hackney.Shared.HousingSearch.Domain.Accounts;
 using Hackney.Shared.HousingSearch.Domain.Accounts.Enum;
 using Nest;
 
@@ -7,6 +9,45 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
 {
     public class QueryableAccount
     {
+
+        public Account Create()
+        {
+            var primaryTenants = Tenure.PrimaryTenants == null
+                ? new List<PrimaryTenants>()
+                : Tenure.PrimaryTenants.Select(p => PrimaryTenants.Create(p.Id, p.FullNameName)).ToList();
+
+            var consolidatedCharges = ConsolidatedCharges == null
+                ? new List<ConsolidatedCharge>()
+                : ConsolidatedCharges.Select(p => ConsolidatedCharge.Create(p.Type, p.Frequency, p.Amount)).ToList();
+            var tenure = Tenure == null
+                ? new Domain.Accounts.Tenure()
+                : Domain.Accounts.Tenure.Create(Tenure.TenureId
+                    , Tenure.TenureType
+                    , Tenure.FullAddress
+                    , primaryTenants);
+
+
+            return Account.Create(Id,
+                ParentAccountId,
+                PaymentReference,
+                TargetType,
+                TargetId,
+                AccountType,
+                RentGroupType,
+                AgreementType,
+                AccountBalance,
+                ConsolidatedBalance,
+                CreatedBy,
+                LastUpdatedBy,
+                CreatedAt,
+                LastUpdatedAt,
+                StartDate,
+                EndDate,
+                AccountStatus,
+                consolidatedCharges,
+                tenure);
+        }
+
         [Text(Name = "id")]
         public Guid Id { get; set; }
 
