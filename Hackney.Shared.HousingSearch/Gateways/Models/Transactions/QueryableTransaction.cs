@@ -1,6 +1,8 @@
 ﻿using Hackney.Shared.HousingSearch.Domain.Transactions;
 using Nest;
 using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
 {
@@ -17,6 +19,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
         [Text(Name = "targetId")]
         public Guid TargetId { get; set; }
 
+        [JsonConverter(typeof(StringEnumConverter))]
         [Text(Name = "targetType")]
         public TargetType TargetType { get; set; }
 

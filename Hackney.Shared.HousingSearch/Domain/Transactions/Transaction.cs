@@ -1,4 +1,6 @@
 ﻿using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Hackney.Shared.HousingSearch.Domain.Transactions
 {
@@ -51,7 +53,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
         public short FinancialMonth { get; }
         
         public string TransactionSource { get; }
-        
+
+        [JsonConverter(typeof(StringEnumConverter))]
         public TransactionType TransactionType { get; }
         
         public DateTime TransactionDate { get; }
