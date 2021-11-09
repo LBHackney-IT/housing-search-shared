@@ -4,8 +4,17 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 {
     public class Person
     {
-        public Guid Id { get; set; }
+        public static Person Create(Guid id, string fullName)
+            => new Person(id, fullName);
 
-        public string FullName { get; set; }
+        public Person(Guid id, string fullName)
+        {
+            Id = id;
+            FullName = fullName;
+        }
+
+        public Guid Id { get; }
+
+        public string FullName { get; }
     }
 }

@@ -8,7 +8,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
     {
         public SuspenseResolutionInfo Create()
         {
-            return new SuspenseResolutionInfo(ResolutionDate, IsConfirmed, IsApproved, Note);
+            return SuspenseResolutionInfo.Create(ResolutionDate, IsConfirmed, IsApproved, Note);
         }
 
         [Date(Name = "resolutionDate")]

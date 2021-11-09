@@ -6,7 +6,21 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 {
     public class Transaction
     {
-        public Transaction(Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth, 
+        public static Transaction Create(Guid targetId, TargetType targetType, short periodNo, short financialYear,
+            short financialMonth,
+            string transactionSource, TransactionType transactionType, DateTime transactionDate,
+            decimal transactionAmount, string paymentReference,
+            string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo,
+            decimal paidAmount, decimal chargedAmount,
+            decimal balanceAmount, decimal housingBenefitAmount, string address, Person person, string fund)
+        {
+            return new Transaction(targetId, targetType, periodNo, financialYear, financialMonth,
+                transactionSource, transactionType, transactionDate, transactionAmount, paymentReference,
+                bankAccountNumber, isSuspense, suspenseResolutionInfo, paidAmount, chargedAmount,
+                balanceAmount, housingBenefitAmount, address, person, fund);
+        }
+
+        private Transaction(Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth, 
             string transactionSource, TransactionType transactionType, DateTime transactionDate, decimal transactionAmount, string paymentReference, 
             string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo, decimal paidAmount, decimal chargedAmount, 
             decimal balanceAmount, decimal housingBenefitAmount, string address, Person person, string fund)

@@ -8,11 +8,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
     {
         public Person Create()
         {
-            return new Person
-            {
-                Id = Id,
-                FullName = FullName
-            };
+            return Person.Create(Id, FullName);
         }
 
         [Text(Name = "id")]
