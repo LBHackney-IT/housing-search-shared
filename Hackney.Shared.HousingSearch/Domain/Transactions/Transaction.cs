@@ -4,12 +4,11 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 {
     public class Transaction
     {
-        public Transaction(Guid id, Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth, 
+        public Transaction(Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth, 
             string transactionSource, TransactionType transactionType, DateTime transactionDate, decimal transactionAmount, string paymentReference, 
             string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo, decimal paidAmount, decimal chargedAmount, 
             decimal balanceAmount, decimal housingBenefitAmount, string address, Person person, string fund)
         {
-            Id = id;
             TargetId = targetId;
             TargetType = targetType;
             PeriodNo = periodNo;
@@ -31,8 +30,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             Person = person;
             Fund = fund;
         }
-
-        public Guid Id { get; }
 
         /// <summary>
         /// The guid of a tenancy/property
