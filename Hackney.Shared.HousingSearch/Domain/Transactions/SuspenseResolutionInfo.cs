@@ -4,11 +4,19 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 {
     public class SuspenseResolutionInfo
     {
+        public SuspenseResolutionInfo(DateTime? resolutionDate, bool isConfirmed, bool isApproved, string note)
+        {
+            ResolutionDate = resolutionDate;
+            IsConfirmed = isConfirmed;
+            IsApproved = isApproved;
+            Note = note;
+        }
+
         public bool IsResolve => IsConfirmed && IsApproved;
 
-        public DateTime? ResolutionDate { get; set; }
-        public bool IsConfirmed { get; set; }
-        public bool IsApproved { get; set; }
-        public string Note { get; set; }
+        public DateTime? ResolutionDate { get; }
+        public bool IsConfirmed { get; }
+        public bool IsApproved { get; }
+        public string Note { get; }
     }
 }

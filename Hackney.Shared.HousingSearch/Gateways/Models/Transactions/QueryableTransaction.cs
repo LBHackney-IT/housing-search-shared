@@ -8,30 +8,10 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
     {
         public Transaction Create()
         {
-            return new Transaction
-            {
-                Address = Address,
-                BalanceAmount = BalanceAmount,
-                BankAccountNumber = BankAccountNumber,
-                ChargedAmount = ChargedAmount,
-                FinancialMonth = FinancialMonth,
-                Fund = Fund,
-                FinancialYear = FinancialYear,
-                HousingBenefitAmount = HousingBenefitAmount,
-                Id = Id,
-                IsSuspense = IsSuspense,
-                PaidAmount = PaidAmount,
-                TransactionAmount = TransactionAmount,
-                TransactionType = TransactionType,
-                TransactionDate = TransactionDate,
-                SuspenseResolutionInfo = SuspenseResolutionInfo.Create(),
-                PeriodNo = PeriodNo,
-                TransactionSource = TransactionSource,
-                PaymentReference = PaymentReference,
-                Person = Person.Create(),
-                TargetId = TargetId,
-                TargetType = TargetType
-            };
+            return new Transaction(Id, TargetId, TargetType, PeriodNo, FinancialYear, FinancialMonth,
+                TransactionSource, TransactionType, TransactionDate, TransactionAmount, PaymentReference, 
+                BankAccountNumber, IsSuspense, SuspenseResolutionInfo.Create(), PaidAmount, ChargedAmount, 
+                BalanceAmount, HousingBenefitAmount, Address, Person.Create(), Fund);
         }
 
         [Text(Name = "id")]
