@@ -65,7 +65,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
         public decimal HousingBenefitAmount { get; set; }
         
         public string Address { get; set; }
-
+        
         /// <summary>
         /// Person, who paid for the transaction
         /// </summary>
