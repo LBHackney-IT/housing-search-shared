@@ -6,7 +6,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
     {
         public ConsolidatedCharge()
         {
-            
+
         }
 
         public static ConsolidatedCharge Create(string type, string frequency, decimal amount)
@@ -14,7 +14,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
             return new ConsolidatedCharge(type, frequency, amount);
         }
 
-        private ConsolidatedCharge(string type,string frequency,decimal amount)
+        private ConsolidatedCharge(string type, string frequency, decimal amount)
         {
             Type = type;
             Frequency = frequency;

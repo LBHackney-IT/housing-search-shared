@@ -7,7 +7,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
     {
         public ConsolidatedCharge Create()
         {
-            return ConsolidatedCharge.Create(Type,Frequency,Amount);
+            return ConsolidatedCharge.Create(Type, Frequency, Amount);
         }
 
         [Text(Name = "type")]

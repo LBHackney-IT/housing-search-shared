@@ -8,17 +8,17 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
     {
         public static Tenure Create(string tenureId, TenureType tenureType, string fullAddress, List<PrimaryTenants> primaryTenants)
         {
-            return new Tenure(tenureId, tenureType, fullAddress,primaryTenants);
+            return new Tenure(tenureId, tenureType, fullAddress, primaryTenants);
         }
 
         public Tenure()
         {
-            
+
         }
 
-        private Tenure(string tenureId, TenureType tenureType, string fullAddress,List<PrimaryTenants> primaryTenants)
+        private Tenure(string tenureId, TenureType tenureType, string fullAddress, List<PrimaryTenants> primaryTenants)
         {
-            TenureId= tenureId;
+            TenureId = tenureId;
             TenureType = tenureType;
             FullAddress = fullAddress;
             PrimaryTenants = primaryTenants;

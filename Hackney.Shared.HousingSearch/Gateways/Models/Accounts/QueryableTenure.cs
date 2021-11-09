@@ -14,7 +14,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
                 ? new List<PrimaryTenants>()
                 : PrimaryTenants.Select(p => Domain.Accounts.PrimaryTenants.Create(p.Id, p.FullNameName)).ToList();
 
-            return Domain.Accounts.Tenure.Create(TenureId, TenureType, FullAddress,primaryTenants);
+            return Domain.Accounts.Tenure.Create(TenureId, TenureType, FullAddress, primaryTenants);
         }
 
         [Text(Name = "tenureId")]

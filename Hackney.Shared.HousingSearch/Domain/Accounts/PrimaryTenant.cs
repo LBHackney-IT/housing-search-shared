@@ -6,14 +6,14 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
     public class PrimaryTenants
     {
 
-        public static PrimaryTenants Create(Guid id,string fullName)
+        public static PrimaryTenants Create(Guid id, string fullName)
         {
             return new PrimaryTenants(id, fullName);
         }
 
         public PrimaryTenants()
         {
-                
+
         }
 
         private PrimaryTenants(Guid id, string fullName)
