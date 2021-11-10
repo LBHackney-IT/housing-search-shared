@@ -7,7 +7,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
         public static Person Create(Guid id, string fullName)
             => new Person(id, fullName);
 
-        public Person(Guid id, string fullName)
+        private Person(Guid id, string fullName)
         {
             Id = id;
             FullName = fullName;

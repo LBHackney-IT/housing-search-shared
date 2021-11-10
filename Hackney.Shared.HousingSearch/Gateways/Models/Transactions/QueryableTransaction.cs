@@ -8,12 +8,12 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
 {
     public class QueryableTransaction
     {
-        public Transaction Create()
+        public Transaction ToTransaction()
         {
             return Transaction.Create(TargetId, TargetType, PeriodNo, FinancialYear, FinancialMonth,
                 TransactionSource, TransactionType, TransactionDate, TransactionAmount, PaymentReference, 
-                BankAccountNumber, IsSuspense, SuspenseResolutionInfo.Create(), PaidAmount, ChargedAmount, 
-                BalanceAmount, HousingBenefitAmount, Address, Person.Create(), Fund);
+                BankAccountNumber, IsSuspense, SuspenseResolutionInfo.ToSuspenseResolutionInfo(), PaidAmount, ChargedAmount, 
+                BalanceAmount, HousingBenefitAmount, Address, Person.ToPerson(), Fund);
         }
 
         [Text(Name = "targetId")]

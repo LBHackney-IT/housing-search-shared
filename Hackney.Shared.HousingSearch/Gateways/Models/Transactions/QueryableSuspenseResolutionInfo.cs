@@ -6,7 +6,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
 {
     public class QueryableSuspenseResolutionInfo
     {
-        public SuspenseResolutionInfo Create()
+        public SuspenseResolutionInfo ToSuspenseResolutionInfo()
         {
             return SuspenseResolutionInfo.Create(ResolutionDate, IsConfirmed, IsApproved, Note);
         }

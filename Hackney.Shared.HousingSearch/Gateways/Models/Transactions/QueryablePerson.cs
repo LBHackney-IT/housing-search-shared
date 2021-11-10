@@ -6,7 +6,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
 {
     public class QueryablePerson
     {
-        public Person Create()
+        public Person ToPerson()
         {
             return Person.Create(Id, FullName);
         }
