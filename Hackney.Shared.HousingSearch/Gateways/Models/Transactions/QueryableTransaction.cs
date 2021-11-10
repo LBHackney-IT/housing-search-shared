@@ -1,45 +1,25 @@
 ﻿using Hackney.Shared.HousingSearch.Domain.Transactions;
 using Nest;
 using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
 {
     public class QueryableTransaction
     {
-        public Transaction Create()
+        public Transaction ToTransaction()
         {
-            return new Transaction
-            {
-                Address = Address,
-                BalanceAmount = BalanceAmount,
-                BankAccountNumber = BankAccountNumber,
-                ChargedAmount = ChargedAmount,
-                FinancialMonth = FinancialMonth,
-                Fund = Fund,
-                FinancialYear = FinancialYear,
-                HousingBenefitAmount = HousingBenefitAmount,
-                Id = Id,
-                IsSuspense = IsSuspense,
-                PaidAmount = PaidAmount,
-                TransactionAmount = TransactionAmount,
-                TransactionType = TransactionType,
-                TransactionDate = TransactionDate,
-                SuspenseResolutionInfo = SuspenseResolutionInfo.Create(),
-                PeriodNo = PeriodNo,
-                TransactionSource = TransactionSource,
-                PaymentReference = PaymentReference,
-                Person = Person.Create(),
-                TargetId = TargetId,
-                TargetType = TargetType
-            };
+            return Transaction.Create(TargetId, TargetType, PeriodNo, FinancialYear, FinancialMonth,
+                TransactionSource, TransactionType, TransactionDate, TransactionAmount, PaymentReference, 
+                BankAccountNumber, IsSuspense, SuspenseResolutionInfo.ToSuspenseResolutionInfo(), PaidAmount, ChargedAmount, 
+                BalanceAmount, HousingBenefitAmount, Address, Person.ToPerson(), Fund);
         }
-
-        [Text(Name = "id")]
-        public Guid Id { get; set; }
 
         [Text(Name = "targetId")]
         public Guid TargetId { get; set; }
 
+        [JsonConverter(typeof(StringEnumConverter))]
         [Text(Name = "targetType")]
         public TargetType TargetType { get; set; }
 
