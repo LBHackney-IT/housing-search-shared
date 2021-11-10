@@ -5,15 +5,13 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {
     public class PrimaryTenants
     {
-
-        public static PrimaryTenants Create(Guid id, string fullName)
-        {
-            return new PrimaryTenants(id, fullName);
-        }
-
         public PrimaryTenants()
         {
 
+        }
+        public static PrimaryTenants Create(Guid id, string fullName)
+        {
+            return new PrimaryTenants(id, fullName);
         }
 
         private PrimaryTenants(Guid id, string fullName)
@@ -26,11 +24,11 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         ///     793dd4ca-d7c4-4110-a8ff-c58eac4b90fa
         /// </example>
         [Required]
-        public Guid Id { get; set; }
+        public Guid Id { get; }
         /// <example>
         ///     Smith Johnson
         /// </example>
         [Required]
-        public string FullName { get; set; }
+        public string FullName { get; }
     }
 }

@@ -25,18 +25,18 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         ///     Rent
         /// </example>
         [NotNull]
-        public string Type { get; set; }
+        public string Type { get; }
 
         /// <example>
         ///     Weekly
         /// </example>
         [NotNull]
-        public string Frequency { get; set; }
+        public string Frequency { get; }
 
         /// <example>
         ///     101.20
         /// </example>
         [NotNull]
-        public decimal Amount { get; set; }
+        public decimal Amount { get; }
     }
 }

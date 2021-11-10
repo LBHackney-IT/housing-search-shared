@@ -6,6 +6,10 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {
     public class Account
     {
+        public Account()
+        {
+
+        }
 
         public static Account Create(Guid id
             , Guid parentAccountId
@@ -46,11 +50,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
                 accountStatus,
                 consolidatedCharges,
                 tenure);
-        }
-
-        public Account()
-        {
-
         }
 
         private Account(Guid id
@@ -94,42 +93,42 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
             Tenure = tenure;
         }
 
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; }
 
-        public Guid ParentAccountId { get; set; }
+        public Guid ParentAccountId { get; }
 
-        public string PaymentReference { get; set; }
+        public string PaymentReference { get; }
 
-        public TargetType TargetType { get; set; }
+        public TargetType TargetType { get; }
 
-        public Guid TargetId { get; set; }
+        public Guid TargetId { get; }
 
-        public AccountType AccountType { get; set; }
+        public AccountType AccountType { get; }
 
-        public RentGroupType RentGroupType { get; set; }
+        public RentGroupType RentGroupType { get; }
 
-        public string AgreementType { get; set; }
+        public string AgreementType { get; }
 
-        public decimal AccountBalance { get; set; } = 0;
+        public decimal AccountBalance { get; } = 0;
 
-        public decimal ConsolidatedBalance { get; set; } = 0;
+        public decimal ConsolidatedBalance { get; } = 0;
 
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get; }
 
-        public string LastUpdatedBy { get; set; }
+        public string LastUpdatedBy { get; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; }
 
-        public DateTime LastUpdatedAt { get; set; }
+        public DateTime LastUpdatedAt { get; }
 
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; }
 
-        public DateTime? EndDate { get; set; }
+        public DateTime? EndDate { get; }
 
-        public AccountStatus AccountStatus { get; set; }
+        public AccountStatus AccountStatus { get; }
 
-        public IEnumerable<ConsolidatedCharge> ConsolidatedCharges { get; set; }
+        public IEnumerable<ConsolidatedCharge> ConsolidatedCharges { get; }
 
-        public Tenure Tenure { get; set; }
+        public Tenure Tenure { get; }
     }
 }
