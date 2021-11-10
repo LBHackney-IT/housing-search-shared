@@ -20,9 +20,9 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
                 balanceAmount, housingBenefitAmount, address, person, fund);
         }
 
-        private Transaction(Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth, 
-            string transactionSource, TransactionType transactionType, DateTime transactionDate, decimal transactionAmount, string paymentReference, 
-            string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo, decimal paidAmount, decimal chargedAmount, 
+        private Transaction(Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth,
+            string transactionSource, TransactionType transactionType, DateTime transactionDate, decimal transactionAmount, string paymentReference,
+            string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo, decimal paidAmount, decimal chargedAmount,
             decimal balanceAmount, decimal housingBenefitAmount, string address, Person person, string fund)
         {
             TargetId = targetId;
@@ -61,18 +61,19 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
         /// Week number for Rent and Period number for LeaseHolders
         /// </summary>
         public short PeriodNo { get; }
-        
+
         public short FinancialYear { get; }
-        
+
         public short FinancialMonth { get; }
-        
+
         public string TransactionSource { get; }
 
         [JsonConverter(typeof(StringEnumConverter))]
         public TransactionType TransactionType { get; }
-        
+
         public DateTime TransactionDate { get; }
-        
+
+
         public decimal TransactionAmount { get; }
 
         /// <summary>
@@ -94,25 +95,25 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
         /// Information after this record ceases to be suspense
         /// </summary>
         public SuspenseResolutionInfo SuspenseResolutionInfo { get; }
-        
+
         public decimal PaidAmount { get; }
-        
+
         public decimal ChargedAmount { get; }
-        
+
         public decimal BalanceAmount { get; }
 
         /// <summary>
         /// Housing Benefit Contribution
         /// </summary>
         public decimal HousingBenefitAmount { get; }
-        
+
         public string Address { get; }
-        
+
         /// <summary>
         /// Person, who paid for the transaction
         /// </summary>
         public Person Person { get; }
-        
+
         public string Fund { get; }
     }
 }
