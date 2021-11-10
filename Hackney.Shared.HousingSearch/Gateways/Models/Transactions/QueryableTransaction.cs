@@ -11,8 +11,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
         public Transaction ToTransaction()
         {
             return Transaction.Create(TargetId, TargetType, PeriodNo, FinancialYear, FinancialMonth,
-                TransactionSource, TransactionType, TransactionDate, TransactionAmount, PaymentReference, 
-                BankAccountNumber, IsSuspense, SuspenseResolutionInfo.ToSuspenseResolutionInfo(), PaidAmount, ChargedAmount, 
+                TransactionSource, TransactionType, TransactionDate, TransactionAmount, PaymentReference,
+                BankAccountNumber, IsSuspense, SuspenseResolutionInfo.ToSuspenseResolutionInfo(), PaidAmount, ChargedAmount,
                 BalanceAmount, HousingBenefitAmount, Address, Person.ToPerson(), Fund);
         }
 
