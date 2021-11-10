@@ -8,7 +8,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
 {
     public class QueryableTenure
     {
-        public Domain.Accounts.Tenure Create()
+        public Domain.Accounts.Tenure ToQueryableTenure()
         {
             var primaryTenants = PrimaryTenants == null
                 ? new List<PrimaryTenants>()

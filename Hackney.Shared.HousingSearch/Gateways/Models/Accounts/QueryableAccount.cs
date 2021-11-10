@@ -10,7 +10,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
     public class QueryableAccount
     {
 
-        public Account Create()
+        public Account ToAccount()
         {
             var primaryTenants = Tenure.PrimaryTenants == null
                 ? new List<PrimaryTenants>()
