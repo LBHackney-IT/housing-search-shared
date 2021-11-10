@@ -6,11 +6,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {
     public class Account
     {
-        public Account()
-        {
-
-        }
-
         public static Account Create(Guid id
             , Guid parentAccountId
             , string paymentReference
