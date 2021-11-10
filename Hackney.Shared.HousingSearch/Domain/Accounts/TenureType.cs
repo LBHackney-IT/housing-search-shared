@@ -2,10 +2,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {
     public class TenureType
     {
-        public TenureType()
-        {
-
-        }
         private TenureType(string code, string description)
         {
             Code = code;

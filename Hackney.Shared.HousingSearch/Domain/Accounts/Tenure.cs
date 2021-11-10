@@ -6,10 +6,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {
     public class Tenure
     {
-        public Tenure()
-        {
-
-        }
         public static Tenure Create(string tenureId, TenureType tenureType, string fullAddress, List<PrimaryTenants> primaryTenants)
         {
             return new Tenure(tenureId, tenureType, fullAddress, primaryTenants);

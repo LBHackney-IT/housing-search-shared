@@ -4,11 +4,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {
     public class ConsolidatedCharge
     {
-        public ConsolidatedCharge()
-        {
-
-        }
-
         public static ConsolidatedCharge Create(string type, string frequency, decimal amount)
         {
             return new ConsolidatedCharge(type, frequency, amount);
