@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Hackney.Shared.HousingSearch.Gateways.Models.Accounts;
@@ -39,8 +40,11 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         ///     285 Avenue, 315 Amsterdam
         /// </example>
         [NotNull]
+        [Required]
         public string FullAddress { get; }
-
+        
+        [NotNull]
+        [Required]
         public List<PrimaryTenant> PrimaryTenants { get; }
     }
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Hackney.Shared.HousingSearch.Gateways.Models.Accounts;
+using Hackney.Shared.HousingSearch.Validations;
 
 namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {
@@ -21,7 +22,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         /// <example>
         ///     793dd4ca-d7c4-4110-a8ff-c58eac4b90fa
         /// </example>
-        [Required]
+        [NonEmptyGuid]
         public Guid Id { get; }
         /// <example>
         ///     Smith Johnson

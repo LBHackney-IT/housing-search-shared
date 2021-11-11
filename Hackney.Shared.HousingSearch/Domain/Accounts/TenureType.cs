@@ -1,3 +1,6 @@
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
+
 namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {
     public class TenureType
@@ -18,6 +21,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         /// <example>
         ///     PVG
         /// </example>
+        [NotNull]
+        [Required]
         public string Code { get; }
         /// <summary>
         ///     The description of the tenure
@@ -25,6 +30,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         /// <example>
         ///     Private garage
         /// </example>
+        [NotNull]
+        [Required]
         public string Description { get; }
     }
 }

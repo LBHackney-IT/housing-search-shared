@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using Hackney.Shared.HousingSearch.Gateways.Models.Accounts;
 
@@ -23,18 +24,21 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         ///     Rent
         /// </example>
         [NotNull]
+        [Required]
         public string Type { get; }
 
         /// <example>
         ///     Weekly
         /// </example>
         [NotNull]
+        [Required]
         public string Frequency { get; }
 
         /// <example>
         ///     101.20
         /// </example>
         [NotNull]
+        [Required]
         public decimal Amount { get; }
     }
 }

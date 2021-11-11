@@ -29,8 +29,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
                 StartDate,
                 EndDate,
                 AccountStatus,
-                ConsolidatedCharges.Select(p=>p.ToConsolidatedCharge()).ToList(),
-                Tenure.ToTenure());
+                ConsolidatedCharges?.Select(p=>p.ToConsolidatedCharge()).ToList(),
+                Tenure?.ToTenure());
         }
 
         [Text(Name = "id")]

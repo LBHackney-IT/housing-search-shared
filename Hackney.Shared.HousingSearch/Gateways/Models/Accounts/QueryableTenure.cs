@@ -13,7 +13,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
             return Domain.Accounts.Tenure.Create(TenureId,
                 TenureType,
                 FullAddress,
-                PrimaryTenants.Select(p => p.ToPrimaryTenant(p.Id, p.FullName)).ToList());
+                PrimaryTenants?.Select(p => p.ToPrimaryTenant(p.Id, p.FullName)).ToList());
         }
 
         [Text(Name = "tenureId")]
