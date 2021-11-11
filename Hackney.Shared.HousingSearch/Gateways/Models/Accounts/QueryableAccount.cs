@@ -12,21 +12,6 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
 
         public Account ToAccount()
         {
-            var primaryTenants = Tenure.PrimaryTenants == null
-                ? new List<PrimaryTenants>()
-                : Tenure.PrimaryTenants.Select(p => PrimaryTenants.Create(p.Id, p.FullNameName)).ToList();
-
-            var consolidatedCharges = ConsolidatedCharges == null
-                ? new List<ConsolidatedCharge>()
-                : ConsolidatedCharges.Select(p => ConsolidatedCharge.Create(p.Type, p.Frequency, p.Amount)).ToList();
-            var tenure = Tenure == null
-                ? new Domain.Accounts.Tenure()
-                : Domain.Accounts.Tenure.Create(Tenure.TenureId
-                    , Tenure.TenureType
-                    , Tenure.FullAddress
-                    , primaryTenants);
-
-
             return Account.Create(Id,
                 ParentAccountId,
                 PaymentReference,
@@ -44,8 +29,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
                 StartDate,
                 EndDate,
                 AccountStatus,
-                consolidatedCharges,
-                tenure);
+                Domain.Accounts.ConsolidatedCharge.Create(ConsolidatedCharges),
+                Domain.Accounts.Tenure.Create(Tenure));
         }
 
         [Text(Name = "id")]

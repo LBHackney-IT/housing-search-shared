@@ -1,13 +1,21 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Hackney.Shared.HousingSearch.Gateways.Models.Accounts;
 
 namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {
     public class PrimaryTenants
     {
-        public static PrimaryTenants Create(Guid id, string fullName)
+        public static IEnumerable<PrimaryTenants> Create(List<QueryablePrimaryTenant> primaryTenants)
         {
-            return new PrimaryTenants(id, fullName);
+            if (primaryTenants != null)
+                foreach (var primaryTenant in primaryTenants)
+                {
+                    yield return new PrimaryTenants(primaryTenant.Id, primaryTenant.FullNameName);
+                }
+
+            yield return null;
         }
 
         private PrimaryTenants(Guid id, string fullName)

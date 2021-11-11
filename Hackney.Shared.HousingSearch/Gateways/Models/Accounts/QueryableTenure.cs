@@ -10,11 +10,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
     {
         public Domain.Accounts.Tenure ToQueryableTenure()
         {
-            var primaryTenants = PrimaryTenants == null
-                ? new List<PrimaryTenants>()
-                : PrimaryTenants.Select(p => Domain.Accounts.PrimaryTenants.Create(p.Id, p.FullNameName)).ToList();
-
-            return Domain.Accounts.Tenure.Create(TenureId, TenureType, FullAddress, primaryTenants);
+            return Domain.Accounts.Tenure.Create(this);
         }
 
         [Text(Name = "tenureId")]
