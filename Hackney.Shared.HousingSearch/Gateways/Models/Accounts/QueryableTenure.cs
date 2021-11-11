@@ -8,9 +8,12 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
 {
     public class QueryableTenure
     {
-        public Domain.Accounts.Tenure ToQueryableTenure()
+        public Domain.Accounts.Tenure ToTenure()
         {
-            return Domain.Accounts.Tenure.Create(this);
+            return Domain.Accounts.Tenure.Create(TenureId,
+                TenureType,
+                FullAddress,
+                PrimaryTenants.Select(p => p.ToPrimaryTenant(p.Id, p.FullName)).ToList());
         }
 
         [Text(Name = "tenureId")]

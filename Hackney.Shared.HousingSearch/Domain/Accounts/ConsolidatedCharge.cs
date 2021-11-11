@@ -7,18 +7,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
     public class ConsolidatedCharge
     {
 
-        public static IEnumerable<ConsolidatedCharge> Create(IEnumerable<QueryableConsolidatedCharge> consolidatedCharges)
-        {
-            if (consolidatedCharges != null)
-                foreach (QueryableConsolidatedCharge consolidatedCharge in consolidatedCharges)
-                {
-                    yield return new ConsolidatedCharge(consolidatedCharge.Type, consolidatedCharge.Frequency,
-                        consolidatedCharge.Amount);
-                }
-
-            yield return null;
-        }
-
         public static ConsolidatedCharge Create(string type, string frequency, decimal amount)
         {
             return new ConsolidatedCharge(type, frequency, amount);

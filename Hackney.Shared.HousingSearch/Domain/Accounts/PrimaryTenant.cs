@@ -5,20 +5,14 @@ using Hackney.Shared.HousingSearch.Gateways.Models.Accounts;
 
 namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {
-    public class PrimaryTenants
+    public class PrimaryTenant
     {
-        public static IEnumerable<PrimaryTenants> Create(List<QueryablePrimaryTenant> primaryTenants)
+        public static PrimaryTenant Create(Guid id, string fullName)
         {
-            if (primaryTenants != null)
-                foreach (var primaryTenant in primaryTenants)
-                {
-                    yield return new PrimaryTenants(primaryTenant.Id, primaryTenant.FullNameName);
-                }
-
-            yield return null;
+            return new PrimaryTenant(id, fullName);
         }
 
-        private PrimaryTenants(Guid id, string fullName)
+        private PrimaryTenant(Guid id, string fullName)
         {
             Id = id;
             FullName = fullName;

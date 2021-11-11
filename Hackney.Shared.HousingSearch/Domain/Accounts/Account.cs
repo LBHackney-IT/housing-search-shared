@@ -23,7 +23,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
             , DateTime startDate
             , DateTime? endDate
             , AccountStatus accountStatus
-            , IEnumerable<ConsolidatedCharge> consolidatedCharges
+            , List<ConsolidatedCharge> consolidatedCharges
             , Tenure tenure)
         {
             return new Account(id,
@@ -122,7 +122,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
 
         public AccountStatus AccountStatus { get; }
 
-        public IEnumerable<ConsolidatedCharge> ConsolidatedCharges { get; }
+        public List<ConsolidatedCharge> ConsolidatedCharges { get; }
 
         public Tenure Tenure { get; }
     }

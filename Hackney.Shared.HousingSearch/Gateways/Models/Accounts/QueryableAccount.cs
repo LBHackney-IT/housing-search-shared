@@ -29,8 +29,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
                 StartDate,
                 EndDate,
                 AccountStatus,
-                Domain.Accounts.ConsolidatedCharge.Create(ConsolidatedCharges),
-                Domain.Accounts.Tenure.Create(Tenure));
+                ConsolidatedCharges.Select(p=>p.ToConsolidatedCharge()).ToList(),
+                Tenure.ToTenure());
         }
 
         [Text(Name = "id")]
@@ -85,7 +85,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
         public AccountStatus AccountStatus { get; set; }
 
         [Text(Name = "consolidatedCharges")]
-        public IEnumerable<QueryableConsolidatedCharge> ConsolidatedCharges { get; set; }
+        public List<QueryableConsolidatedCharge> ConsolidatedCharges { get; set; }
 
         [Text(Name = "tenure")]
         public QueryableTenure Tenure { get; set; }
