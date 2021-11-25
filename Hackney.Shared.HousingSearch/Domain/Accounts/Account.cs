@@ -94,7 +94,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         public Guid Id { get; }
         [NonEmptyGuid]
         public Guid ParentAccountId { get; }
-        
+
         [NotNull]
         [Required]
         public string PaymentReference { get; }
@@ -111,7 +111,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         [NotNull]
         [Required]
         public string AgreementType { get; }
-        
+
         [NotNull]
         public decimal AccountBalance { get; } = 0;
 
@@ -143,7 +143,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         public AccountStatus AccountStatus { get; }
 
         public List<ConsolidatedCharge> ConsolidatedCharges { get; }
-        
+
         [NotNull]
         [Required]
         public Tenure Tenure { get; }
