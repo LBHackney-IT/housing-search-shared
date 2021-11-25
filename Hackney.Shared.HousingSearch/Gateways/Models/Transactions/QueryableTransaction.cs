@@ -13,7 +13,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
             return Transaction.Create(TargetId, TargetType, PeriodNo, FinancialYear, FinancialMonth,
                 TransactionSource, TransactionType, TransactionDate, TransactionAmount, PaymentReference,
                 BankAccountNumber, IsSuspense, SuspenseResolutionInfo.ToSuspenseResolutionInfo(), PaidAmount, ChargedAmount,
-                BalanceAmount, HousingBenefitAmount, Address, Person.ToPerson(), Fund);
+                BalanceAmount, HousingBenefitAmount, Address, Sender.ToPerson(), Fund);
         }
 
         [Text(Name = "targetId")]
@@ -71,8 +71,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
         [Text(Name = "address")]
         public string Address { get; set; }
 
-        [Text(Name = "person")]
-        public QueryablePerson Person { get; set; }
+        [Text(Name = "sender")]
+        public QueryablePerson Sender { get; set; }
 
         [Text(Name = "fund")]
         public string Fund { get; set; }
