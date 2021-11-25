@@ -9,7 +9,6 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
 {
     public class QueryableAccount
     {
-
         public Account ToAccount()
         {
             return Account.Create(Id,
@@ -29,7 +28,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
                 StartDate,
                 EndDate,
                 AccountStatus,
-                ConsolidatedCharges?.Select(p=>p.ToConsolidatedCharge()).ToList(),
+                ConsolidatedCharges?.Select(p => p.ToConsolidatedCharge()).ToList(),
                 Tenure?.ToTenure());
         }
 

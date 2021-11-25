@@ -1,10 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using Hackney.Shared.HousingSearch.Gateways.Models.Accounts;
-using Hackney.Shared.Tenure.Domain;
 
 namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {
@@ -42,11 +38,9 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         [NotNull]
         [Required]
         public string FullAddress { get; }
-        
+
         [NotNull]
         [Required]
         public List<PrimaryTenant> PrimaryTenants { get; }
     }
-
-
 }
