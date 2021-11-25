@@ -6,7 +6,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 {
     public class Transaction
     {
-        public static Transaction Create(Guid targetId, TargetType targetType, short periodNo, short financialYear,
+        public static Transaction Create(Guid id, Guid targetId, TargetType targetType, short periodNo, short financialYear,
             short financialMonth,
             string transactionSource, TransactionType transactionType, DateTime transactionDate,
             decimal transactionAmount, string paymentReference,
@@ -14,17 +14,18 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             decimal paidAmount, decimal chargedAmount,
             decimal balanceAmount, decimal housingBenefitAmount, string address, Person sender, string fund)
         {
-            return new Transaction(targetId, targetType, periodNo, financialYear, financialMonth,
+            return new Transaction(id, targetId, targetType, periodNo, financialYear, financialMonth,
                 transactionSource, transactionType, transactionDate, transactionAmount, paymentReference,
                 bankAccountNumber, isSuspense, suspenseResolutionInfo, paidAmount, chargedAmount,
                 balanceAmount, housingBenefitAmount, address, sender, fund);
         }
 
-        private Transaction(Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth,
+        private Transaction(Guid id, Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth,
             string transactionSource, TransactionType transactionType, DateTime transactionDate, decimal transactionAmount, string paymentReference,
             string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo, decimal paidAmount, decimal chargedAmount,
             decimal balanceAmount, decimal housingBenefitAmount, string address, Person sender, string fund)
         {
+            Id = id;
             TargetId = targetId;
             TargetType = targetType;
             PeriodNo = periodNo;
@@ -46,6 +47,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             Sender = sender;
             Fund = fund;
         }
+
+        public Guid Id { get; }
 
         /// <summary>
         /// The guid of a tenancy/property
