@@ -12,18 +12,18 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             decimal transactionAmount, string paymentReference,
             string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo,
             decimal paidAmount, decimal chargedAmount,
-            decimal balanceAmount, decimal housingBenefitAmount, string address, Person person, string fund)
+            decimal balanceAmount, decimal housingBenefitAmount, string address, Person sender, string fund)
         {
             return new Transaction(targetId, targetType, periodNo, financialYear, financialMonth,
                 transactionSource, transactionType, transactionDate, transactionAmount, paymentReference,
                 bankAccountNumber, isSuspense, suspenseResolutionInfo, paidAmount, chargedAmount,
-                balanceAmount, housingBenefitAmount, address, person, fund);
+                balanceAmount, housingBenefitAmount, address, sender, fund);
         }
 
         private Transaction(Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth,
             string transactionSource, TransactionType transactionType, DateTime transactionDate, decimal transactionAmount, string paymentReference,
             string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo, decimal paidAmount, decimal chargedAmount,
-            decimal balanceAmount, decimal housingBenefitAmount, string address, Person person, string fund)
+            decimal balanceAmount, decimal housingBenefitAmount, string address, Person sender, string fund)
         {
             TargetId = targetId;
             TargetType = targetType;
@@ -43,7 +43,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             BalanceAmount = balanceAmount;
             HousingBenefitAmount = housingBenefitAmount;
             Address = address;
-            Person = person;
+            Sender = sender;
             Fund = fund;
         }
 
@@ -110,9 +110,9 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
         public string Address { get; }
 
         /// <summary>
-        /// Person, who paid for the transaction
+        /// Sender, who paid for the transaction
         /// </summary>
-        public Person Person { get; }
+        public Person Sender { get; }
 
         public string Fund { get; }
     }
