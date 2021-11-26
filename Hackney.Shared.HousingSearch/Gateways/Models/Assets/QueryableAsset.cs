@@ -1,7 +1,6 @@
 using Hackney.Shared.HousingSearch.Domain.Asset;
 using Nest;
 using Asset = Hackney.Shared.HousingSearch.Domain.Asset.Asset;
-using TenureObject = Hackney.Shared.HousingSearch.Domain.Asset.Tenure;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
 {
@@ -22,7 +21,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                 );
 
             var tenure = Tenure == null
-                ? new TenureObject()
+                ? null
                 : Domain.Asset.Tenure.Create(
                     Tenure.Id,
                     Tenure.PaymentReference,
