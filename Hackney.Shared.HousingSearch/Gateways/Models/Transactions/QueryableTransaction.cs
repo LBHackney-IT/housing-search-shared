@@ -75,7 +75,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
         public string Address { get; set; }
 
         [Text(Name = "sender")]
-        public QueryablePerson Sender { get; set; }
+        public QueryableSender Sender { get; set; }
 
         [Text(Name = "fund")]
         public string Fund { get; set; }
