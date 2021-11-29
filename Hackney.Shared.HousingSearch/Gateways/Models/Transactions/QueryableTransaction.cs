@@ -13,7 +13,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
             return Transaction.Create(Id, TargetId, TargetType, PeriodNo, FinancialYear, FinancialMonth,
                 TransactionSource, TransactionType, TransactionDate, TransactionAmount, PaymentReference,
                 BankAccountNumber, IsSuspense, SuspenseResolutionInfo?.ToSuspenseResolutionInfo(), PaidAmount, ChargedAmount,
-                BalanceAmount, HousingBenefitAmount, Address, Sender?.ToSender(), Fund);
+                BalanceAmount, HousingBenefitAmount, Address, Sender?.ToPerson(), Fund);
         }
 
         [Text(Name = "id")]
