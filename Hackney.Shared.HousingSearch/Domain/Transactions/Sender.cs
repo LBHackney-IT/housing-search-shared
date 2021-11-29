@@ -2,12 +2,12 @@
 
 namespace Hackney.Shared.HousingSearch.Domain.Transactions
 {
-    public class Person
+    public class Sender
     {
-        public static Person Create(Guid id, string fullName)
-            => new Person(id, fullName);
+        public static Sender Create(Guid id, string fullName)
+            => new Sender(id, fullName);
 
-        private Person(Guid id, string fullName)
+        private Sender(Guid id, string fullName)
         {
             Id = id;
             FullName = fullName;

@@ -4,11 +4,11 @@ using Nest;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
 {
-    public class QueryablePerson
+    public class QueryableSender
     {
-        public Person ToPerson()
+        public Sender ToSender()
         {
-            return Person.Create(Id, FullName);
+            return Sender.Create(Id, FullName);
         }
 
         [Text(Name = "id")]
