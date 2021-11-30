@@ -6,6 +6,10 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 {
     public class Transaction
     {
+        public Transaction()
+        {
+        }
+
         public static Transaction Create(Guid id, Guid targetId, TargetType targetType, short periodNo, short financialYear,
             short financialMonth,
             string transactionSource, TransactionType transactionType, DateTime transactionDate,
@@ -48,75 +52,75 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             Fund = fund;
         }
 
-        public Guid Id { get; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// The guid of a tenancy/property
         /// </summary>
-        public Guid TargetId { get; }
+        public Guid TargetId { get; set; }
 
         /// <summary>
         ///     The target of provided id by target_id
         /// </summary>
-        public TargetType TargetType { get; }
+        public TargetType TargetType { get; set; }
 
         /// <summary>
         /// Week number for Rent and Period number for LeaseHolders
         /// </summary>
-        public short PeriodNo { get; }
+        public short PeriodNo { get; set; }
 
-        public short FinancialYear { get; }
+        public short FinancialYear { get; set; }
 
-        public short FinancialMonth { get; }
+        public short FinancialMonth { get; set; }
 
-        public string TransactionSource { get; }
+        public string TransactionSource { get; set; }
 
         [JsonConverter(typeof(StringEnumConverter))]
-        public TransactionType TransactionType { get; }
+        public TransactionType TransactionType { get; set; }
 
-        public DateTime TransactionDate { get; }
+        public DateTime TransactionDate { get; set; }
 
 
-        public decimal TransactionAmount { get; }
+        public decimal TransactionAmount { get; set; }
 
         /// <summary>
         /// Same as Rent Account Number
         /// </summary>
-        public string PaymentReference { get; }
+        public string PaymentReference { get; set; }
 
         /// <summary>
         /// Partially filled bank account number
         /// </summary>
-        public string BankAccountNumber { get; }
+        public string BankAccountNumber { get; set; }
 
         /// <summary>
         /// Is this account need to be in suspense
         /// </summary>
-        public bool IsSuspense { get; }
+        public bool IsSuspense { get; set; }
 
         /// <summary>
         /// Information after this record ceases to be suspense
         /// </summary>
-        public SuspenseResolutionInfo SuspenseResolutionInfo { get; }
+        public SuspenseResolutionInfo SuspenseResolutionInfo { get; set; }
 
-        public decimal PaidAmount { get; }
+        public decimal PaidAmount { get; set; }
 
-        public decimal ChargedAmount { get; }
+        public decimal ChargedAmount { get; set; }
 
-        public decimal BalanceAmount { get; }
+        public decimal BalanceAmount { get; set; }
 
         /// <summary>
         /// Housing Benefit Contribution
         /// </summary>
-        public decimal HousingBenefitAmount { get; }
+        public decimal HousingBenefitAmount { get; set; }
 
-        public string Address { get; }
+        public string Address { get; set; }
 
         /// <summary>
         /// Person, who paid for the transaction
         /// </summary>
-        public Sender Sender { get; }
+        public Sender Sender { get; set; }
 
-        public string Fund { get; }
+        public string Fund { get; set; }
     }
 }

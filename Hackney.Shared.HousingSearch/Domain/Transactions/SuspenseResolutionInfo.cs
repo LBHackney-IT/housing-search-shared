@@ -4,6 +4,10 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 {
     public class SuspenseResolutionInfo
     {
+        public SuspenseResolutionInfo()
+        {
+        }
+
         public static SuspenseResolutionInfo Create(DateTime? resolutionDate, bool isConfirmed, bool isApproved, string note)
             => new SuspenseResolutionInfo(resolutionDate, isConfirmed, isApproved, note);
 
@@ -17,9 +21,9 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 
         public bool IsResolve => IsConfirmed && IsApproved;
 
-        public DateTime? ResolutionDate { get; }
-        public bool IsConfirmed { get; }
-        public bool IsApproved { get; }
-        public string Note { get; }
+        public DateTime? ResolutionDate { get; set; }
+        public bool IsConfirmed { get; set; }
+        public bool IsApproved { get; set; }
+        public string Note { get; set; }
     }
 }

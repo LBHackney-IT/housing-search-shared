@@ -4,6 +4,10 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 {
     public class Sender
     {
+        public Sender()
+        {
+        }
+
         public static Sender Create(Guid id, string fullName)
             => new Sender(id, fullName);
 
@@ -13,8 +17,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             FullName = fullName;
         }
 
-        public Guid Id { get; }
+        public Guid Id { get; set; }
 
-        public string FullName { get; }
+        public string FullName { get; set; }
     }
 }
