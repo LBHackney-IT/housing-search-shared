@@ -13,7 +13,6 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
                 BankAccountNumber, IsSuspense, SuspenseResolutionInfo?.ToSuspenseResolutionInfo(), PaidAmount, ChargedAmount,
                 BalanceAmount, HousingBenefitAmount, Address, Sender?.ToSender(), Fund);
         }
-         
 
         [Text(Name = "id")]
         public Guid Id { get; set; }
