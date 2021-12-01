@@ -72,7 +72,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
         public string TransactionSource { get; }
 
         [JsonConverter(typeof(StringEnumConverter))]
-        public TransactionType TransactionType { get; set; }
+        public TransactionType TransactionType { get; }
 
         public DateTime TransactionDate { get; }
 
