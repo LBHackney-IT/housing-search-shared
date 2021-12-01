@@ -1,8 +1,6 @@
 ﻿using Hackney.Shared.HousingSearch.Domain.Transactions;
 using Nest;
 using System;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
 {
@@ -22,17 +20,16 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
         [Text(Name = "targetId")]
         public Guid TargetId { get; set; }
 
-        [JsonConverter(typeof(StringEnumConverter))]
         [Text(Name = "targetType")]
         public TargetType TargetType { get; set; }
 
-        [Number(Name = "periodNo")]
+        [Text(Name = "periodNo")]
         public short PeriodNo { get; set; }
 
-        [Number(Name = "financialYear")]
+        [Text(Name = "financialYear")]
         private short FinancialYear { get; set; }
 
-        [Number(Name = "financialMonth")]
+        [Text(Name = "financialMonth")]
         public short FinancialMonth { get; set; }
 
         [Text(Name = "transactionSource")]
@@ -44,7 +41,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
         [Date(Name = "transactionDate")]
         public DateTime TransactionDate { get; set; }
 
-        [Number(Name = "transactionAmount")]
+        [Text(Name = "transactionAmount")]
         public decimal TransactionAmount { get; set; }
 
         [Text(Name = "paymentReference")]
@@ -53,22 +50,22 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
         [Text(Name = "bankAccountNumber")]
         public string BankAccountNumber { get; set; }
 
-        [Boolean(Name = "isSuspense")]
+        [Text(Name = "isSuspense")]
         public bool IsSuspense { get; set; }
 
         [Text(Name = "suspenseResolutionInfo")]
         public QueryableSuspenseResolutionInfo SuspenseResolutionInfo { get; set; }
 
-        [Number(Name = "paidAmount")]
+        [Text(Name = "paidAmount")]
         public decimal PaidAmount { get; set; }
 
-        [Number(Name = "chargedAmount")]
+        [Text(Name = "chargedAmount")]
         public decimal ChargedAmount { get; set; }
 
-        [Number(Name = "balanceAmount")]
+        [Text(Name = "balanceAmount")]
         public decimal BalanceAmount { get; set; }
 
-        [Number(Name = "housingBenefitAmount")]
+        [Text(Name = "housingBenefitAmount")]
         public decimal HousingBenefitAmount { get; set; }
 
         [Text(Name = "address")]
