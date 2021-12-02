@@ -13,19 +13,19 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo,
             decimal paidAmount, decimal chargedAmount,
             decimal balanceAmount, decimal housingBenefitAmount, string address, Sender sender, string fund,
-            string lastUpdatedBy, DateTime lastUpdatedAt, string createdBy, DateTime createdAt)
+            DateTime createdAt, string createdBy, DateTime? lastUpdatedAt, string lastUpdatedBy)
         {
             return new Transaction(id, targetId, targetType, periodNo, financialYear, financialMonth,
                 transactionSource, transactionType, transactionDate, transactionAmount, paymentReference,
                 bankAccountNumber, isSuspense, suspenseResolutionInfo, paidAmount, chargedAmount,
-                balanceAmount, housingBenefitAmount, address, sender, fund, lastUpdatedBy, lastUpdatedAt, createdBy, createdAt);
+                balanceAmount, housingBenefitAmount, address, sender, fund, createdAt, createdBy, lastUpdatedAt, lastUpdatedBy);
         }
 
         private Transaction(Guid id, Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth,
             string transactionSource, TransactionType transactionType, DateTime transactionDate, decimal transactionAmount, string paymentReference,
             string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo, decimal paidAmount, decimal chargedAmount,
-            decimal balanceAmount, decimal housingBenefitAmount, string address, Sender sender, string fund, string lastUpdatedBy, 
-            DateTime lastUpdatedAt, string createdBy, DateTime createdAt)
+            decimal balanceAmount, decimal housingBenefitAmount, string address, Sender sender, string fund,
+            DateTime createdAt, string createdBy, DateTime? lastUpdatedAt, string lastUpdatedBy)
         {
             Id = id;
             TargetId = targetId;
@@ -127,7 +127,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 
         public string LastUpdatedBy { get; set; }
 
-        public DateTime LastUpdatedAt { get; set; }
+        public DateTime? LastUpdatedAt { get; set; }
 
         public DateTime CreatedAt { get; set; }
 
