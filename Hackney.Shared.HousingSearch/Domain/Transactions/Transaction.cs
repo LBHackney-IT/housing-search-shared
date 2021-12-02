@@ -125,12 +125,12 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 
         public string Fund { get; }
 
-        public string LastUpdatedBy { get; set; }
+        public string LastUpdatedBy { get; }
 
-        public DateTime? LastUpdatedAt { get; set; }
+        public DateTime? LastUpdatedAt { get; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; }
 
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get; }
     }
 }
