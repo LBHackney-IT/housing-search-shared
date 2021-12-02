@@ -12,18 +12,20 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             decimal transactionAmount, string paymentReference,
             string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo,
             decimal paidAmount, decimal chargedAmount,
-            decimal balanceAmount, decimal housingBenefitAmount, string address, Sender sender, string fund)
+            decimal balanceAmount, decimal housingBenefitAmount, string address, Sender sender, string fund,
+            DateTime createdAt, string createdBy, DateTime? lastUpdatedAt, string lastUpdatedBy)
         {
             return new Transaction(id, targetId, targetType, periodNo, financialYear, financialMonth,
                 transactionSource, transactionType, transactionDate, transactionAmount, paymentReference,
                 bankAccountNumber, isSuspense, suspenseResolutionInfo, paidAmount, chargedAmount,
-                balanceAmount, housingBenefitAmount, address, sender, fund);
+                balanceAmount, housingBenefitAmount, address, sender, fund, createdAt, createdBy, lastUpdatedAt, lastUpdatedBy);
         }
 
         private Transaction(Guid id, Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth,
             string transactionSource, TransactionType transactionType, DateTime transactionDate, decimal transactionAmount, string paymentReference,
             string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo, decimal paidAmount, decimal chargedAmount,
-            decimal balanceAmount, decimal housingBenefitAmount, string address, Sender sender, string fund)
+            decimal balanceAmount, decimal housingBenefitAmount, string address, Sender sender, string fund,
+            DateTime createdAt, string createdBy, DateTime? lastUpdatedAt, string lastUpdatedBy)
         {
             Id = id;
             TargetId = targetId;
@@ -46,6 +48,10 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             Address = address;
             Sender = sender;
             Fund = fund;
+            LastUpdatedBy = lastUpdatedBy;
+            LastUpdatedAt = lastUpdatedAt;
+            CreatedBy = createdBy;
+            CreatedAt = createdAt;
         }
 
         public Guid Id { get; }
@@ -118,5 +124,13 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
         public Sender Sender { get; }
 
         public string Fund { get; }
+
+        public string LastUpdatedBy { get; }
+
+        public DateTime? LastUpdatedAt { get; }
+
+        public DateTime CreatedAt { get; }
+
+        public string CreatedBy { get; }
     }
 }

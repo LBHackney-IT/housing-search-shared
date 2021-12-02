@@ -11,7 +11,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
             return Transaction.Create(Id, TargetId, TargetType, PeriodNo, FinancialYear, FinancialMonth,
                 TransactionSource, TransactionType, TransactionDate, TransactionAmount, PaymentReference,
                 BankAccountNumber, IsSuspense, SuspenseResolutionInfo?.ToSuspenseResolutionInfo(), PaidAmount, ChargedAmount,
-                BalanceAmount, HousingBenefitAmount, Address, Sender?.ToSender(), Fund);
+                BalanceAmount, HousingBenefitAmount, Address, Sender?.ToSender(), Fund, CreatedAt, CreatedBy, LastUpdatedAt, LastUpdatedBy);
         }
 
         [Text(Name = "id")]
@@ -76,5 +76,17 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
 
         [Text(Name = "fund")]
         public string Fund { get; set; }
+
+        [Text(Name = "lastUpdatedBy")]
+        public string LastUpdatedBy { get; set; }
+
+        [Date(Name = "lastUpdatedAt")]
+        public DateTime? LastUpdatedAt { get; set; }
+
+        [Date(Name = "createdAt")]
+        public DateTime CreatedAt { get; set; }
+
+        [Text(Name = "createdBy")]
+        public string CreatedBy { get; set; }
     }
 }
