@@ -27,7 +27,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
         public short PeriodNo { get; set; }
 
         [Text(Name = "financialYear")]
-        private short FinancialYear { get; set; }
+        public short FinancialYear { get; set; }
 
         [Text(Name = "financialMonth")]
         public short FinancialMonth { get; set; }
