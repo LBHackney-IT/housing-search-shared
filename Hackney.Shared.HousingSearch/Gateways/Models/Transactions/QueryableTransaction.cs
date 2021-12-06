@@ -10,7 +10,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
         {
             return Transaction.Create(Id, TargetId, TargetType, PeriodNo, FinancialYear, FinancialMonth,
                 TransactionSource, TransactionType, TransactionDate, TransactionAmount, PaymentReference,
-                BankAccountNumber, IsSuspense, SuspenseResolutionInfo?.ToSuspenseResolutionInfo(), PaidAmount, ChargedAmount,
+                BankAccountNumber, SortCode, SuspenseResolutionInfo?.ToSuspenseResolutionInfo(), PaidAmount, ChargedAmount,
                 BalanceAmount, HousingBenefitAmount, Address, Sender?.ToSender(), Fund, CreatedAt, CreatedBy, LastUpdatedAt, LastUpdatedBy);
         }
 
@@ -50,8 +50,11 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Transactions
         [Text(Name = "bankAccountNumber")]
         public string BankAccountNumber { get; set; }
 
+        [Text(Name = "sortCode")]
+        public string SortCode { get; set; }
+
         [Text(Name = "isSuspense")]
-        public bool IsSuspense { get; set; }
+        public bool IsSuspense => TargetId == Guid.Empty;
 
         [Text(Name = "suspenseResolutionInfo")]
         public QueryableSuspenseResolutionInfo SuspenseResolutionInfo { get; set; }
