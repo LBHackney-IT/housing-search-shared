@@ -12,20 +12,20 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             short financialMonth,
             string transactionSource, TransactionType transactionType, DateTime transactionDate,
             decimal transactionAmount, string paymentReference,
-            string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo,
+            string bankAccountNumber, string sortCode, SuspenseResolutionInfo suspenseResolutionInfo,
             decimal paidAmount, decimal chargedAmount,
             decimal balanceAmount, decimal housingBenefitAmount, string address, Sender sender, string fund,
             DateTime createdAt, string createdBy, DateTime? lastUpdatedAt, string lastUpdatedBy)
         {
             return new Transaction(id, targetId, targetType, periodNo, financialYear, financialMonth,
                 transactionSource, transactionType, transactionDate, transactionAmount, paymentReference,
-                bankAccountNumber, isSuspense, suspenseResolutionInfo, paidAmount, chargedAmount,
+                bankAccountNumber, sortCode, suspenseResolutionInfo, paidAmount, chargedAmount,
                 balanceAmount, housingBenefitAmount, address, sender, fund, createdAt, createdBy, lastUpdatedAt, lastUpdatedBy);
         }
 
         private Transaction(Guid id, Guid targetId, TargetType targetType, short periodNo, short financialYear, short financialMonth,
             string transactionSource, TransactionType transactionType, DateTime transactionDate, decimal transactionAmount, string paymentReference,
-            string bankAccountNumber, bool isSuspense, SuspenseResolutionInfo suspenseResolutionInfo, decimal paidAmount, decimal chargedAmount,
+            string bankAccountNumber, string sortCode, SuspenseResolutionInfo suspenseResolutionInfo, decimal paidAmount, decimal chargedAmount,
             decimal balanceAmount, decimal housingBenefitAmount, string address, Sender sender, string fund,
             DateTime createdAt, string createdBy, DateTime? lastUpdatedAt, string lastUpdatedBy)
         {
@@ -41,7 +41,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
             TransactionAmount = transactionAmount;
             PaymentReference = paymentReference;
             BankAccountNumber = bankAccountNumber;
-            IsSuspense = isSuspense;
+            SortCode = sortCode;
+            IsSuspense = targetId == Guid.Empty;
             SuspenseResolutionInfo = suspenseResolutionInfo;
             PaidAmount = paidAmount;
             ChargedAmount = chargedAmount;
@@ -84,7 +85,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
 
         public DateTime TransactionDate { get; set; }
 
-
         public decimal TransactionAmount { get; set; }
 
         /// <summary>
@@ -96,6 +96,11 @@ namespace Hackney.Shared.HousingSearch.Domain.Transactions
         /// Partially filled bank account number
         /// </summary>
         public string BankAccountNumber { get; set; }
+
+        /// <summary>
+        /// Partial of the credit card no
+        /// </summary>
+        public string SortCode { get; set; }
 
         /// <summary>
         /// Is this account need to be in suspense
