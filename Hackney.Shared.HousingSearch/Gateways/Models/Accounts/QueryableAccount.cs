@@ -27,6 +27,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
                 LastUpdatedAt,
                 StartDate,
                 EndDate,
+                EndReasonCode,
                 AccountStatus,
                 ConsolidatedCharges?.Select(p => p.ToConsolidatedCharge()).ToList(),
                 Tenure?.ToTenure());
@@ -52,6 +53,9 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Accounts
 
         [Text(Name = "endDate")]
         public DateTime? EndDate { get; set; }
+
+        [Text(Name = "endReasonCode")]
+        public string EndReasonCode { get; set; }
 
         [Text(Name = "accountBalance")]
         public decimal AccountBalance { get; set; } = 0;

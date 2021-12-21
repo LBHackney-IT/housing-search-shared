@@ -1,7 +1,5 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using Hackney.Shared.HousingSearch.Gateways.Models.Accounts;
 
 namespace Hackney.Shared.HousingSearch.Domain.Accounts
 {

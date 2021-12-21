@@ -25,6 +25,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
             , DateTime lastUpdatedAt
             , DateTime startDate
             , DateTime? endDate
+            , string endReasonCode
             , AccountStatus accountStatus
             , List<ConsolidatedCharge> consolidatedCharges
             , Tenure tenure)
@@ -45,6 +46,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
                 lastUpdatedAt,
                 startDate,
                 endDate,
+                endReasonCode,
                 accountStatus,
                 consolidatedCharges,
                 tenure);
@@ -66,6 +68,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
             , DateTime lastUpdatedAt
             , DateTime startDate
             , DateTime? endDate
+            , string endReasonCode
             , AccountStatus accountStatus
             , List<ConsolidatedCharge> consolidatedCharges
             , Tenure tenure)
@@ -86,6 +89,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
             LastUpdatedAt = lastUpdatedAt;
             StartDate = startDate;
             EndDate = endDate;
+            EndReasonCode = endReasonCode;
             AccountStatus = accountStatus;
             ConsolidatedCharges = consolidatedCharges;
             Tenure = tenure ?? throw new ArgumentNullException(nameof(tenure));
@@ -139,6 +143,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts
         public DateTime StartDate { get; }
 
         public DateTime? EndDate { get; }
+
+        public string EndReasonCode { get; }
 
         public AccountStatus AccountStatus { get; }
 
