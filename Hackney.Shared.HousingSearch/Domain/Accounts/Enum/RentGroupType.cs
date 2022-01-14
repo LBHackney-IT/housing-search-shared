@@ -13,6 +13,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Accounts.Enum
         HraRents,
         MajorWorks,
         TempAcc,
+        TempAccHRA,
         Travelers
     }
 }
