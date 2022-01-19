@@ -27,4 +27,4 @@ If all tests pass, a new version of your package will be publised on every commi
 
 All preview versions of packages will have the suffix **`-feat-<branch-name>-<number>`**.
 
-This branch name in the package version has a character limit of **12 characters long**, so try to name your branch accordingly, otherwise it will be cut off.
+This branch name in the package version has a character limit of **12 characters**, so try to name your branch accordingly, otherwise it will be cut off.
