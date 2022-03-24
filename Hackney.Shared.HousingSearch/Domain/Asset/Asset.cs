@@ -2,6 +2,14 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
 {
     public class Asset
     {
+        public static Asset CreateAll(string id, string assetId, string assetType,
+            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds, 
+            AssetCharacteristics assetCharacteristics, AssetManagement assetManagement)
+        {
+            return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, assetAddress, tenure, rootAsset, 
+                parentAssetIds,  assetCharacteristics, assetManagement);
+        }
+
         public static Asset Create(string id, string assetId, string assetType,
             bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure)
         {
@@ -12,7 +20,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         {
 
         }
-
         private Asset(string id, string assetId, string assetType,
             bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure)
         {
@@ -22,6 +29,21 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
             IsAssetCautionaryAlerted = isAssetCautionaryAlerted;
             AssetAddress = assetAddress;
             Tenure = tenure;
+        }
+        private Asset(string id, string assetId, string assetType,
+            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds,
+             AssetCharacteristics assetCharacteristics, AssetManagement assetManagement)
+        {
+            Id = id;
+            AssetId = assetId;
+            AssetType = assetType;
+            IsAssetCautionaryAlerted = isAssetCautionaryAlerted;
+            AssetAddress = assetAddress;
+            Tenure = tenure;
+            RootAsset = rootAsset;
+            ParentAssetIds = parentAssetIds;
+            AssetCharacteristics = assetCharacteristics;
+            AssetManagement = assetManagement;
         }
 
         public string Id { get; set; }
@@ -35,5 +57,12 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         public AssetAddress AssetAddress { get; set; }
 
         public Tenure Tenure { get; set; }
+
+        public string RootAsset { get; set; }
+        public string ParentAssetIds { get; set; }
+
+        public AssetCharacteristics AssetCharacteristics { get; set; }
+
+        public AssetManagement AssetManagement { get; set; }
     }
 }
