@@ -64,5 +64,19 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         public AssetCharacteristics AssetCharacteristics { get; set; }
 
         public AssetManagement AssetManagement { get; set; }
+
+        public string AssetStatus { get; set; }
+
+        public int NumberOfBedSpaces { get; set; }
+
+        public int NumberOfCots { get; set; }
+
+        public bool GroundFloor { get; set; }
+
+        public bool PrivateBathroom { get; set; }
+
+        public bool PrivateKitchen { get; set; }
+
+        public bool StepFree { get; set; }
     }
 }

@@ -2,10 +2,10 @@
  <PropertyGroup>
    <TargetFramework>netstandard2.1</TargetFramework>
    <RepositoryUrl>https://github.com/LBHackney-IT/housing-search-shared</RepositoryUrl>
-   <Version>1.0.1</Version>
+   <Version>0.2.3</Version>
    <Authors>London Borough of Hackney</Authors>
    <Company>London Borough of Hackney</Company>
-   <Copyright>2021</Copyright>
+   <Copyright>2022</Copyright>
    <Description>Shared Library for Housing Search service</Description>
    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
  </PropertyGroup>

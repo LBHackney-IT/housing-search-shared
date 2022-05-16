@@ -118,6 +118,30 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         [Text(Name = "parentAssetIds")]
         public string ParentAssetIds { get; set; }
 
+        [Text(Name = "assetStatus")]
+        public string AssetStatus { get; set; }
+
+        [Text(Name = "numberOfBedSpaces")]
+        public int NumberOfBedSpaces { get; set; }
+
+        [Text(Name = "numberOfCots")]
+        public int NumberOfCots { get; set; }
+
+        [Text(Name = "groundFloor")]
+        public bool GroundFloor { get; set; }
+
+        [Text(Name = "privateBathroom")]
+        public bool PrivateBathroom { get; set; }
+
+        [Text(Name = "privateKitchen")]
+        public bool PrivateKitchen { get; set; }
+
+        [Text(Name = "stepFree")]
+        public bool StepFree { get; set; }
+
+        [Text(Name = "isTemporaryAccomodation")]
+        public bool IsTemporaryAccomodation { get; set; }
+
         public QueryableAssetAddress AssetAddress { get; set; }
 
         public QueryableAssetTenure Tenure { get; set; }
