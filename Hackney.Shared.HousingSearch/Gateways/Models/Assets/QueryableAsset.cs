@@ -30,13 +30,30 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     Tenure.EndOfTenureDate,
                     Tenure.Type
                 );
+            var assetCharacteristics = AssetCharacteristics == null
+            ? null
+            : Domain.Asset.AssetCharacteristics.Create(
+                AssetCharacteristics.NumberOfBedrooms,
+                AssetCharacteristics.NumberOfLifts,
+                AssetCharacteristics.NumberOfLivingRooms,
+                AssetCharacteristics.WindowType,
+                AssetCharacteristics.YearConstructed);
+            
             return Asset.Create(
                 Id,
                 AssetId,
                 AssetType,
                 IsAssetCautionaryAlerted,
                 assetAddress,
-                tenure
+                tenure,
+                assetCharacteristics,
+                AssetStatus,
+                NumberOfBedSpaces,
+                NumberOfCots,
+                GroundFloor,
+                PrivateBathroom,
+                PrivateKitchen,
+                StepFree
             );
         }
 
@@ -145,7 +162,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         public QueryableAssetAddress AssetAddress { get; set; }
 
         public QueryableAssetTenure Tenure { get; set; }
-
+        
         public QueryableAssetCharacteristics AssetCharacteristics { get; set; }
 
         public QueryableAssetManagement AssetManagement { get; set; }
