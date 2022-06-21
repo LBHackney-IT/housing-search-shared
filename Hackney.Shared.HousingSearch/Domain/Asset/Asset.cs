@@ -3,11 +3,11 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
     public class Asset
     {
         public static Asset CreateAll(string id, string assetId, string assetType,
-            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds, 
+            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds,
             AssetCharacteristics assetCharacteristics, AssetManagement assetManagement)
         {
-            return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, assetAddress, tenure, rootAsset, 
-                parentAssetIds,  assetCharacteristics, assetManagement);
+            return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, assetAddress, tenure, rootAsset,
+                parentAssetIds, assetCharacteristics, assetManagement);
         }
 
         public static Asset Create(string id, string assetId, string assetType,
@@ -22,7 +22,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
 
         }
         private Asset(string id, string assetId, string assetType,
-            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, AssetCharacteristics assetCharacteristics, string assetStatus, 
+            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, AssetCharacteristics assetCharacteristics, string assetStatus,
             int numberOfBedSpaces, int numberOfCots, bool groundFloor, bool privateBathroom, bool privateKitchen, bool stepFree)
         {
             Id = id;
@@ -47,7 +47,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
             RootAsset = rootAsset;
             ParentAssetIds = parentAssetIds;
             AssetCharacteristics = assetCharacteristics;
-            AssetManagement = assetManagement;       
+            AssetManagement = assetManagement;
         }
 
         public string Id { get; set; }

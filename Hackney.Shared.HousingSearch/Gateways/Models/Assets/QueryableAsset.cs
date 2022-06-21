@@ -44,7 +44,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                 AssetCharacteristics.PrivateBathroom,
                 AssetCharacteristics.PrivateKitchen,
                 AssetCharacteristics.StepFree);
-            
+
             return Asset.Create(
                 Id,
                 AssetId,
@@ -80,7 +80,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     Tenure.EndOfTenureDate,
                     Tenure.Type
                 );
-           
+
             var assetCharacteristics = AssetCharacteristics == null
                 ? null
                 : Domain.Asset.AssetCharacteristics.Create(
@@ -95,7 +95,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     AssetCharacteristics.PrivateBathroom,
                     AssetCharacteristics.PrivateKitchen,
                     AssetCharacteristics.StepFree);
-            
+
             var assetManagement = AssetManagement == null
                 ? null
                 : Domain.Asset.AssetManagement.Create(
@@ -151,7 +151,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         public QueryableAssetAddress AssetAddress { get; set; }
 
         public QueryableAssetTenure Tenure { get; set; }
-        
+
         public QueryableAssetCharacteristics AssetCharacteristics { get; set; }
 
         public QueryableAssetManagement AssetManagement { get; set; }
