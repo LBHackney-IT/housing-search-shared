@@ -22,8 +22,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
 
         }
         private Asset(string id, string assetId, string assetType,
-            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, AssetCharacteristics assetCharacteristics, string assetStatus,
-            int numberOfBedSpaces, int numberOfCots, bool groundFloor, bool privateBathroom, bool privateKitchen, bool stepFree)
+            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, AssetCharacteristics assetCharacteristics, string assetStatus)
         {
             Id = id;
             AssetId = assetId;
