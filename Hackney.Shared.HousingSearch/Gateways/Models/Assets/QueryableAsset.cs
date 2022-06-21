@@ -37,7 +37,13 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                 AssetCharacteristics.NumberOfLifts,
                 AssetCharacteristics.NumberOfLivingRooms,
                 AssetCharacteristics.WindowType,
-                AssetCharacteristics.YearConstructed);
+                AssetCharacteristics.YearConstructed,
+                AssetCharacteristics.NumberOfBedSpaces,
+                AssetCharacteristics.NumberOfCots,
+                AssetCharacteristics.GroundFloor,
+                AssetCharacteristics.PrivateBathroom,
+                AssetCharacteristics.PrivateKitchen,
+                AssetCharacteristics.StepFree);
             
             return Asset.Create(
                 Id,
@@ -47,13 +53,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                 assetAddress,
                 tenure,
                 assetCharacteristics,
-                AssetStatus,
-                NumberOfBedSpaces,
-                NumberOfCots,
-                GroundFloor,
-                PrivateBathroom,
-                PrivateKitchen,
-                StepFree
+                AssetStatus
             );
         }
 
@@ -88,7 +88,14 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     AssetCharacteristics.NumberOfLifts,
                     AssetCharacteristics.NumberOfLivingRooms,
                     AssetCharacteristics.WindowType,
-                    AssetCharacteristics.YearConstructed);
+                    AssetCharacteristics.YearConstructed,
+                    AssetCharacteristics.NumberOfBedSpaces,
+                    AssetCharacteristics.NumberOfCots,
+                    AssetCharacteristics.GroundFloor,
+                    AssetCharacteristics.PrivateBathroom,
+                    AssetCharacteristics.PrivateKitchen,
+                    AssetCharacteristics.StepFree);
+            
             var assetManagement = AssetManagement == null
                 ? null
                 : Domain.Asset.AssetManagement.Create(
@@ -137,24 +144,6 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
 
         [Text(Name = "assetStatus")]
         public string AssetStatus { get; set; }
-
-        [Text(Name = "numberOfBedSpaces")]
-        public int NumberOfBedSpaces { get; set; }
-
-        [Text(Name = "numberOfCots")]
-        public int NumberOfCots { get; set; }
-
-        [Text(Name = "groundFloor")]
-        public bool GroundFloor { get; set; }
-
-        [Text(Name = "privateBathroom")]
-        public bool PrivateBathroom { get; set; }
-
-        [Text(Name = "privateKitchen")]
-        public bool PrivateKitchen { get; set; }
-
-        [Text(Name = "stepFree")]
-        public bool StepFree { get; set; }
 
         [Text(Name = "isTemporaryAccomodation")]
         public bool IsTemporaryAccomodation { get; set; }
