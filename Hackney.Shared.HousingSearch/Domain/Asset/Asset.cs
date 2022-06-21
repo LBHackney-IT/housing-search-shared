@@ -12,11 +12,9 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
 
         public static Asset Create(string id, string assetId, string assetType,
             bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure,
-            AssetCharacteristics assetCharacteristics, string AssetStatus, int numberOfBedSpaces, int numberOfCots,
-            bool groundFloor, bool privateBathroom, bool privateKitchen, bool stepFree)
+            AssetCharacteristics assetCharacteristics, string AssetStatus)
         {
-            return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, assetAddress, tenure, assetCharacteristics, AssetStatus, 
-                numberOfBedSpaces, numberOfCots, groundFloor, privateBathroom, privateKitchen, stepFree);
+            return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, assetAddress, tenure, assetCharacteristics, AssetStatus);
         }
 
         public Asset()
@@ -35,12 +33,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
             Tenure = tenure;
             AssetCharacteristics = assetCharacteristics;
             AssetStatus = assetStatus;
-            NumberOfBedSpaces = numberOfBedSpaces;
-            NumberOfCots = numberOfCots;
-            GroundFloor = groundFloor;
-            PrivateBathroom = privateBathroom;
-            PrivateKitchen = privateKitchen;
-            StepFree = stepFree;
         }
         private Asset(string id, string assetId, string assetType,
             bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds,
@@ -78,17 +70,5 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         public AssetManagement AssetManagement { get; set; }
 
         public string AssetStatus { get; set; }
-
-        public int NumberOfBedSpaces { get; set; }
-
-        public int NumberOfCots { get; set; }
-
-        public bool GroundFloor { get; set; }
-
-        public bool PrivateBathroom { get; set; }
-
-        public bool PrivateKitchen { get; set; }
-
-        public bool StepFree { get; set; }
     }
 }
