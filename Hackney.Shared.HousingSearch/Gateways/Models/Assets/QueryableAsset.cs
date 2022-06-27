@@ -40,10 +40,10 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                 AssetCharacteristics.YearConstructed,
                 AssetCharacteristics.NumberOfBedSpaces,
                 AssetCharacteristics.NumberOfCots,
-                AssetCharacteristics.GroundFloor,
-                AssetCharacteristics.PrivateBathroom,
-                AssetCharacteristics.PrivateKitchen,
-                AssetCharacteristics.StepFree);
+                AssetCharacteristics.NumberOfFloors,
+                AssetCharacteristics.HasPrivateBathroom,
+                AssetCharacteristics.HasPrivateKitchen,
+                AssetCharacteristics.IsStepFree);
 
             return Asset.Create(
                 Id,
@@ -91,10 +91,10 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     AssetCharacteristics.YearConstructed,
                     AssetCharacteristics.NumberOfBedSpaces,
                     AssetCharacteristics.NumberOfCots,
-                    AssetCharacteristics.GroundFloor,
-                    AssetCharacteristics.PrivateBathroom,
-                    AssetCharacteristics.PrivateKitchen,
-                    AssetCharacteristics.StepFree);
+                    AssetCharacteristics.NumberOfFloors,
+                    AssetCharacteristics.HasPrivateBathroom,
+                    AssetCharacteristics.HasPrivateKitchen,
+                    AssetCharacteristics.IsStepFree);
 
             var assetManagement = AssetManagement == null
                 ? null
@@ -107,7 +107,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     AssetManagement.Owner,
                     AssetManagement.IsTMOManaged,
                     AssetManagement.PropertyOccupiedStatus,
-                    AssetManagement.IsNoRepairsMaintenance
+                    AssetManagement.IsNoRepairsMaintenance,
+                    AssetManagement.IsTemporaryAccomodation
                 );
 
             return Asset.CreateAll(

@@ -9,9 +9,9 @@
         public string YearConstructed { get; set; }
         public int NumberOfBedSpaces { get; set; }
         public int NumberOfCots { get; set; }
-        public bool GroundFloor { get; set; }
-        public bool PrivateBathroom { get; set; }
-        public bool PrivateKitchen { get; set; }
-        public bool StepFree { get; set; }
+        public int NumberOfFloors { get; set; }
+        public bool HasPrivateBathroom { get; set; }
+        public bool HasPrivateKitchen { get; set; }
+        public bool IsStepFree { get; set; }
     }
 }
