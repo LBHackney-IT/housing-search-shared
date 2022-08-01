@@ -148,7 +148,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     AssetManagement.Owner,
                     AssetManagement.IsTMOManaged,
                     AssetManagement.PropertyOccupiedStatus,
-                    AssetManagement.IsNoRepairsMaintenance
+                    AssetManagement.IsNoRepairsMaintenance,
+                    AssetManagement.IsTemporaryAccomodation
                 );
 
             return Asset.CreateAll(
@@ -185,9 +186,6 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
 
         [Text(Name = "assetStatus")]
         public string AssetStatus { get; set; }
-
-        [Text(Name = "isTemporaryAccomodation")]
-        public bool IsTemporaryAccomodation { get; set; }
 
         public QueryableAssetAddress AssetAddress { get; set; }
 

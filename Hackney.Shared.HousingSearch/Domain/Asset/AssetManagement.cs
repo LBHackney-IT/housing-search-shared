@@ -5,7 +5,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
     public class AssetManagement
     {
         public static AssetManagement Create(string agent, string areaOfficeName, bool isCouncilProperty, string managingOrganisation,
-            Guid managingOrganisationId, string owner, bool isTMOManaged, string propertyOccupiedStatus, bool isNoRepairsMaintenance)
+            Guid managingOrganisationId, string owner, bool isTMOManaged, string propertyOccupiedStatus, bool isNoRepairsMaintenance,
+            bool isTemporaryAccomodation)
         {
             return new AssetManagement(
                 agent,
@@ -16,13 +17,15 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
                 owner,
                 isTMOManaged,
                 propertyOccupiedStatus,
-                isNoRepairsMaintenance
+                isNoRepairsMaintenance,
+                isTemporaryAccomodation
             );
         }
         public AssetManagement() { }
 
         private AssetManagement(string agent, string areaOfficeName, bool isCouncilProperty, string managingOrganisation,
-            Guid managingOrganisationId, string owner, bool isTMOManaged, string propertyOccupiedStatus, bool isNoRepairsMaintenance)
+            Guid managingOrganisationId, string owner, bool isTMOManaged, string propertyOccupiedStatus, bool isNoRepairsMaintenance,
+            bool isTemporaryAccomodation)
         {
             Agent = agent;
             AreaOfficeName = areaOfficeName;
@@ -33,6 +36,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
             IsTMOManaged = isTMOManaged;
             PropertyOccupiedStatus = propertyOccupiedStatus;
             IsNoRepairsMaintenance = isNoRepairsMaintenance;
+            IsTemporaryAccomodation = isTemporaryAccomodation;
         }
 
         public string Agent { get; set; }
@@ -44,5 +48,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         public bool IsTMOManaged { get; set; }
         public string PropertyOccupiedStatus { get; set; }
         public bool IsNoRepairsMaintenance { get; set; }
+        public bool IsTemporaryAccomodation { get; set; }
     }
 }
