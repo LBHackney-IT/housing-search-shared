@@ -152,6 +152,12 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     AssetManagement.IsTemporaryAccomodation
                 );
 
+            var assetLocation = AssetLocation == null
+                ? null
+                : Domain.Asset.AssetLocation.Create(
+                    AssetLocation.FloorNo
+                );
+
             return Asset.CreateAll(
                 Id,
                 AssetId,
@@ -162,7 +168,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                 RootAsset,
                 ParentAssetIds,
                 assetCharacteristics,
-                assetManagement
+                assetManagement,
+                assetLocation
             );
         }
 
@@ -194,5 +201,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         public QueryableAssetCharacteristics AssetCharacteristics { get; set; }
 
         public QueryableAssetManagement AssetManagement { get; set; }
+
+        public QueryableAssetLocation AssetLocation { get; set; }
     }
 }

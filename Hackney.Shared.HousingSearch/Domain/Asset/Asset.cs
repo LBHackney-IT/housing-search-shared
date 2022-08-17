@@ -4,10 +4,10 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
     {
         public static Asset CreateAll(string id, string assetId, string assetType,
             bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds,
-            AssetCharacteristics assetCharacteristics, AssetManagement assetManagement)
+            AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation)
         {
             return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, assetAddress, tenure, rootAsset,
-                parentAssetIds, assetCharacteristics, assetManagement);
+                parentAssetIds, assetCharacteristics, assetManagement, assetLocation);
         }
 
         public static Asset Create(string id, string assetId, string assetType,
@@ -35,7 +35,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         }
         private Asset(string id, string assetId, string assetType,
             bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds,
-             AssetCharacteristics assetCharacteristics, AssetManagement assetManagement)
+             AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation)
         {
             Id = id;
             AssetId = assetId;
@@ -47,6 +47,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
             ParentAssetIds = parentAssetIds;
             AssetCharacteristics = assetCharacteristics;
             AssetManagement = assetManagement;
+            AssetLocation = assetLocation;
         }
 
         public string Id { get; set; }
@@ -69,5 +70,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         public AssetManagement AssetManagement { get; set; }
 
         public string AssetStatus { get; set; }
+
+        public AssetLocation AssetLocation { get; set; }
     }
 }
