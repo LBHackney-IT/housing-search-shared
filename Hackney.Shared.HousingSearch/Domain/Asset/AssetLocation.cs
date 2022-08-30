@@ -2,7 +2,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
 {
     public class AssetLocation
     {
-        public static AssetLocation Create(int floorNo)
+        public static AssetLocation Create(string floorNo)
         {
             return new AssetLocation(
                 floorNo
@@ -11,10 +11,10 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
 
         public AssetLocation() { }
 
-        private AssetLocation(int floorNo)
+        private AssetLocation(string floorNo)
         {
             FloorNo = floorNo;
         }
-        public int FloorNo { get; set; }
+        public string FloorNo { get; set; }
     }
 }
