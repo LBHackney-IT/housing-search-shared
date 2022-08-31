@@ -7,12 +7,12 @@ using System.Text;
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Staffs
 {
     public class QueryableStaff
-    { 
+    {
         public Staff Create()
         {
-            return Staff.Create(FirstName, LastName,EmailAddress, PatchId);
+            return Staff.Create(FirstName, LastName, EmailAddress, PatchId);
         }
- 
+
         [Text(Name = "firstName")]
         public string FirstName { get; set; }
 

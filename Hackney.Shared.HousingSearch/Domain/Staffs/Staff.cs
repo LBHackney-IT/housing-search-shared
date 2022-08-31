@@ -6,8 +6,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Staff
 {
     public class Staff
     {
-        public Staff () { }
-        public static Staff Create(string firstName,  string lastName,
+        public Staff() { }
+        public static Staff Create(string firstName, string lastName,
            string emailAddress, Guid? patchId)
         {
             return new Staff(firstName, lastName, emailAddress, patchId);
@@ -15,7 +15,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Staff
 
         private Staff(string firstName, string lastName, string emailAddress, Guid? patchId)
         {
-            FirstName= firstName;
+            FirstName = firstName;
             LastName = lastName;
             EmailAddress = emailAddress;
             PatchId = patchId;
