@@ -19,7 +19,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Staffs
         [Text(Name = "lastName")]
         public string LastName { get; set; }
 
-        [Text(Name = "emailAddress")]
+        [Text(Name = "email")]
         public string EmailAddress { get; set; }
 
         [Text(Name = "patchId")]
