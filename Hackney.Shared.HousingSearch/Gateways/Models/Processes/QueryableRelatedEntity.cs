@@ -1,3 +1,6 @@
+using Hackney.Shared.HousingSearch.Domain.Process;
+using Nest;
+
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableRelatedEntity

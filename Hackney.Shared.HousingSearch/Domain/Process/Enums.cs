@@ -1,5 +1,7 @@
 // TODO: Replace with classes from Hackney.Shared.Processes
 
+using System.Text.Json.Serialization;
+
 namespace Hackney.Shared.HousingSearch.Domain.Process
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]

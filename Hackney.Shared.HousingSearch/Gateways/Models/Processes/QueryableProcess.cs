@@ -19,7 +19,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         public string State { get; set; }
 
         [Text(Name = "patchAssignment")]
-        public QueryablePatchAssignment? PatchAssignment { get; set; }
+        public QueryablePatchAssignment PatchAssignment { get; set; }
 
         [Text(Name = "createdAt")]
         public string CreatedAt { get; set; }

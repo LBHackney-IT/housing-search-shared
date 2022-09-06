@@ -1,3 +1,5 @@
+using Nest;
+
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryablePatchAssignment
