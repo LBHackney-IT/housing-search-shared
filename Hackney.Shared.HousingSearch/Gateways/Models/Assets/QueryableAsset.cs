@@ -169,7 +169,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                 ParentAssetIds,
                 assetCharacteristics,
                 assetManagement,
-                assetLocation
+                assetLocation,
+                IsActive
             );
         }
 
@@ -187,6 +188,9 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
 
         [Text(Name = "rootAsset")]
         public string RootAsset { get; set; }
+
+        [Text(Name = "isActive")]
+        public bool IsActive { get; set; }
 
         [Text(Name = "parentAssetIds")]
         public string ParentAssetIds { get; set; }

@@ -4,10 +4,10 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
     {
         public static Asset CreateAll(string id, string assetId, string assetType,
             bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds,
-            AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation)
+            AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation, bool isActive)
         {
             return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, assetAddress, tenure, rootAsset,
-                parentAssetIds, assetCharacteristics, assetManagement, assetLocation);
+                parentAssetIds, assetCharacteristics, assetManagement, assetLocation, isActive);
         }
 
         public static Asset Create(string id, string assetId, string assetType,
@@ -35,7 +35,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         }
         private Asset(string id, string assetId, string assetType,
             bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds,
-             AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation)
+             AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation, bool isActive)
         {
             Id = id;
             AssetId = assetId;
@@ -44,6 +44,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
             AssetAddress = assetAddress;
             Tenure = tenure;
             RootAsset = rootAsset;
+            IsActive = isActive;
             ParentAssetIds = parentAssetIds;
             AssetCharacteristics = assetCharacteristics;
             AssetManagement = assetManagement;
@@ -63,6 +64,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         public Tenure Tenure { get; set; }
 
         public string RootAsset { get; set; }
+
+        public bool IsActive { get; set; }
         public string ParentAssetIds { get; set; }
 
         public AssetCharacteristics AssetCharacteristics { get; set; }
