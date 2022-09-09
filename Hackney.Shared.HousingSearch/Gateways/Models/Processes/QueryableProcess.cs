@@ -1,8 +1,5 @@
-using Hackney.Shared.HousingSearch.Domain.Process;
 using Nest;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
@@ -11,6 +8,12 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 
         [Text(Name = "id")]
         public string Id { get; set; }
+
+        [Text(Name = "targetId")]
+        public string TargetId { get; set; }
+
+        [Text(Name = "targetType")]
+        public string TargetType { get; set; }
 
         [Text(Name = "processName")]
         public string ProcessName { get; set; }
