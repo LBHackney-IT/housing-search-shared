@@ -1,12 +1,13 @@
 using Hackney.Shared.HousingSearch.Domain.Process;
 using Nest;
+using System;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableRelatedEntity
     {
         [Text(Name = "id")]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         [Text(Name = "targetType")]
         public TargetType TargetType { get; set; }

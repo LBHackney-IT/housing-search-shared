@@ -1,25 +1,50 @@
+using Hackney.Shared.HousingSearch.Domain.Process;
 using Nest;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableProcess
     {
+        public Process Create()
+        {
+            var patchAssignment = PatchAssignment == null 
+                ? new PatchAssignment() :
+                Domain.Process.PatchAssignment.Create(
+                    PatchAssignment.PatchId,
+                    PatchAssignment.PatchName, 
+                    PatchAssignment.ResponsibleEntityId, 
+                    PatchAssignment.ResponsibleName);
+
+            var relatedEntities = RelatedEntities == null
+                ? new List<RelatedEntity>() :
+                RelatedEntities.Select(x => RelatedEntity.Create(
+                                                       x.Id,
+                                                       x.TargetType,
+                                                       x.SubType,
+                                                       x?.Description)).ToList();
+                    
+
+
+            return Process.Create(Id, TargetId, TargetType, relatedEntities, ProcessName, patchAssignment, State);
+        }
 
         [Text(Name = "id")]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         [Text(Name = "targetId")]
-        public string TargetId { get; set; }
+        public Guid TargetId { get; set; }
 
         [Text(Name = "targetType")]
-        public string TargetType { get; set; }
+        public TargetType TargetType { get; set; }
 
         [Text(Name = "processName")]
-        public string ProcessName { get; set; }
+        public ProcessName ProcessName { get; set; }
 
         [Text(Name = "state")]
-        public string State { get; set; }
+        public ProcessState State { get; set; }
 
         [Text(Name = "patchAssignment")]
         public QueryablePatchAssignment PatchAssignment { get; set; }
