@@ -8,11 +8,11 @@ namespace Hackney.Shared.HousingSearch.Domain.Process
     {
         public Process() { }
 
-        public static Process Create(Guid id, Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment, ProcessState currentState)
+        public static Process Create(Guid id, Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment, string state)
         {
-            return new Process(id, targetId, targetType, relatedEntities, processName, patchAssignment, currentState);
+            return new Process(id, targetId, targetType, relatedEntities, processName, patchAssignment, state);
         }
-        private Process(Guid id, Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment, ProcessState currentState)
+        private Process(Guid id, Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment, string state)
         {
             Id = id;
             TargetId = targetId;
@@ -20,7 +20,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Process
             RelatedEntities = relatedEntities;
             ProcessName = processName;
             PatchAssignment = patchAssignment;
-            CurrentState = currentState;
+            State = state;
         }
 
         public Guid Id { get; set; }
@@ -29,6 +29,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Process
         public List<RelatedEntity> RelatedEntities { get; set; }
         public ProcessName ProcessName { get; set; }
         public PatchAssignment PatchAssignment { get; set; }
-        public ProcessState CurrentState { get; set; }
+        public string State { get; set; }
     }
 }

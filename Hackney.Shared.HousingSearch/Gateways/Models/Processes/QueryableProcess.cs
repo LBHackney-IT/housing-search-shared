@@ -10,12 +10,12 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
     {
         public Process Create()
         {
-            var patchAssignment = PatchAssignment == null 
+            var patchAssignment = PatchAssignment == null
                 ? new PatchAssignment() :
                 Domain.Process.PatchAssignment.Create(
                     PatchAssignment.PatchId,
-                    PatchAssignment.PatchName, 
-                    PatchAssignment.ResponsibleEntityId, 
+                    PatchAssignment.PatchName,
+                    PatchAssignment.ResponsibleEntityId,
                     PatchAssignment.ResponsibleName);
 
             var relatedEntities = RelatedEntities == null
@@ -25,7 +25,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
                                                        x.TargetType,
                                                        x.SubType,
                                                        x?.Description)).ToList();
-                    
+
 
 
             return Process.Create(Id, TargetId, TargetType, relatedEntities, ProcessName, patchAssignment, State);
@@ -44,7 +44,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         public ProcessName ProcessName { get; set; }
 
         [Text(Name = "state")]
-        public ProcessState State { get; set; }
+        public string State { get; set; }
 
         [Text(Name = "patchAssignment")]
         public QueryablePatchAssignment PatchAssignment { get; set; }
