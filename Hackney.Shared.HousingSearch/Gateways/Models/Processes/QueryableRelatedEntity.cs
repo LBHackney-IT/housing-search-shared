@@ -7,6 +7,21 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableRelatedEntity
     {
+        public QueryableRelatedEntity() { }
+
+        public static QueryableRelatedEntity Create(Guid id, TargetType targetType, SubType subType, string description)
+        {
+            return new QueryableRelatedEntity(id, targetType, subType, description);
+        }
+
+        public QueryableRelatedEntity(Guid id, TargetType targetType, SubType subType, string description)
+        {
+            Id = id;
+            TargetType = targetType;
+            SubType = subType;
+            Description = description;
+        }
+
         [Text(Name = "id")]
         public Guid Id { get; set; }
 

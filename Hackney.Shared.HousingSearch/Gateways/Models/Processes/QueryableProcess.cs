@@ -1,28 +1,41 @@
-using Hackney.Shared.HousingSearch.Domain.Process;
 using Hackney.Shared.Processes.Domain;
 using Nest;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableProcess
     {
-        public Process Create()
+        public QueryableProcess() { }
+        public static QueryableProcess Create(string id, string targetId, TargetType targetType, List<QueryableRelatedEntity> relatedEntities, ProcessName processName, QueryablePatchAssignment patchAssignment, string state)
+        {
+            return new QueryableProcess(id, targetId, targetType, relatedEntities, processName, patchAssignment, state);
+        }
+
+        private QueryableProcess(string id, string targetId, TargetType targetType, List<QueryableRelatedEntity> relatedEntities, ProcessName processName, QueryablePatchAssignment patchAssignment, string state)
+        {
+            Id = id;
+            TargetId = targetId;
+            TargetType = targetType;
+            RelatedEntities = relatedEntities;
+            ProcessName = processName;
+            PatchAssignment = patchAssignment;
+            State = state;
+        }
+        public QueryableProcess Create()
         {
             var patchAssignment = PatchAssignment == null
-                ? new PatchAssignment() :
-                Domain.Process.PatchAssignment.Create(
+                ? new QueryablePatchAssignment() :
+                  QueryablePatchAssignment.Create(
                     PatchAssignment.PatchId,
                     PatchAssignment.PatchName,
                     PatchAssignment.ResponsibleEntityId,
                     PatchAssignment.ResponsibleName);
 
             var relatedEntities = RelatedEntities == null
-                ? new List<RelatedEntity>() :
-                RelatedEntities.Select(x => RelatedEntity.Create(
+                ? new List<QueryableRelatedEntity>() :
+                RelatedEntities.Select(x => QueryableRelatedEntity.Create(
                                                        x.Id,
                                                        x.TargetType,
                                                        x.SubType,
@@ -30,7 +43,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 
 
 
-            return Process.Create(Id, TargetId, TargetType, relatedEntities, ProcessName, patchAssignment, State);
+            return Create(Id, TargetId, TargetType, relatedEntities, ProcessName, patchAssignment, State);
         }
 
         [Text(Name = "id")]
