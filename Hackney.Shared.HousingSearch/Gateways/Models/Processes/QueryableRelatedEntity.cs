@@ -26,10 +26,10 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         public Guid Id { get; set; }
 
         [Text(Name = "targetType")]
-        public string TargetType { get; set; }
+        public TargetType TargetType { get; set; }
 
         [Text(Name = "subType")]
-        public string SubType { get; set; }
+        public SubType SubType { get; set; }
 
         [Text(Name = "description")]
         public string Description { get; set; }
