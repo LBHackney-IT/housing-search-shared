@@ -1,8 +1,10 @@
 using Hackney.Shared.HousingSearch.Domain.Process;
+using Hackney.Shared.Processes.Domain;
 using Nest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
@@ -32,10 +34,10 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         }
 
         [Text(Name = "id")]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         [Text(Name = "targetId")]
-        public Guid TargetId { get; set; }
+        public string TargetId { get; set; }
 
         [Text(Name = "targetType")]
         public TargetType TargetType { get; set; }

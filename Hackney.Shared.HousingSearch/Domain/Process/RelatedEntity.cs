@@ -1,3 +1,4 @@
+using Hackney.Shared.Processes.Domain;
 using System;
 
 namespace Hackney.Shared.HousingSearch.Domain.Process

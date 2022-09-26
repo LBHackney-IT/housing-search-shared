@@ -1,3 +1,4 @@
+using Hackney.Shared.Processes.Domain;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -8,11 +9,11 @@ namespace Hackney.Shared.HousingSearch.Domain.Process
     {
         public Process() { }
 
-        public static Process Create(Guid id, Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment, string state)
+        public static Process Create(string id, string targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment, string state)
         {
             return new Process(id, targetId, targetType, relatedEntities, processName, patchAssignment, state);
         }
-        private Process(Guid id, Guid targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment, string state)
+        private Process(string id, string targetId, TargetType targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment, string state)
         {
             Id = id;
             TargetId = targetId;
@@ -23,8 +24,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Process
             State = state;
         }
 
-        public Guid Id { get; set; }
-        public Guid TargetId { get; set; }
+        public string Id { get; set; }
+        public string TargetId { get; set; }
         public TargetType TargetType { get; set; }
         public List<RelatedEntity> RelatedEntities { get; set; }
         public ProcessName ProcessName { get; set; }
