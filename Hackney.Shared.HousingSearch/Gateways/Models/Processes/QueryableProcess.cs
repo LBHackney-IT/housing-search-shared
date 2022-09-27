@@ -39,7 +39,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         public string TargetId { get; set; }
 
         [Text(Name = "targetType")]
-        public TargetType TargetType { get; set; }
+        public string TargetType { get; set; }
 
         [Text(Name = "processName")]
         public ProcessName ProcessName { get; set; }
