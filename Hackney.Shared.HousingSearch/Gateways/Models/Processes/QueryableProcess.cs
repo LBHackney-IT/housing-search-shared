@@ -7,35 +7,20 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableProcess
     {
-        public QueryableProcess(string id,
-                                string targetId,
-                                string targetType,
-                                ProcessName processName,
-                                string state,
-                                QueryablePatchAssignment patchAssignment,
-                                string createdAt,
-                                List<QueryableRelatedEntity> relatedEntities)
+        public QueryableProcess(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, ProcessName processName, QueryablePatchAssignment patchAssignment, string state)
         {
             Id = id;
             TargetId = targetId;
             TargetType = targetType;
-            ProcessName = processName;
-            State = state;
-            PatchAssignment = patchAssignment;
-            CreatedAt = createdAt;
             RelatedEntities = relatedEntities;
+            ProcessName = processName;
+            PatchAssignment = patchAssignment;
+            State = state;
         }
 
-        public QueryableProcess Create(string id,
-                                string targetId,
-                                string targetType,
-                                ProcessName processName,
-                                string state,
-                                QueryablePatchAssignment patchAssignment,
-                                string createdAt,
-                                List<QueryableRelatedEntity> relatedEntities)
+        public static QueryableProcess Create(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, ProcessName processName, QueryablePatchAssignment patchAssignment, string state)
         {
-            return new QueryableProcess(id, targetId, targetType, processName, state, patchAssignment, createdAt, relatedEntities);
+            return new QueryableProcess(id, targetId, targetType, relatedEntities, processName, patchAssignment, state);
         }
 
         [Text(Name = "id")]

@@ -29,7 +29,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         public string TargetType { get; set; }
 
         [Text(Name = "subType")]
-        public SubType SubType { get; set; }
+        public SubType? SubType { get; set; }
 
         [Text(Name = "description")]
         public string Description { get; set; }
