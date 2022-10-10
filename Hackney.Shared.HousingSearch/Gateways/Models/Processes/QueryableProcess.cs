@@ -1,36 +1,41 @@
-using Hackney.Shared.HousingSearch.Domain.Process;
 using Hackney.Shared.Processes.Domain;
 using Nest;
 using System.Collections.Generic;
 using System.Linq;
-using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
-using DomainProcess = Hackney.Shared.HousingSearch.Domain.Process;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableProcess
     {
-        public DomainProcess.Process Create()
+        public QueryableProcess(string id,
+                                string targetId,
+                                string targetType,
+                                ProcessName processName,
+                                string state,
+                                QueryablePatchAssignment patchAssignment,
+                                string createdAt,
+                                List<QueryableRelatedEntity> relatedEntities)
         {
-            var patchAssignment = PatchAssignment == null
-                ? new DomainProcess.PatchAssignment() :
-                DomainProcess.PatchAssignment.Create(
-                    PatchAssignment.PatchId,
-                    PatchAssignment.PatchName,
-                    PatchAssignment.ResponsibleEntityId,
-                    PatchAssignment.ResponsibleName);
+            Id = id;
+            TargetId = targetId;
+            TargetType = targetType;
+            ProcessName = processName;
+            State = state;
+            PatchAssignment = patchAssignment;
+            CreatedAt = createdAt;
+            RelatedEntities = relatedEntities;
+        }
 
-            var relatedEntities = RelatedEntities == null
-                ? new List<RelatedEntity>() :
-                RelatedEntities.Select(x => RelatedEntity.Create(
-                                                       x.Id,
-                                                       x.TargetType,
-                                                       x.SubType,
-                                                       x?.Description)).ToList();
-
-
-
-            return DomainProcess.Process.Create(Id, TargetId, TargetType, relatedEntities, ProcessName, patchAssignment, State);
+        public QueryableProcess Create(string id,
+                                string targetId,
+                                string targetType,
+                                ProcessName processName,
+                                string state,
+                                QueryablePatchAssignment patchAssignment,
+                                string createdAt,
+                                List<QueryableRelatedEntity> relatedEntities)
+        {
+            return new QueryableProcess(id, targetId, targetType, processName, state, patchAssignment, createdAt, relatedEntities);
         }
 
         [Text(Name = "id")]
