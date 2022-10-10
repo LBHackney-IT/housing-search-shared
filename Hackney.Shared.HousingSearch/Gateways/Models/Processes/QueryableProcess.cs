@@ -4,16 +4,17 @@ using Nest;
 using System.Collections.Generic;
 using System.Linq;
 using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
+using DomainProcess = Hackney.Shared.HousingSearch.Domain.Process;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableProcess
     {
-        public Process Create()
+        public DomainProcess.Process Create()
         {
             var patchAssignment = PatchAssignment == null
-                ? new PatchAssignment() :
-                Domain.Process.PatchAssignment.Create(
+                ? new DomainProcess.PatchAssignment() :
+                DomainProcess.PatchAssignment.Create(
                     PatchAssignment.PatchId,
                     PatchAssignment.PatchName,
                     PatchAssignment.ResponsibleEntityId,
@@ -29,7 +30,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 
 
 
-            return Process.Create(Id, TargetId, TargetType, relatedEntities, ProcessName, patchAssignment, State);
+            return DomainProcess.Process.Create(Id, TargetId, TargetType, relatedEntities, ProcessName, patchAssignment, State);
         }
 
         [Text(Name = "id")]
