@@ -38,7 +38,13 @@ namespace Hackney.Shared.HousingSearch.Factories
 
         public static DomainProcess ToDomain(this QueryableProcess entity)
         {
-            return new DomainProcess(entity.Id, entity.TargetId, entity.TargetType, entity.RelatedEntities.ToDomain(), entity.ProcessName, entity.PatchAssignment.ToDomain(), entity.State);
+            return new DomainProcess(entity.Id,
+                                     entity.TargetId,
+                                     entity.TargetType,
+                                     entity.RelatedEntities.ToDomain(),
+                                     (ProcessName)Enum.Parse(typeof(ProcessName), entity.ProcessName),
+                                     entity.PatchAssignment.ToDomain(),
+                                     entity.State);
         }
     }
 }

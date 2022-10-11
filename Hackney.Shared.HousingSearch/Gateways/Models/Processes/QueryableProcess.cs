@@ -7,7 +7,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableProcess
     {
-        public QueryableProcess(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, ProcessName processName, QueryablePatchAssignment patchAssignment, string state)
+        public QueryableProcess(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment patchAssignment, string state)
         {
             Id = id;
             TargetId = targetId;
@@ -18,7 +18,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
             State = state;
         }
 
-        public static QueryableProcess Create(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, ProcessName processName, QueryablePatchAssignment patchAssignment, string state)
+        public static QueryableProcess Create(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment patchAssignment, string state)
         {
             return new QueryableProcess(id, targetId, targetType, relatedEntities, processName, patchAssignment, state);
         }
@@ -33,7 +33,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         public string TargetType { get; set; }
 
         [Text(Name = "processName")]
-        public ProcessName ProcessName { get; set; }
+        public string ProcessName { get; set; }
 
         [Text(Name = "state")]
         public string State { get; set; }
