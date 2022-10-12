@@ -1,8 +1,6 @@
 ﻿using Hackney.Shared.HousingSearch.Domain.Staff;
 using Nest;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Staffs
 {
@@ -10,7 +8,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Staffs
     {
         public Staff Create()
         {
-            return Staff.Create(FirstName, LastName, EmailAddress, PatchId);
+            return Staff.Create(FirstName, LastName, EmailAddress, PatchId, AreaId);
         }
 
         [Text(Name = "firstName")]
@@ -24,5 +22,9 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Staffs
 
         [Text(Name = "patchId")]
         public Guid? PatchId { get; set; }
+
+        [Text(Name = "areaId")]
+        public Guid? AreaId { get; set; }
+
     }
 }

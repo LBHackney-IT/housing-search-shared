@@ -8,17 +8,18 @@ namespace Hackney.Shared.HousingSearch.Domain.Staff
     {
         public Staff() { }
         public static Staff Create(string firstName, string lastName,
-           string emailAddress, Guid? patchId)
+           string emailAddress, Guid? patchId, Guid? areaId)
         {
-            return new Staff(firstName, lastName, emailAddress, patchId);
+            return new Staff(firstName, lastName, emailAddress, patchId, areaId);
         }
 
-        private Staff(string firstName, string lastName, string emailAddress, Guid? patchId)
+        private Staff(string firstName, string lastName, string emailAddress, Guid? patchId, Guid? areaId)
         {
             FirstName = firstName;
             LastName = lastName;
             EmailAddress = emailAddress;
             PatchId = patchId;
+            AreaId = areaId;
         }
 
 
@@ -26,5 +27,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Staff
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public Guid? PatchId { get; set; }
+
+        public Guid? AreaId { get; set; }
     }
 }
