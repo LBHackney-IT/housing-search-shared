@@ -1,35 +1,26 @@
-using Hackney.Shared.HousingSearch.Domain.Process;
 using Hackney.Shared.Processes.Domain;
 using Nest;
 using System.Collections.Generic;
 using System.Linq;
-using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableProcess
     {
-        public Process Create()
+        public QueryableProcess(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment patchAssignment, string state)
         {
-            var patchAssignment = PatchAssignment == null
-                ? new PatchAssignment() :
-                Domain.Process.PatchAssignment.Create(
-                    PatchAssignment.PatchId,
-                    PatchAssignment.PatchName,
-                    PatchAssignment.ResponsibleEntityId,
-                    PatchAssignment.ResponsibleName);
+            Id = id;
+            TargetId = targetId;
+            TargetType = targetType;
+            RelatedEntities = relatedEntities;
+            ProcessName = processName;
+            PatchAssignment = patchAssignment;
+            State = state;
+        }
 
-            var relatedEntities = RelatedEntities == null
-                ? new List<RelatedEntity>() :
-                RelatedEntities.Select(x => RelatedEntity.Create(
-                                                       x.Id,
-                                                       x.TargetType,
-                                                       x.SubType,
-                                                       x?.Description)).ToList();
-
-
-
-            return Process.Create(Id, TargetId, TargetType, relatedEntities, ProcessName, patchAssignment, State);
+        public static QueryableProcess Create(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment patchAssignment, string state)
+        {
+            return new QueryableProcess(id, targetId, targetType, relatedEntities, processName, patchAssignment, state);
         }
 
         [Text(Name = "id")]
@@ -42,7 +33,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         public string TargetType { get; set; }
 
         [Text(Name = "processName")]
-        public ProcessName ProcessName { get; set; }
+        public string ProcessName { get; set; }
 
         [Text(Name = "state")]
         public string State { get; set; }
