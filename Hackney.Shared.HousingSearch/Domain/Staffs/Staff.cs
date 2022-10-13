@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Hackney.Shared.HousingSearch.Domain.Staff
 {
@@ -13,7 +11,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Staff
             return new Staff(firstName, lastName, emailAddress, patchId, areaId);
         }
 
-        private Staff(string firstName, string lastName, string emailAddress, Guid? patchId, Guid? areaId)
+        public Staff(string firstName, string lastName, string emailAddress, Guid? patchId, Guid? areaId)
         {
             FirstName = firstName;
             LastName = lastName;

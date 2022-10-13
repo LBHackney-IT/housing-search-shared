@@ -6,9 +6,17 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Staffs
 {
     public class QueryableStaff
     {
-        public Staff Create()
+        public QueryableStaff(string firstName, string lastName, string emailAddress, Guid? patchId, Guid? areaId)
         {
-            return Staff.Create(FirstName, LastName, EmailAddress, PatchId, AreaId);
+            FirstName = firstName;
+            LastName = lastName;
+            EmailAddress = emailAddress;
+            PatchId = patchId;
+            AreaId = areaId;
+        }
+        public static QueryableStaff Create(string firstName, string lastName, string emailAddress, Guid? patchId, Guid? areaId)
+        {
+            return new QueryableStaff(firstName, lastName, emailAddress, patchId, areaId);
         }
 
         [Text(Name = "firstName")]

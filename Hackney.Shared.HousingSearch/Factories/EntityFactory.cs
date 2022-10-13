@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Hackney.Shared.Processes.Domain;
 using System.Linq;
 using System;
+using Hackney.Shared.HousingSearch.Gateways.Models.Staffs;
+using Hackney.Shared.HousingSearch.Domain.Staff;
 
 namespace Hackney.Shared.HousingSearch.Factories
 {
@@ -39,6 +41,11 @@ namespace Hackney.Shared.HousingSearch.Factories
         public static QueryableProcess ToDatabase(this DomainProcess entity)
         {
             return new QueryableProcess(entity.Id, entity.TargetId, entity.TargetType, entity.RelatedEntities.ToDatabase(), entity.ProcessName.ToString(), entity.PatchAssignment.ToDatabase(), entity.State);
+        }
+
+        public static QueryableStaff ToDatabase(this Staff entity)
+        {
+            return new QueryableStaff(entity.FirstName, entity.LastName, entity.EmailAddress, entity.PatchId, entity.AreaId);
         }
     }
 }

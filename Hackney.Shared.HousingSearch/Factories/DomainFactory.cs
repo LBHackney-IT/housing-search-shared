@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Hackney.Shared.Processes.Domain;
 using System.Linq;
 using System;
+using Hackney.Shared.HousingSearch.Domain.Staff;
+using Hackney.Shared.HousingSearch.Gateways.Models.Staffs;
 
 namespace Hackney.Shared.HousingSearch.Factories
 {
@@ -45,6 +47,11 @@ namespace Hackney.Shared.HousingSearch.Factories
                                      (ProcessName)Enum.Parse(typeof(ProcessName), entity.ProcessName),
                                      entity.PatchAssignment.ToDomain(),
                                      entity.State);
+        }
+
+        public static Staff ToDomain(this QueryableStaff entity)
+        {
+            return new Staff(entity.EmailAddress, entity.FirstName, entity.LastName, entity.PatchId, entity.AreaId);
         }
     }
 }
