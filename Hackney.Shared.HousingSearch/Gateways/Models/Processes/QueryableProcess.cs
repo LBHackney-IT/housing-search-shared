@@ -43,13 +43,13 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         [Text(Name = "patchAssignment")]
         public QueryablePatchAssignment PatchAssignment { get; set; }
 
-        [Text(Name = "createdAt")]
+        [Text(Name = "processStartedAt")]
         public string ProcessStartedAt { get; set; }
 
         [Text(Name = "relatedEntities")]
         public List<QueryableRelatedEntity> RelatedEntities { get; set; }
 
-        [Text(Name = "updatedAt")]
+        [Text(Name = "stateStartedAt")]
         public string StateStartedAt { get; set; }
     }
 }
