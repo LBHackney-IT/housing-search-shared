@@ -51,7 +51,7 @@ namespace Hackney.Shared.HousingSearch.Factories
 
         public static Staff ToDomain(this QueryableStaff entity)
         {
-            return new Staff(entity.EmailAddress, entity.FirstName, entity.LastName, entity.PatchId, entity.AreaId);
+            return new Staff(entity.FirstName, entity.LastName, entity.EmailAddress, entity.PatchId, entity.AreaId);
         }
     }
 }
