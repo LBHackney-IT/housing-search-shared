@@ -55,5 +55,29 @@ namespace Hackney.Shared.HousingSearch.Factories
         {
             return new QueryableStaff(entity.FirstName, entity.LastName, entity.EmailAddress, entity.PatchId, entity.AreaId);
         }
+
+        public static QueryableProcess ToElasticSearch(this Process entity)
+        {
+
+            return new QueryableProcess(
+                entity.Id.ToString(),
+                entity.TargetId.ToString(),
+                entity.TargetType.ToString(),
+                entity.RelatedEntities.ToDatabase(),
+                entity.ProcessName.ToString(),
+                entity.PatchAssignment.ToDatabase(),
+                entity.CurrentState.State,
+                GetCreatedAt(entity),
+                entity.CurrentState.CreatedAt.ToString());
+
+        }
+
+        private static string GetCreatedAt(Process process)
+        {
+            if (process.PreviousStates is null || process.PreviousStates.Count == 0)
+                return process.CurrentState?.CreatedAt.ToString();
+
+            return process.PreviousStates.Min(x => x.CreatedAt).ToString();
+        }
     }
 }
