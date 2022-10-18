@@ -4,10 +4,10 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
     {
         public static Asset CreateAll(string id, string assetId, string assetType,
             bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds,
-            AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation, bool isActive)
+            AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation, bool isActive, Contract contract)
         {
             return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, assetAddress, tenure, rootAsset,
-                parentAssetIds, assetCharacteristics, assetManagement, assetLocation, isActive);
+                parentAssetIds, assetCharacteristics, assetManagement, assetLocation, isActive, contract);
         }
 
         public static Asset Create(string id, string assetId, string assetType,
@@ -35,7 +35,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         }
         private Asset(string id, string assetId, string assetType,
             bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds,
-             AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation, bool isActive)
+             AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation, bool isActive, Contract contract)
         {
             Id = id;
             AssetId = assetId;
@@ -49,6 +49,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
             AssetCharacteristics = assetCharacteristics;
             AssetManagement = assetManagement;
             AssetLocation = assetLocation;
+            Contract = contract;
         }
 
         public string Id { get; set; }
@@ -75,5 +76,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         public string AssetStatus { get; set; }
 
         public AssetLocation AssetLocation { get; set; }
+        public Contract Contract { get; set; }
     }
 }
