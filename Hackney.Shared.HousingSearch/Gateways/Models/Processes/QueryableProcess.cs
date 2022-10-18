@@ -7,7 +7,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableProcess
     {
-        public QueryableProcess(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment patchAssignment, string state)
+        public QueryableProcess(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment patchAssignment, string state, string processStartedAt, string stateStartedAt)
         {
             Id = id;
             TargetId = targetId;
@@ -16,11 +16,13 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
             ProcessName = processName;
             PatchAssignment = patchAssignment;
             State = state;
+            ProcessStartedAt = processStartedAt;
+            StateStartedAt = stateStartedAt;
         }
 
-        public static QueryableProcess Create(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment patchAssignment, string state)
+        public static QueryableProcess Create(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment patchAssignment, string state, string processStartedAt, string stateStartedAt)
         {
-            return new QueryableProcess(id, targetId, targetType, relatedEntities, processName, patchAssignment, state);
+            return new QueryableProcess(id, targetId, targetType, relatedEntities, processName, patchAssignment, state, processStartedAt, stateStartedAt);
         }
 
         [Text(Name = "id")]
@@ -41,10 +43,13 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         [Text(Name = "patchAssignment")]
         public QueryablePatchAssignment PatchAssignment { get; set; }
 
-        [Text(Name = "createdAt")]
-        public string CreatedAt { get; set; }
+        [Text(Name = "processStartedAt")]
+        public string ProcessStartedAt { get; set; }
 
         [Text(Name = "relatedEntities")]
         public List<QueryableRelatedEntity> RelatedEntities { get; set; }
+
+        [Text(Name = "stateStartedAt")]
+        public string StateStartedAt { get; set; }
     }
 }
