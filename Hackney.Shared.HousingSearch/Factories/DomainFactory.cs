@@ -40,6 +40,9 @@ namespace Hackney.Shared.HousingSearch.Factories
 
         public static DomainProcess ToDomain(this QueryableProcess entity)
         {
+            var convertedProcessStartedAt = DateTime.TryParse(entity.ProcessStartedAt, out DateTime date) ? (DateTime?)date : null;
+
+            var convertedStateStartedAt = DateTime.TryParse(entity.StateStartedAt, out DateTime startedAt) ? (DateTime?)startedAt : null;
             return new DomainProcess(entity.Id,
                                      entity.TargetId,
                                      entity.TargetType,
@@ -47,8 +50,8 @@ namespace Hackney.Shared.HousingSearch.Factories
                                      (ProcessName)Enum.Parse(typeof(ProcessName), entity.ProcessName),
                                      entity.PatchAssignment.ToDomain(),
                                      entity.State,
-                                     DateTime.Parse(entity?.ProcessStartedAt),
-                                     DateTime.Parse(entity?.StateStartedAt));
+                                     convertedProcessStartedAt,
+                                     convertedStateStartedAt);
         }
 
         public static Staff ToDomain(this QueryableStaff entity)
