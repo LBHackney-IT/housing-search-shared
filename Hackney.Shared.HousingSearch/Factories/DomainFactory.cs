@@ -49,8 +49,8 @@ namespace Hackney.Shared.HousingSearch.Factories
                 PatchAssignment = entity.PatchAssignment.ToDomain(),
                 RelatedEntities = entity.RelatedEntities.ToDomain(),
                 State = entity.State,
-                ProcessStartedAt = (entity.ProcessStartedAt is null ? (DateTime?) null : DateTime.Parse(entity.ProcessStartedAt)),
-                StateStartedAt = (entity.StateStartedAt is null ? (DateTime?) null : DateTime.Parse(entity.StateStartedAt))
+                ProcessStartedAt = (entity.ProcessStartedAt is null ? (DateTime?)null : DateTime.Parse(entity.ProcessStartedAt)),
+                StateStartedAt = (entity.StateStartedAt is null ? (DateTime?)null : DateTime.Parse(entity.StateStartedAt))
             };
         }
 
