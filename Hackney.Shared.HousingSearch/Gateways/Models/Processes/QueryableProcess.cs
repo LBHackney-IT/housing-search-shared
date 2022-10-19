@@ -20,6 +20,10 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
             StateStartedAt = stateStartedAt;
         }
 
+        public QueryableProcess()
+        {
+        }
+
         public static QueryableProcess Create(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment patchAssignment, string state, string processStartedAt, string stateStartedAt)
         {
             return new QueryableProcess(id, targetId, targetType, relatedEntities, processName, patchAssignment, state, processStartedAt, stateStartedAt);
