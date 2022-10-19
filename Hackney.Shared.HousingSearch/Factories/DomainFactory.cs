@@ -40,18 +40,18 @@ namespace Hackney.Shared.HousingSearch.Factories
 
         public static DomainProcess ToDomain(this QueryableProcess entity)
         {
-            var convertedProcessStartedAt = DateTime.TryParse(entity.ProcessStartedAt, out DateTime date) ? (DateTime?)date : null;
-
-            var convertedStateStartedAt = DateTime.TryParse(entity.StateStartedAt, out DateTime startedAt) ? (DateTime?)startedAt : null;
-            return new DomainProcess(entity.Id,
-                                     entity.TargetId,
-                                     entity.TargetType,
-                                     entity.RelatedEntities.ToDomain(),
-                                     (ProcessName)Enum.Parse(typeof(ProcessName), entity.ProcessName),
-                                     entity.PatchAssignment.ToDomain(),
-                                     entity.State,
-                                     convertedProcessStartedAt,
-                                     convertedStateStartedAt);
+            return new DomainProcess
+            {
+                Id = entity.Id,
+                TargetId = entity.TargetId,
+                TargetType = entity.TargetType,
+                ProcessName = (ProcessName)Enum.Parse(typeof(ProcessName), entity.ProcessName),
+                PatchAssignment = entity.PatchAssignment.ToDomain(),
+                RelatedEntities = entity.RelatedEntities.ToDomain(),
+                State = entity.State,
+                ProcessStartedAt = (entity.ProcessStartedAt is null ? (DateTime?)null : DateTime.Parse(entity.ProcessStartedAt)),
+                StateStartedAt = (entity.StateStartedAt is null ? (DateTime?)null : DateTime.Parse(entity.StateStartedAt))
+            };
         }
 
         public static Staff ToDomain(this QueryableStaff entity)

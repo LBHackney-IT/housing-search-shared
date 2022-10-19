@@ -40,15 +40,18 @@ namespace Hackney.Shared.HousingSearch.Factories
 
         public static QueryableProcess ToDatabase(this DomainProcess entity)
         {
-            return new QueryableProcess(entity.Id,
-                entity.TargetId,
-                entity.TargetType,
-                entity.RelatedEntities.ToDatabase(),
-                entity.ProcessName.ToString(),
-                entity.PatchAssignment.ToDatabase(),
-                entity.State,
-                entity.ProcessStartedAt.ToString(),
-                entity.StateStartedAt.ToString());
+            return new QueryableProcess
+            {
+                Id = entity.Id,
+                TargetId = entity.TargetId,
+                TargetType = entity.TargetType,
+                RelatedEntities = entity.RelatedEntities.ToDatabase(),
+                ProcessName = entity.ProcessName.ToString(),
+                PatchAssignment = entity.PatchAssignment.ToDatabase(),
+                State = entity.State,
+                ProcessStartedAt = entity.ProcessStartedAt?.ToString(),
+                StateStartedAt = entity.StateStartedAt?.ToString()
+            };
         }
 
         public static QueryableStaff ToDatabase(this Staff entity)
@@ -58,18 +61,18 @@ namespace Hackney.Shared.HousingSearch.Factories
 
         public static QueryableProcess ToElasticSearch(this Process entity)
         {
-
-            return new QueryableProcess(
-                entity.Id.ToString(),
-                entity.TargetId.ToString(),
-                entity.TargetType.ToString(),
-                entity.RelatedEntities.ToDatabase(),
-                entity.ProcessName.ToString(),
-                entity.PatchAssignment.ToDatabase(),
-                entity.CurrentState.State,
-                GetCreatedAt(entity),
-                entity.CurrentState.CreatedAt.ToString());
-
+            return new QueryableProcess
+            {
+                Id = entity.Id.ToString(),
+                TargetId = entity.TargetId.ToString(),
+                TargetType = entity.TargetType.ToString(),
+                RelatedEntities = entity.RelatedEntities.ToDatabase(),
+                ProcessName = entity.ProcessName.ToString(),
+                PatchAssignment = entity.PatchAssignment.ToDatabase(),
+                State = entity.CurrentState.State,
+                ProcessStartedAt = GetCreatedAt(entity),
+                StateStartedAt = entity.CurrentState.CreatedAt.ToString()
+            };
         }
 
         private static string GetCreatedAt(Process process)
