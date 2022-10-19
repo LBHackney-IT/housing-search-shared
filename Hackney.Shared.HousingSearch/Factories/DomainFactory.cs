@@ -47,8 +47,8 @@ namespace Hackney.Shared.HousingSearch.Factories
                                      (ProcessName)Enum.Parse(typeof(ProcessName), entity.ProcessName),
                                      entity.PatchAssignment.ToDomain(),
                                      entity.State,
-                                     DateTime.Parse(entity.ProcessStartedAt),
-                                     DateTime.Parse(entity.StateStartedAt));
+                                     DateTime.Parse(entity?.ProcessStartedAt),
+                                     DateTime.Parse(entity?.StateStartedAt));
         }
 
         public static Staff ToDomain(this QueryableStaff entity)
