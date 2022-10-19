@@ -33,7 +33,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Process
         public ProcessName ProcessName { get; set; }
         public PatchAssignment PatchAssignment { get; set; }
         public string State { get; set; }
-        public DateTime ProcessStartedAt { get; set; }
-        public DateTime StateStartedAt { get; set; }
+        public DateTime? ProcessStartedAt { get; set; }
+        public DateTime? StateStartedAt { get; set; }
     }
 }
