@@ -16,7 +16,7 @@ namespace Hackney.Shared.HousingSearch.Factories
             return new RelatedEntity
             {
                 Id = entity.Id,
-                TargetType = (TargetType)Enum.Parse(typeof(TargetType), entity?.TargetType),
+                TargetType = ((TargetType)(entity.TargetType is null ? (Enum)null : (TargetType)Enum.Parse(typeof(TargetType), entity?.TargetType))),
                 SubType = entity?.SubType,
                 Description = entity.Description
             };
