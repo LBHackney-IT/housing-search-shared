@@ -11,7 +11,7 @@ using HousingSearchRelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.R
 using Process = Hackney.Shared.Processes.Domain.Process;
 using RelatedEntity = Hackney.Shared.Processes.Domain.RelatedEntity;
 using PatchAssignment = Hackney.Shared.Processes.Domain.PatchAssignment;
-using HousingSearchPatchAssigment= Hackney.Shared.HousingSearch.Domain.Process.PatchAssignment;
+using HousingSearchPatchAssigment = Hackney.Shared.HousingSearch.Domain.Process.PatchAssignment;
 
 namespace Hackney.Shared.HousingSearch.Factories
 {
@@ -86,7 +86,7 @@ namespace Hackney.Shared.HousingSearch.Factories
             return new QueryablePatchAssignment()
             {
                 PatchId = entity.PatchId.ToString(),
-                PatchName = entity.PatchName,   
+                PatchName = entity.PatchName,
                 ResponsibleEntityId = entity.ResponsibleEntityId.ToString(),
                 ResponsibleName = entity.ResponsibleName
             };
