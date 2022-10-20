@@ -70,7 +70,7 @@ namespace Hackney.Shared.HousingSearch.Factories
             return new QueryableRelatedEntity()
             {
                 Description = entity.Description,
-                Id = entity.Id,
+                Id = entity.Id.ToString(),
                 SubType = entity.SubType?.ToString(),
                 TargetType = entity.TargetType.ToString()
             };
