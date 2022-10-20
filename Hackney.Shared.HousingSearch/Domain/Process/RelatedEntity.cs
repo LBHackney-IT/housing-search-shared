@@ -6,7 +6,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Process
 {
     public class RelatedEntity
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string TargetType { get; set; }
 
         public string SubType { get; set; }
