@@ -45,7 +45,7 @@ namespace Hackney.Shared.HousingSearch.Factories
                 Id = entity.Id,
                 TargetId = entity.TargetId,
                 TargetType = entity.TargetType,
-                ProcessName = (ProcessName)Enum.Parse(typeof(ProcessName), entity.ProcessName),
+                ProcessName = entity.ProcessName,
                 PatchAssignment = entity.PatchAssignment?.ToDomain(),
                 RelatedEntities = entity.RelatedEntities.ToDomain(),
                 State = entity.State,

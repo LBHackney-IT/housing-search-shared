@@ -9,11 +9,11 @@ namespace Hackney.Shared.HousingSearch.Domain.Process
     {
         public Process() { }
 
-        public static Process Create(string id, string targetId, string targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment, string state, DateTime? processStartedAt, DateTime? stateStartedAt)
+        public static Process Create(string id, string targetId, string targetType, List<RelatedEntity> relatedEntities, string processName, PatchAssignment patchAssignment, string state, DateTime? processStartedAt, DateTime? stateStartedAt)
         {
             return new Process(id, targetId, targetType, relatedEntities, processName, patchAssignment, state, processStartedAt, stateStartedAt);
         }
-        public Process(string id, string targetId, string targetType, List<RelatedEntity> relatedEntities, ProcessName processName, PatchAssignment patchAssignment, string state, DateTime? processStartedAt, DateTime? stateStartedAt)
+        public Process(string id, string targetId, string targetType, List<RelatedEntity> relatedEntities, string processName, PatchAssignment patchAssignment, string state, DateTime? processStartedAt, DateTime? stateStartedAt)
         {
             Id = id;
             TargetId = targetId;
@@ -30,7 +30,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Process
         public string TargetId { get; set; }
         public string TargetType { get; set; }
         public List<RelatedEntity> RelatedEntities { get; set; }
-        public ProcessName ProcessName { get; set; }
+        public string ProcessName { get; set; }
         public PatchAssignment PatchAssignment { get; set; }
         public string State { get; set; }
         public DateTime? ProcessStartedAt { get; set; }
