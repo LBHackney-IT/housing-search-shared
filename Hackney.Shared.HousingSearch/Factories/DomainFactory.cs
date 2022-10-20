@@ -5,9 +5,8 @@ using System.Linq;
 using System;
 using Hackney.Shared.HousingSearch.Domain.Staff;
 using Hackney.Shared.HousingSearch.Gateways.Models.Staffs;
-using Hackney.Shared.HousingSearch.Domain.Process;
-using Hackney.Shared.Processes.Domain;
 using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
+using PatchAssignment = Hackney.Shared.HousingSearch.Domain.Process.PatchAssignment;
 
 namespace Hackney.Shared.HousingSearch.Factories
 {
@@ -33,9 +32,9 @@ namespace Hackney.Shared.HousingSearch.Factories
         {
             return new PatchAssignment
             {
-                PatchId = Guid.Parse(entity.PatchId),
+                PatchId = entity.PatchId,
                 PatchName = entity.PatchName,
-                ResponsibleEntityId = Guid.Parse(entity.ResponsibleEntityId),
+                ResponsibleEntityId = entity.ResponsibleEntityId,
                 ResponsibleName = entity.ResponsibleName
             };
         }

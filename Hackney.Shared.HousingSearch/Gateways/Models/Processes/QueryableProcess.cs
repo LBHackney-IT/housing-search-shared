@@ -7,7 +7,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
 {
     public class QueryableProcess
     {
-        public QueryableProcess(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment? patchAssignment, string state, string processStartedAt, string stateStartedAt)
+        public QueryableProcess(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment patchAssignment, string state, string processStartedAt, string stateStartedAt)
         {
             Id = id;
             TargetId = targetId;
@@ -24,7 +24,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         {
         }
 
-        public static QueryableProcess Create(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment? patchAssignment, string state, string processStartedAt, string stateStartedAt)
+        public static QueryableProcess Create(string id, string targetId, string targetType, List<QueryableRelatedEntity> relatedEntities, string processName, QueryablePatchAssignment patchAssignment, string state, string processStartedAt, string stateStartedAt)
         {
             return new QueryableProcess(id, targetId, targetType, relatedEntities, processName, patchAssignment, state, processStartedAt, stateStartedAt);
         }
@@ -45,7 +45,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         public string State { get; set; }
 
         [Text(Name = "patchAssignment")]
-        public QueryablePatchAssignment? PatchAssignment { get; set; }
+        public QueryablePatchAssignment PatchAssignment { get; set; }
 
         [Text(Name = "processStartedAt")]
         public string ProcessStartedAt { get; set; }

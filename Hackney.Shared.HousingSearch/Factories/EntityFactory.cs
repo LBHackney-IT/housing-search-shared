@@ -10,6 +10,8 @@ using Hackney.Shared.Processes.Domain;
 using HousingSearchRelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
 using Process = Hackney.Shared.Processes.Domain.Process;
 using RelatedEntity = Hackney.Shared.Processes.Domain.RelatedEntity;
+using PatchAssignment = Hackney.Shared.Processes.Domain.PatchAssignment;
+using HousingSearchPatchAssigment= Hackney.Shared.HousingSearch.Domain.Process.PatchAssignment;
 
 namespace Hackney.Shared.HousingSearch.Factories
 {
@@ -31,7 +33,7 @@ namespace Hackney.Shared.HousingSearch.Factories
             return relatedEntities.Select(x => x.ToDatabase()).ToList();
         }
 
-        public static QueryablePatchAssignment ToDatabase(this PatchAssignment domain)
+        public static QueryablePatchAssignment ToDatabase(this HousingSearchPatchAssigment domain)
         {
             return new QueryablePatchAssignment
             {
@@ -79,6 +81,16 @@ namespace Hackney.Shared.HousingSearch.Factories
             return relatedEntities.Select(x => x.ToElasticSearch()).ToList();
         }
 
+        public static QueryablePatchAssignment ToElasticSearch(this PatchAssignment entity)
+        {
+            return new QueryablePatchAssignment()
+            {
+                PatchId = entity.PatchId.ToString(),
+                PatchName = entity.PatchName,   
+                ResponsibleEntityId = entity.ResponsibleEntityId.ToString(),
+                ResponsibleName = entity.ResponsibleName
+            };
+        }
         public static QueryableProcess ToElasticSearch(this Process entity)
         {
             return new QueryableProcess
@@ -88,7 +100,7 @@ namespace Hackney.Shared.HousingSearch.Factories
                 TargetType = entity.TargetType.ToString(),
                 RelatedEntities = entity.RelatedEntities.ToElasticSearch(),
                 ProcessName = entity.ProcessName.ToString(),
-                PatchAssignment = entity.PatchAssignment.ToDatabase(),
+                PatchAssignment = entity.PatchAssignment.ToElasticSearch(),
                 State = entity.CurrentState.State,
                 ProcessStartedAt = GetCreatedAt(entity),
                 StateStartedAt = entity.CurrentState.CreatedAt.ToString()
