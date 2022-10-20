@@ -9,7 +9,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
     {
         public QueryableRelatedEntity() { }
 
-        public QueryableRelatedEntity(Guid id, string targetType, SubType subType, string description)
+        public QueryableRelatedEntity(Guid id, string targetType, string subType, string description)
         {
             Id = id;
             TargetType = targetType;
@@ -17,7 +17,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
             Description = description;
         }
 
-        public static QueryableRelatedEntity Create(Guid id, string targetType, SubType subType, string description)
+        public static QueryableRelatedEntity Create(Guid id, string targetType, string subType, string description)
         {
             return new QueryableRelatedEntity(id, targetType, subType, description);
         }
@@ -29,7 +29,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         public string TargetType { get; set; }
 
         [Text(Name = "subType")]
-        public SubType? SubType { get; set; }
+        public string SubType { get; set; }
 
         [Text(Name = "description")]
         public string Description { get; set; }
