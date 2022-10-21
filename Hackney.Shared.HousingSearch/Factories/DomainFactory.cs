@@ -1,11 +1,12 @@
 using Hackney.Shared.HousingSearch.Gateways.Models.Processes;
 using DomainProcess = Hackney.Shared.HousingSearch.Domain.Process.Process;
 using System.Collections.Generic;
-using Hackney.Shared.Processes.Domain;
 using System.Linq;
 using System;
 using Hackney.Shared.HousingSearch.Domain.Staff;
 using Hackney.Shared.HousingSearch.Gateways.Models.Staffs;
+using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
+using PatchAssignment = Hackney.Shared.HousingSearch.Domain.Process.PatchAssignment;
 
 namespace Hackney.Shared.HousingSearch.Factories
 {
@@ -16,8 +17,8 @@ namespace Hackney.Shared.HousingSearch.Factories
             return new RelatedEntity
             {
                 Id = entity.Id,
-                TargetType = (TargetType)Enum.Parse(typeof(TargetType), entity?.TargetType),
-                SubType = entity?.SubType,
+                TargetType = entity.TargetType,
+                SubType = entity.SubType,
                 Description = entity.Description
             };
         }
@@ -31,9 +32,9 @@ namespace Hackney.Shared.HousingSearch.Factories
         {
             return new PatchAssignment
             {
-                PatchId = Guid.Parse(entity.PatchId),
+                PatchId = entity.PatchId,
                 PatchName = entity.PatchName,
-                ResponsibleEntityId = Guid.Parse(entity.ResponsibleEntityId),
+                ResponsibleEntityId = entity.ResponsibleEntityId,
                 ResponsibleName = entity.ResponsibleName
             };
         }
@@ -45,7 +46,7 @@ namespace Hackney.Shared.HousingSearch.Factories
                 Id = entity.Id,
                 TargetId = entity.TargetId,
                 TargetType = entity.TargetType,
-                ProcessName = (ProcessName)Enum.Parse(typeof(ProcessName), entity.ProcessName),
+                ProcessName = entity.ProcessName,
                 PatchAssignment = entity.PatchAssignment.ToDomain(),
                 RelatedEntities = entity.RelatedEntities.ToDomain(),
                 State = entity.State,
