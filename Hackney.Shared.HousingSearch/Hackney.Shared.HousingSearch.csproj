@@ -10,7 +10,7 @@
  </PropertyGroup>
 
  <ItemGroup>
-   <PackageReference Include="Hackney.Shared.Processes" Version="0.7.0-feat-mttl-3433-0004" />
+   <PackageReference Include="Hackney.Shared.Processes" Version="0.7.0" />
    <PackageReference Include="Hackney.Shared.Tenure" Version="0.9.0" />
    <PackageReference Include="NEST" Version="7.11.1" />
    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
