@@ -163,6 +163,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                 ? null
                 : Domain.Asset.Contract.Create(
                     AssetContract.Id,
+                    AssetContract.TargetId,
+                    AssetContract.TargetType,
                     AssetContract.Charges?.Select(p => p.Create()).ToList()
                 );
 
