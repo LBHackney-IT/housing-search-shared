@@ -49,7 +49,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
             AssetCharacteristics = assetCharacteristics;
             AssetManagement = assetManagement;
             AssetLocation = assetLocation;
-            Contract = contract;
+            AssetContract = contract;
         }
 
         public string Id { get; set; }
@@ -76,6 +76,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         public string AssetStatus { get; set; }
 
         public AssetLocation AssetLocation { get; set; }
-        public Contract Contract { get; set; }
+        public Contract AssetContract { get; set; }
     }
 }
