@@ -11,7 +11,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         public Asset Create()
         {
             var assetAddress = AssetAddress == null
-                ? new AssetAddress()
+                ? null
                 : Domain.Asset.AssetAddress.Create(
                     AssetAddress.Uprn,
                     AssetAddress.AddressLine1,
@@ -82,7 +82,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         public Asset CreateAll()
         {
             var assetAddress = AssetAddress == null
-                ? new AssetAddress()
+                ? null
                 : Domain.Asset.AssetAddress.Create(
                     AssetAddress.Uprn,
                     AssetAddress.AddressLine1,
