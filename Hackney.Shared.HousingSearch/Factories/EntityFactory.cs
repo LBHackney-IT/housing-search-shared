@@ -103,16 +103,16 @@ namespace Hackney.Shared.HousingSearch.Factories
                 PatchAssignment = entity.PatchAssignment?.ToElasticSearch(),
                 State = entity.CurrentState.State,
                 ProcessStartedAt = GetCreatedAt(entity),
-                StateStartedAt = entity.CurrentState.CreatedAt.ToString()
+                StateStartedAt = entity.CurrentState.CreatedAt.ToString("O")
             };
         }
 
         private static string GetCreatedAt(Process process)
         {
             if (process.PreviousStates is null || process.PreviousStates.Count == 0)
-                return process.CurrentState?.CreatedAt.ToString();
+                return process.CurrentState?.CreatedAt.ToString("O");
 
-            return process.PreviousStates.Min(x => x.CreatedAt).ToString();
+            return process.PreviousStates.Min(x => x.CreatedAt).ToString("O");
         }
     }
 }
