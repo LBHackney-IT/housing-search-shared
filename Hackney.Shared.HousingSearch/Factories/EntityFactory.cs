@@ -100,7 +100,7 @@ namespace Hackney.Shared.HousingSearch.Factories
                 TargetType = entity.TargetType.ToString(),
                 RelatedEntities = entity.RelatedEntities.ToElasticSearch(),
                 ProcessName = entity.ProcessName.ToString(),
-                PatchAssignment = entity.PatchAssignment.ToElasticSearch(),
+                PatchAssignment = entity.PatchAssignment?.ToElasticSearch(),
                 State = entity.CurrentState.State,
                 ProcessStartedAt = GetCreatedAt(entity),
                 StateStartedAt = entity.CurrentState.CreatedAt.ToString()
