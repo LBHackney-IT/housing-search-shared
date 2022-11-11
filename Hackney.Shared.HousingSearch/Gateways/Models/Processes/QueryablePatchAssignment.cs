@@ -22,7 +22,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         [Text(Name = "patchId")]
         public string PatchId { get; set; }
 
-        [Text(Name = "patchName")]
+        [Keyword(Name = "patchName")]
         public string PatchName { get; set; }
 
         [Text(Name = "responsibleEntityId")]

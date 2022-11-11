@@ -38,10 +38,10 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Processes
         [Text(Name = "targetType")]
         public string TargetType { get; set; }
 
-        [Text(Name = "processName")]
+        [Keyword(Name = "processName")]
         public string ProcessName { get; set; }
 
-        [Text(Name = "state")]
+        [Keyword(Name = "state")]
         public string State { get; set; }
 
         [Text(Name = "patchAssignment")]
