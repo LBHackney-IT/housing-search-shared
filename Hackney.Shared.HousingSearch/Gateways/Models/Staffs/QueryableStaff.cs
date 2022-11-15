@@ -29,7 +29,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Staffs
         [Text(Name = "email")]
         public string EmailAddress { get; set; }
 
-        [Text(Name = "relatedEntities")]
+        [Text(Name = "patches")]
         public List<QueryableStaffPatch> Patches { get; set; }
     }
 }
