@@ -60,9 +60,25 @@ namespace Hackney.Shared.HousingSearch.Factories
             };
         }
 
+        public static QueryableStaffPatch ToDatabase(this StaffPatch entity)
+        {
+            return new QueryableStaffPatch
+            {
+                Id = entity.Id.ToString(),
+                Name = entity.Name,
+                AreaId = entity.AreaId.ToString(),
+                AreaName = entity.AreaName
+            };
+        }
+
+        public static List<QueryableStaffPatch> ToDatabase(this List<StaffPatch> patches)
+        {
+            return patches.Select(x => x.ToDatabase()).ToList();
+        }
+
         public static QueryableStaff ToDatabase(this Staff entity)
         {
-            return new QueryableStaff(entity.FirstName, entity.LastName, entity.EmailAddress, entity.PatchId, entity.AreaId);
+            return new QueryableStaff(entity.FirstName, entity.LastName, entity.EmailAddress, entity.Patches.ToDatabase());
         }
 
         public static QueryableRelatedEntity ToElasticSearch(this RelatedEntity entity)

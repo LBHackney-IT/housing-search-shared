@@ -7,17 +7,17 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Staffs
 {
     public class QueryableStaff
     {
-        public QueryableStaff(string firstName, string lastName, string emailAddress, Guid patchId, Guid? areaId)
+        public QueryableStaff(string firstName, string lastName, string emailAddress, List<QueryableStaffPatch> patches)
         {
             FirstName = firstName;
             LastName = lastName;
             EmailAddress = emailAddress;
-            PatchId = patchId;
-            AreaId = areaId;
+            Patches = patches;
         }
-        public static QueryableStaff Create(string firstName, string lastName, string emailAddress, Guid patchId, Guid? areaId)
+
+        public static QueryableStaff Create(string firstName, string lastName, string emailAddress, List<QueryableStaffPatch> patches)
         {
-            return new QueryableStaff(firstName, lastName, emailAddress, patchId, areaId);
+            return new QueryableStaff(firstName, lastName, emailAddress, patches);
         }
 
         [Text(Name = "firstName")]
@@ -29,11 +29,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Staffs
         [Text(Name = "email")]
         public string EmailAddress { get; set; }
 
-        [Text(Name = "patchId")]
-        public Guid PatchId { get; set; }
-
-        [Text(Name = "areaId")]
-        public Guid? AreaId { get; set; }
-
+        [Text(Name = "patches")]
+        public List<QueryableStaffPatch> Patches { get; set; }
     }
 }
