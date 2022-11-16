@@ -59,9 +59,9 @@ namespace Hackney.Shared.HousingSearch.Factories
         {
             return new StaffPatch
             {
-                Id = Guid.Parse(entity.Id),
+                Id = entity.Id,
                 Name = entity.Name,
-                AreaId = Guid.Parse(entity.AreaId),
+                AreaId = entity.AreaId,
                 AreaName = entity.AreaName
             };
         }
