@@ -22,7 +22,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Contract
         public string Id { get; set; }
         public string Type { get; set; }
         public string SubType { get; set; }
-        public Frequency Frequency { get; set; }
+        public string Frequency { get; set; }
         public decimal? Amount { get; set; }
     }
 }
