@@ -2,11 +2,6 @@ using Hackney.Shared.HousingSearch.Gateways.Models.Processes;
 using DomainProcess = Hackney.Shared.HousingSearch.Domain.Process.Process;
 using System.Collections.Generic;
 using System.Linq;
-using System;
-using Hackney.Shared.HousingSearch.Gateways.Models.Staffs;
-using Hackney.Shared.HousingSearch.Domain.Staff;
-using Hackney.Shared.HousingSearch.Domain.Process;
-using Hackney.Shared.Processes.Domain;
 using HousingSearchRelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
 using Process = Hackney.Shared.Processes.Domain.Process;
 using RelatedEntity = Hackney.Shared.Processes.Domain.RelatedEntity;
@@ -58,27 +53,6 @@ namespace Hackney.Shared.HousingSearch.Factories
                 ProcessStartedAt = entity.ProcessStartedAt?.ToString(),
                 StateStartedAt = entity.StateStartedAt?.ToString()
             };
-        }
-
-        public static QueryableStaffPatch ToDatabase(this StaffPatch entity)
-        {
-            return new QueryableStaffPatch
-            {
-                Id = entity.Id.ToString(),
-                Name = entity.Name,
-                AreaId = entity.AreaId.ToString(),
-                AreaName = entity.AreaName
-            };
-        }
-
-        public static List<QueryableStaffPatch> ToDatabase(this List<StaffPatch> patches)
-        {
-            return patches.Select(x => x.ToDatabase()).ToList();
-        }
-
-        public static QueryableStaff ToDatabase(this Staff entity)
-        {
-            return new QueryableStaff(entity.FirstName, entity.LastName, entity.EmailAddress, entity.Patches.ToDatabase());
         }
 
         public static QueryableRelatedEntity ToElasticSearch(this RelatedEntity entity)
