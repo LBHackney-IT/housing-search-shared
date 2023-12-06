@@ -3,8 +3,6 @@ using DomainProcess = Hackney.Shared.HousingSearch.Domain.Process.Process;
 using System.Collections.Generic;
 using System.Linq;
 using System;
-using Hackney.Shared.HousingSearch.Domain.Staff;
-using Hackney.Shared.HousingSearch.Gateways.Models.Staffs;
 using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
 using PatchAssignment = Hackney.Shared.HousingSearch.Domain.Process.PatchAssignment;
 
@@ -53,27 +51,6 @@ namespace Hackney.Shared.HousingSearch.Factories
                 ProcessStartedAt = (entity.ProcessStartedAt is null ? (DateTime?)null : DateTime.Parse(entity.ProcessStartedAt)),
                 StateStartedAt = (entity.StateStartedAt is null ? (DateTime?)null : DateTime.Parse(entity.StateStartedAt))
             };
-        }
-
-        public static StaffPatch ToDomain(this QueryableStaffPatch entity)
-        {
-            return new StaffPatch
-            {
-                Id = entity.Id,
-                Name = entity.Name,
-                AreaId = entity.AreaId,
-                AreaName = entity.AreaName
-            };
-        }
-
-        public static List<StaffPatch> ToDomain(this List<QueryableStaffPatch> patches)
-        {
-            return patches.Select(x => x.ToDomain()).ToList();
-        }
-
-        public static Staff ToDomain(this QueryableStaff entity)
-        {
-            return new Staff(entity.FirstName, entity.LastName, entity.EmailAddress, entity.Patches.ToDomain());
         }
     }
 }
