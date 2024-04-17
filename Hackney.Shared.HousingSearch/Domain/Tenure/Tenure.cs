@@ -39,5 +39,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
         public string EndOfTenureDate { get; set; }
         public TenureType TenureType { get; set; }
         public bool IsActive => TenureHelpers.IsTenureActive(EndOfTenureDate);
+        public TemporaryAccommodationInfo TemporaryAccommodationInfo { get; set; }
     }
 }

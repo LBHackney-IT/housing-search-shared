@@ -18,6 +18,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Tenures
         public QueryableTenuredAsset TenuredAsset { get; set; }
         public string StartOfTenureDate { get; set; }
         public string EndOfTenureDate { get; set; }
-        public QueryableTenureType TenureType { get; set; }
+        public QueryableTenureType TenureType { get; set; }   
+        public QueryableTemporaryAccommodationInfo TemporaryAccommodationInfo { get; set; }
     }
 }
