@@ -8,10 +8,10 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
     public class Tenure
     {
         public static Tenure Create(string id, string paymentReference, string startOfTenureDate, string endOfTenureDate,
-            List<QueryableHouseholdMember> houseHoldMembers, QueryableTenuredAsset tenuredAsset, QueryableTenureType tenureType)
+            List<QueryableHouseholdMember> houseHoldMembers, QueryableTenuredAsset tenuredAsset, QueryableTenureType tenureType, QueryableTemporaryAccommodationInfo temporaryAccommodationInfo)
         {
             return new Tenure(id, paymentReference, startOfTenureDate, endOfTenureDate, houseHoldMembers,
-                tenuredAsset, tenureType);
+                tenuredAsset, tenureType, temporaryAccommodationInfo);
         }
 
         public Tenure()
@@ -20,7 +20,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
         }
 
         private Tenure(string id, string paymentReference, string startOfTenureDate, string endOfTenureDate,
-            List<QueryableHouseholdMember> houseHoldMembers, QueryableTenuredAsset tenuredAsset, QueryableTenureType tenureType)
+            List<QueryableHouseholdMember> houseHoldMembers, QueryableTenuredAsset tenuredAsset, QueryableTenureType tenureType, QueryableTemporaryAccommodationInfo queryableTemporaryAccommodationInfo)
         {
             Id = id;
             PaymentReference = paymentReference;
@@ -29,6 +29,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
             HouseholdMembers = houseHoldMembers != null && houseHoldMembers.Any() ? houseHoldMembers.Select(HouseholdMember.Create).ToList() : new List<HouseholdMember>();
             TenureType = TenureType.Create(tenureType);
             TenuredAsset = TenuredAsset.Create(tenuredAsset);
+            TemporaryAccommodationInfo = TemporaryAccommodationInfo.Create(queryableTemporaryAccommodationInfo);
         }
 
         public string Id { get; set; }
