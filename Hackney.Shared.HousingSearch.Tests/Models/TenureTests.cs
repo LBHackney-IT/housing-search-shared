@@ -16,18 +16,18 @@ namespace Hackney.Shared.HousingSearch.Tests
             var aQueryableTenure = _fixture.Create<QueryableTenure>();
 
             //act
-            var createdDomaninTenure = aQueryableTenure.Create();
+            var createdDomainTenure = aQueryableTenure.Create();
 
             //assert
-            createdDomaninTenure.Id.Should().Be(aQueryableTenure.Id);
-            createdDomaninTenure.TempAccommodationInfo.BookingStatus.Should().Be(aQueryableTenure.TempAccommodationInfo.BookingStatus);
-            createdDomaninTenure.TenuredAsset.Should().BeEquivalentTo(aQueryableTenure.TenuredAsset);
-            createdDomaninTenure.PaymentReference.Should().BeEquivalentTo(aQueryableTenure.PaymentReference);
-            createdDomaninTenure.HouseholdMembers.Should().BeEquivalentTo(aQueryableTenure.HouseholdMembers);
-            createdDomaninTenure.StartOfTenureDate.Should().BeEquivalentTo(aQueryableTenure.StartOfTenureDate);
-            createdDomaninTenure.EndOfTenureDate.Should().BeEquivalentTo(aQueryableTenure.EndOfTenureDate);
-            createdDomaninTenure.TenureType.Should().BeEquivalentTo(aQueryableTenure.TenureType);
-            createdDomaninTenure.TempAccommodationInfo.Should().BeEquivalentTo(aQueryableTenure.TempAccommodationInfo);
+            createdDomainTenure.Id.Should().Be(aQueryableTenure.Id);
+            createdDomainTenure.TempAccommodationInfo.BookingStatus.Should().Be(aQueryableTenure.TempAccommodationInfo.BookingStatus);
+            createdDomainTenure.TenuredAsset.Should().BeEquivalentTo(aQueryableTenure.TenuredAsset);
+            createdDomainTenure.PaymentReference.Should().BeEquivalentTo(aQueryableTenure.PaymentReference);
+            createdDomainTenure.HouseholdMembers.Should().BeEquivalentTo(aQueryableTenure.HouseholdMembers);
+            createdDomainTenure.StartOfTenureDate.Should().BeEquivalentTo(aQueryableTenure.StartOfTenureDate);
+            createdDomainTenure.EndOfTenureDate.Should().BeEquivalentTo(aQueryableTenure.EndOfTenureDate);
+            createdDomainTenure.TenureType.Should().BeEquivalentTo(aQueryableTenure.TenureType);
+            createdDomainTenure.TempAccommodationInfo.Should().BeEquivalentTo(aQueryableTenure.TempAccommodationInfo);
         }
     }
 }
