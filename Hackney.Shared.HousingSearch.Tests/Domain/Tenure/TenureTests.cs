@@ -14,6 +14,5 @@ namespace Hackney.Shared.HousingSearch.Tests
             thisTenure.Id.ToString().Should().Be(Constants.ID);
             thisTenure.TemporaryAccommodationInfo.BookingStatus.Should().Be(Constants.TASTATUS);
         }
-
     }
 }
