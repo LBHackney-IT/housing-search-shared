@@ -20,8 +20,7 @@ namespace Hackney.Shared.HousingSearch.Tests
 
             //assert
             createdDomaninTenure.Id.Should().Be(aQueryableTenure.Id);
-            createdDomaninTenure.TenuredAsset.Should().Be(aQueryableTenure.TenuredAsset);
-
+            createdDomaninTenure.TempAccommodationInfo.BookingStatus.Should().Be(aQueryableTenure.TempAccommodationInfo.BookingStatus);
         }
     }
 }
