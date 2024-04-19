@@ -1,5 +1,5 @@
-using System;
-using Hackney.Shared.HousingSearch;
+using DT = Hackney.Shared.HousingSearch.Domain.Tenure;
+
 
 namespace Hackney.Shared.HousingSearch.Tests.Helper
 {
@@ -9,7 +9,7 @@ namespace Hackney.Shared.HousingSearch.Tests.Helper
         public const string STAROFTENURETDATE = "2023-03-20";
         public const string ENDOFTENUREDATE = "2024-03-20";
         public const string TASTATUS = "MATCHED";
-        public static Domain.Tenure.Tenure ConstructTenureFromConstants()
+        public static DT.Tenure ConstructTenureFromConstants()
         {
             var entity = new Domain.Tenure.Tenure();
             entity.Id = ID;
