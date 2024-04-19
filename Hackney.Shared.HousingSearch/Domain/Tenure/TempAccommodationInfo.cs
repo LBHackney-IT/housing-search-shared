@@ -19,7 +19,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
         }
         private TempAccommodationInfo(QueryableTempAccommodationInfo TempAccommodationInfo)
         {
-            BookingStatus = TempAccommodationInfo.BookingStatus;
+            BookingStatus = TempAccommodationInfo?.BookingStatus;
         }
     }
 }
