@@ -15,8 +15,8 @@ namespace Hackney.Shared.HousingSearch.Tests.Helper
             entity.Id = ID;
             entity.StartOfTenureDate = STAROFTENURETDATE;
             entity.EndOfTenureDate = ENDOFTENUREDATE;
-            entity.TemporaryAccommodationInfo =
-                new Domain.Tenure.TemporaryAccommodationInfo
+            entity.TempAccommodationInfo =
+                new Domain.Tenure.TempAccommodationInfo
                 {
                     BookingStatus = TASTATUS
                 };

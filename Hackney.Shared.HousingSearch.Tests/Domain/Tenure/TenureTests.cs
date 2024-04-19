@@ -13,7 +13,7 @@ namespace Hackney.Shared.HousingSearch.Tests
         {
             DT.Tenure thisTenure = Constants.ConstructTenureFromConstants();
             thisTenure.Id.ToString().Should().Be(Constants.ID);
-            thisTenure.TemporaryAccommodationInfo.BookingStatus.Should().Be(Constants.TASTATUS);
+            thisTenure.TempAccommodationInfo.BookingStatus.Should().Be(Constants.TASTATUS);
         }
     }
 }
