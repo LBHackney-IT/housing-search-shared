@@ -8,10 +8,10 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
     public class Tenure
     {
         public static Tenure Create(string id, string paymentReference, string startOfTenureDate, string endOfTenureDate,
-            List<QueryableHouseholdMember> houseHoldMembers, QueryableTenuredAsset tenuredAsset, QueryableTenureType tenureType)
+            List<QueryableHouseholdMember> houseHoldMembers, QueryableTenuredAsset tenuredAsset, QueryableTenureType tenureType, QueryableTempAccommodationInfo TempAccommodationInfo)
         {
             return new Tenure(id, paymentReference, startOfTenureDate, endOfTenureDate, houseHoldMembers,
-                tenuredAsset, tenureType);
+                tenuredAsset, tenureType, TempAccommodationInfo);
         }
 
         public Tenure()
@@ -20,7 +20,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
         }
 
         private Tenure(string id, string paymentReference, string startOfTenureDate, string endOfTenureDate,
-            List<QueryableHouseholdMember> houseHoldMembers, QueryableTenuredAsset tenuredAsset, QueryableTenureType tenureType)
+            List<QueryableHouseholdMember> houseHoldMembers, QueryableTenuredAsset tenuredAsset, QueryableTenureType tenureType, QueryableTempAccommodationInfo queryableTempAccommodationInfo)
         {
             Id = id;
             PaymentReference = paymentReference;
@@ -29,6 +29,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
             HouseholdMembers = houseHoldMembers != null && houseHoldMembers.Any() ? houseHoldMembers.Select(HouseholdMember.Create).ToList() : new List<HouseholdMember>();
             TenureType = TenureType.Create(tenureType);
             TenuredAsset = TenuredAsset.Create(tenuredAsset);
+            TempAccommodationInfo = TempAccommodationInfo.Create(queryableTempAccommodationInfo);
         }
 
         public string Id { get; set; }
@@ -39,5 +40,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
         public string EndOfTenureDate { get; set; }
         public TenureType TenureType { get; set; }
         public bool IsActive => TenureHelpers.IsTenureActive(EndOfTenureDate);
+        public TempAccommodationInfo TempAccommodationInfo { get; set; }
     }
 }

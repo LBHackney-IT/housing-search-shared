@@ -8,7 +8,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Tenures
         public Domain.Tenure.Tenure Create()
         {
             return Domain.Tenure.Tenure.Create(Id, PaymentReference, StartOfTenureDate, EndOfTenureDate,
-                HouseholdMembers, TenuredAsset, TenureType);
+                HouseholdMembers, TenuredAsset, TenureType, TempAccommodationInfo);
         }
 
         [Text(Name = "id")]
@@ -19,5 +19,6 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Tenures
         public string StartOfTenureDate { get; set; }
         public string EndOfTenureDate { get; set; }
         public QueryableTenureType TenureType { get; set; }
+        public QueryableTempAccommodationInfo TempAccommodationInfo { get; set; }
     }
 }
