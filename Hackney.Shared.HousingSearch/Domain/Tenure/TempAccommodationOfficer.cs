@@ -2,21 +2,21 @@ using Hackney.Shared.HousingSearch.Gateways.Models.Tenures;
 
 namespace Hackney.Shared.HousingSearch.Domain.Tenure
 {
-    public class TemporaryAccommodationOfficer
+    public class TempAccommodationOfficer
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
 
-        public static TemporaryAccommodationOfficer Create(QueryableTemporaryAccommodationOfficer TemporaryAccommodationOfficer)
+        public static TempAccommodationOfficer Create(QueryableTempAccommodationOfficer TempAccommodationOfficer)
         {
-            return new TemporaryAccommodationOfficer(TemporaryAccommodationOfficer);
+            return new TempAccommodationOfficer(TempAccommodationOfficer);
         }
-        public TemporaryAccommodationOfficer()
+        public TempAccommodationOfficer()
         {
 
         }
-        private TemporaryAccommodationOfficer(QueryableTemporaryAccommodationOfficer TAOfficer)
+        private TempAccommodationOfficer(QueryableTempAccommodationOfficer TAOfficer)
         {
             FirstName = TAOfficer?.FirstName;
             LastName = TAOfficer?.LastName;

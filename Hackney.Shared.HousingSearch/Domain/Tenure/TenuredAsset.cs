@@ -8,6 +8,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
         public string Uprn { get; set; }
         public string Id { get; set; }
         public string Type { get; set; }
+        public bool? IsTemporaryAccommodation { get; set; }
 
         public static TenuredAsset Create(QueryableTenuredAsset tenuredAsset)
         {
@@ -25,6 +26,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
             Uprn = tenuredAsset?.Uprn;
             Id = tenuredAsset?.Id;
             Type = tenuredAsset?.Type;
+            IsTemporaryAccommodation = tenuredAsset?.IsTemporaryAccommodation;
         }
     }
 }

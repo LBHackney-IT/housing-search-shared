@@ -1,6 +1,6 @@
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Tenures
 {
-    public class QueryableTemporaryAccommodationOfficer
+    public class QueryableTempAccommodationOfficer
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

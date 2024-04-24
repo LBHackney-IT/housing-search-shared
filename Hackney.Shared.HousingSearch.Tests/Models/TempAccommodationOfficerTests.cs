@@ -14,10 +14,10 @@ namespace Hackney.Shared.HousingSearch.Tests
         public void DomainTAOfficerHasPropertiesSet()
         {
             //arrange    
-            var aQueryableTAOfficer = _fixture.Create<QueryableTemporaryAccommodationOfficer>();
+            var aQueryableTAOfficer = _fixture.Create<QueryableTempAccommodationOfficer>();
 
             //act
-            var createdDomaninTAOfficer = TemporaryAccommodationOfficer.Create(aQueryableTAOfficer);
+            var createdDomaninTAOfficer = TempAccommodationOfficer.Create(aQueryableTAOfficer);
 
             //assert
             createdDomaninTAOfficer.FirstName.Should().Be(aQueryableTAOfficer.FirstName);
