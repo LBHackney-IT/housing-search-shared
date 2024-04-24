@@ -5,7 +5,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
     public class TempAccommodationInfo
     {
         public string BookingStatus { get; set; }
-        public string AssignedOfficer { get; set; }
+        public TemporaryAccommodationOfficer AssignedOfficer { get; set; }
 
         public static TempAccommodationInfo Create(QueryableTempAccommodationInfo TempAccommodationInfo)
         {

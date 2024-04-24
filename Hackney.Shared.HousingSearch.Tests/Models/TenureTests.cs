@@ -27,6 +27,7 @@ namespace Hackney.Shared.HousingSearch.Tests
             createdDomainTenure.EndOfTenureDate.Should().BeEquivalentTo(aQueryableTenure.EndOfTenureDate);
             createdDomainTenure.TenureType.Should().BeEquivalentTo(aQueryableTenure.TenureType);
             createdDomainTenure.TempAccommodationInfo.Should().BeEquivalentTo(aQueryableTenure.TempAccommodationInfo);
+            createdDomainTenure.TempAccommodationInfo.AssignedOfficer.Should().BeEquivalentTo(aQueryableTenure.TempAccommodationInfo.AssignedOfficer);
         }
     }
 }
