@@ -21,6 +21,7 @@ namespace Hackney.Shared.HousingSearch.Tests
 
             //assert
             createdDomaninTAInfo.BookingStatus.Should().Be(aQueryableTAInfo.BookingStatus);
+            createdDomaninTAInfo.AssignedOfficer.Should().Be(aQueryableTAInfo.AssignedOfficer);
         }
     }
 }
