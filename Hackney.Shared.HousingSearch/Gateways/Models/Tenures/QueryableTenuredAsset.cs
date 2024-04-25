@@ -6,5 +6,6 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Tenures
         public string Uprn { get; set; }
         public string Id { get; set; }
         public string Type { get; set; }
+        public bool? IsTemporaryAccommodation { get; set; }
     }
 }
