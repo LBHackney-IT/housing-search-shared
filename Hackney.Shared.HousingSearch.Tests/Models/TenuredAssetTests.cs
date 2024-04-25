@@ -17,14 +17,14 @@ namespace Hackney.Shared.HousingSearch.Tests
             var aQueryableTenuredAsset = _fixture.Create<QueryableTenuredAsset>();
 
             //act
-            var createdDomaninTenuredAsset = TenuredAsset.Create(aQueryableTenuredAsset);
+            var createdDomainTenuredAsset = TenuredAsset.Create(aQueryableTenuredAsset);
 
             //assert
-            createdDomaninTenuredAsset.FullAddress.Should().Be(aQueryableTenuredAsset.FullAddress);
-            createdDomaninTenuredAsset.Uprn.Should().Be(aQueryableTenuredAsset.Uprn);
-            createdDomaninTenuredAsset.Id.Should().Be(aQueryableTenuredAsset.Id);
-            createdDomaninTenuredAsset.Type.Should().Be(aQueryableTenuredAsset.Type);
-            createdDomaninTenuredAsset.IsTemporaryAccommodation.Should().Be(aQueryableTenuredAsset.IsTemporaryAccommodation);
+            createdDomainTenuredAsset.FullAddress.Should().Be(aQueryableTenuredAsset.FullAddress);
+            createdDomainTenuredAsset.Uprn.Should().Be(aQueryableTenuredAsset.Uprn);
+            createdDomainTenuredAsset.Id.Should().Be(aQueryableTenuredAsset.Id);
+            createdDomainTenuredAsset.Type.Should().Be(aQueryableTenuredAsset.Type);
+            createdDomainTenuredAsset.IsTemporaryAccommodation.Should().Be(aQueryableTenuredAsset.IsTemporaryAccommodation);
         }
     }
 }
