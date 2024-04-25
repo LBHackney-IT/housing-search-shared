@@ -6,7 +6,7 @@ using Hackney.Shared.HousingSearch.Domain.Tenure;
 
 namespace Hackney.Shared.HousingSearch.Tests
 {
-    public class TAOfficerTests
+    public class TemporaryAccommodationOfficerTests
     {
         private Fixture _fixture = new Fixture();
 
