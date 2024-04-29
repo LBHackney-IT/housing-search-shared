@@ -5,6 +5,8 @@ using System.Linq;
 using System;
 using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
 using PatchAssignment = Hackney.Shared.HousingSearch.Domain.Process.PatchAssignment;
+using Hackney.Shared.HousingSearch.Domain.Tenure;
+using Hackney.Shared.HousingSearch.Gateways.Models.Tenures;
 
 namespace Hackney.Shared.HousingSearch.Factories
 {
@@ -50,6 +52,26 @@ namespace Hackney.Shared.HousingSearch.Factories
                 State = entity.State,
                 ProcessStartedAt = (entity.ProcessStartedAt is null ? (DateTime?)null : DateTime.Parse(entity.ProcessStartedAt)),
                 StateStartedAt = (entity.StateStartedAt is null ? (DateTime?)null : DateTime.Parse(entity.StateStartedAt))
+            };
+        }
+
+        public static TempAccommodationInfo ToDomain(this QueryableTempAccommodationInfo entity)
+        {
+            return new TempAccommodationInfo
+            {
+                AssignedOfficer = entity.AssignedOfficer?.ToDomain(),
+                BookingStatus = entity.BookingStatus
+            };
+        }
+
+        public static TempAccommodationOfficer ToDomain(this QueryableTempAccommodationOfficer entity)
+        {
+            return new TempAccommodationOfficer
+            {
+                Id = entity.Id,
+                Email = entity.Email,
+                FirstName = entity.FirstName,
+                LastName = entity.LastName
             };
         }
     }
