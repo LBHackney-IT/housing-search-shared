@@ -20,9 +20,10 @@ namespace Hackney.Shared.HousingSearch.Tests
             var createdDomaninTAOfficer = TempAccommodationOfficer.Create(aQueryableTAOfficer);
 
             //assert
+            createdDomaninTAOfficer.Id.Should().Be(aQueryableTAOfficer.Id);
             createdDomaninTAOfficer.FirstName.Should().Be(aQueryableTAOfficer.FirstName);
             createdDomaninTAOfficer.LastName.Should().Be(aQueryableTAOfficer.LastName);
-            createdDomaninTAOfficer.Email.Should().Be(aQueryableTAOfficer.Email);
+            createdDomaninTAOfficer.Email.Should().Be(aQueryableTAOfficer.Email);            
         }
     }
 }
