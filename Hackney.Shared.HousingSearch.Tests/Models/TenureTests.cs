@@ -30,7 +30,7 @@ namespace Hackney.Shared.HousingSearch.Tests
         }
 
         [Fact]
-        public void DomainTenureHasTempAccommodationInfoSetToNullWhenEntityTempAccommodationInfoIsNull() 
+        public void DomainTenureHasTempAccommodationInfoSetToNullWhenEntityTempAccommodationInfoIsNull()
         {
             var queryableTenure = _fixture.Create<QueryableTenure>();
             queryableTenure.TempAccommodationInfo = null;
