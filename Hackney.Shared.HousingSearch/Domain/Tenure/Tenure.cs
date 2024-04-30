@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Hackney.Shared.HousingSearch.Factories;
 using Hackney.Shared.HousingSearch.Gateways.Models.Tenures;
 using Hackney.Shared.Tenure.Domain;
 
@@ -29,7 +30,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Tenure
             HouseholdMembers = houseHoldMembers != null && houseHoldMembers.Any() ? houseHoldMembers.Select(HouseholdMember.Create).ToList() : new List<HouseholdMember>();
             TenureType = TenureType.Create(tenureType);
             TenuredAsset = TenuredAsset.Create(tenuredAsset);
-            TempAccommodationInfo = TempAccommodationInfo.Create(queryableTempAccommodationInfo);
+            TempAccommodationInfo = queryableTempAccommodationInfo?.ToDomain();
         }
 
         public string Id { get; set; }

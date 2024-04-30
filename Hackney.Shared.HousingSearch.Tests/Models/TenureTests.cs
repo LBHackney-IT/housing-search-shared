@@ -28,5 +28,18 @@ namespace Hackney.Shared.HousingSearch.Tests
             createdDomainTenure.TenureType.Should().BeEquivalentTo(aQueryableTenure.TenureType);
             createdDomainTenure.TempAccommodationInfo.Should().BeEquivalentTo(aQueryableTenure.TempAccommodationInfo);
         }
+
+        [Fact]
+        public void DomainTenureHasTempAccommodationInfoSetToNullWhenEntityTempAccommodationInfoIsNull()
+        {
+            var queryableTenure = _fixture.Create<QueryableTenure>();
+            queryableTenure.TempAccommodationInfo = null;
+
+            var domainTenure = queryableTenure.Create();
+
+            domainTenure.TempAccommodationInfo.Should().BeNull();
+
+
+        }
     }
 }
