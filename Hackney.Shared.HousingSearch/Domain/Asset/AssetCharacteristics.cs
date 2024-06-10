@@ -4,10 +4,10 @@
     {
         public static AssetCharacteristics Create(int numberOfBedrooms, int numberOfLifts, int numberOfLivingRooms, string windowType, string yearConstructed, string assetPropertyFolderLink,
         string epcExpiryDate, string fireSafetyCertificateExpiryDate, string gasSafetyCertificateExpiryDate, string elecCertificateExpiryDate,
-        bool optionToTax, bool hasStairs, int numberOfStairs, bool hasRampAccess, bool hasCommunalAreas, bool hasPrivateBathroom,
-        int numberOfBathrooms, string bathroomFloor, bool hasPrivateKitchen, int numberOfKitchens, string kitchenfloor,
+        bool optionToTax, bool hasStairs, int numberOfStairs, bool hasRampAccess, bool hasCommunalAreas, bool? hasPrivateBathroom,
+        int numberOfBathrooms, string bathroomFloor, bool? hasPrivateKitchen, int numberOfKitchens, string kitchenfloor,
         string alertSystemExpiryDate, string epcScore, int numberOfFloors, string accessibilityComments, int numberOfBedSpaces, int numberOfCots,
-        string sleepingArrangementNotes, int numberOfShowers, string kitchenNotes, bool isStepFree)
+        string sleepingArrangementNotes, int numberOfShowers, string kitchenNotes, bool? isStepFree)
         {
             return new AssetCharacteristics(
                 numberOfBedrooms,
@@ -48,10 +48,10 @@
         private AssetCharacteristics(int numberOfBedrooms, int numberOfLifts, int numberOfLivingRooms, string windowType,
             string yearConstructed, string assetPropertyFolderLink, string epcExpiryDate, string fireSafetyCertificateExpiryDate,
             string gasSafetyCertificateExpiryDate, string elecCertificateExpiryDate, bool optionToTax, bool hasStairs, int numberOfStairs,
-            bool hasRampAccess, bool hasCommunalAreas, bool hasPrivateBathroom, int numberOfBathrooms, string bathroomFloor,
-            bool hasPrivateKitchen, int numberOfKitchens, string kitchenfloor, string alertSystemExpiryDate, string epcScore,
+            bool hasRampAccess, bool hasCommunalAreas, bool? hasPrivateBathroom, int numberOfBathrooms, string bathroomFloor,
+            bool? hasPrivateKitchen, int numberOfKitchens, string kitchenfloor, string alertSystemExpiryDate, string epcScore,
             int numberOfFloors, string accessibilityComments, int numberOfBedSpaces, int numberOfCots, string sleepingArrangementNotes,
-            int numberOfShowers, string kitchenNotes, bool isStepFree)
+            int numberOfShowers, string kitchenNotes, bool? isStepFree)
         {
             NumberOfBedrooms = numberOfBedrooms;
             NumberOfLifts = numberOfLifts;
@@ -101,10 +101,10 @@
         public int NumberOfStairs { get; set; }
         public bool HasRampAccess { get; set; }
         public bool HasCommunalAreas { get; set; }
-        public bool HasPrivateBathroom { get; set; }
+        public bool? HasPrivateBathroom { get; set; }
         public int NumberOfBathrooms { get; set; }
         public string BathroomFloor { get; set; }
-        public bool HasPrivateKitchen { get; set; }
+        public bool? HasPrivateKitchen { get; set; }
         public int NumberOfKitchens { get; set; }
         public string Kitchenfloor { get; set; }
         public string AlertSystemExpiryDate { get; set; }
@@ -116,6 +116,6 @@
         public string SleepingArrangementNotes { get; set; }
         public int NumberOfShowers { get; set; }
         public string KitchenNotes { get; set; }
-        public bool IsStepFree { get; set; }
+        public bool? IsStepFree { get; set; }
     }
 }

@@ -17,10 +17,10 @@
         public int NumberOfStairs { get; set; }
         public bool HasRampAccess { get; set; }
         public bool HasCommunalAreas { get; set; }
-        public bool HasPrivateBathroom { get; set; }
+        public bool? HasPrivateBathroom { get; set; }
         public int NumberOfBathrooms { get; set; }
         public string BathroomFloor { get; set; }
-        public bool HasPrivateKitchen { get; set; }
+        public bool? HasPrivateKitchen { get; set; }
         public int NumberOfKitchens { get; set; }
         public string Kitchenfloor { get; set; }
         public string AlertSystemExpiryDate { get; set; }
@@ -32,6 +32,6 @@
         public string SleepingArrangementNotes { get; set; }
         public int NumberOfShowers { get; set; }
         public string KitchenNotes { get; set; }
-        public bool IsStepFree { get; set; }
+        public bool? IsStepFree { get; set; }
     }
 }
