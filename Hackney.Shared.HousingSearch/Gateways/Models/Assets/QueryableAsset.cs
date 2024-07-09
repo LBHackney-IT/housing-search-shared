@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using System.Linq;
-using Hackney.Shared.HousingSearch.Domain.Asset;
 using Nest;
 using Asset = Hackney.Shared.HousingSearch.Domain.Asset.Asset;
 
@@ -165,7 +163,11 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     AssetContract.Id,
                     AssetContract.TargetId,
                     AssetContract.TargetType,
-                    AssetContract.Charges?.Select(p => p.Create()).ToList()
+                    AssetContract.StartDate,
+                    AssetContract.ApprovalDate,
+                    AssetContract.IsApproved,
+                    AssetContract.Charges?.Select(p => p.Create()).ToList(),
+                    AssetContract.RelatedPeople?.Select(p => p.Create()).ToList()
                 );
 
             return Asset.CreateAll(
