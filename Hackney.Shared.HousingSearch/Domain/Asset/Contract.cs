@@ -23,7 +23,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         public Contract() { }
 
         private Contract(string id, string targetId, string targetType, DateTime? startDate, DateTime? approvalDate,
-            bool? isApproved,  IEnumerable<Charges> charges, IEnumerable<RelatedPeople> relatedPeople)
+            bool? isApproved, IEnumerable<Charges> charges, IEnumerable<RelatedPeople> relatedPeople)
         {
             Id = id;
             TargetId = targetId;

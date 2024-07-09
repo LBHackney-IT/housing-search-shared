@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Nest;
-
-namespace Hackney.Shared.HousingSearch.Domain.Contract
+﻿namespace Hackney.Shared.HousingSearch.Domain.Contract
 {
     public class RelatedPeople
     {
@@ -13,7 +8,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Contract
         {
             return new RelatedPeople(id, type, subType, name);
         }
-
+        
         private RelatedPeople(string id, string type, string subType, string name)
         {
             Id = id;
