@@ -3,12 +3,12 @@
     public class RelatedPeople
     {
         public RelatedPeople() { }
-        
+
         public static RelatedPeople Create(string id, string type, string subType, string name)
         {
             return new RelatedPeople(id, type, subType, name);
         }
-        
+
         private RelatedPeople(string id, string type, string subType, string name)
         {
             Id = id;
