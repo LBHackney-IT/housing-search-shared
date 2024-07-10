@@ -111,7 +111,7 @@ namespace Hackney.Shared.HousingSearch.Factories
 
         public static IEnumerable<Charges> ToDomain(this IEnumerable<QueryableCharges> charges)
         {
-            return charges.Select(x => x.ToDomain()).ToList();
+            return charges.Select(x => x.ToDomain());
         }
 
         public static RelatedPeople ToDomain(this QueryableRelatedPeople entity)
@@ -127,7 +127,7 @@ namespace Hackney.Shared.HousingSearch.Factories
 
         public static IEnumerable<RelatedPeople> ToDomain(this IEnumerable<QueryableRelatedPeople> relatedPeople)
         {
-            return relatedPeople.Select(x => x.ToDomain()).ToList();
+            return relatedPeople.Select(x => x.ToDomain());
         }
     }
 }
