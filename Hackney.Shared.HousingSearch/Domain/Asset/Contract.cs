@@ -8,7 +8,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
     {
         public string Id { get; set; }
         public string TargetId { get; set; }
-        public string TargetType { get; set; }
+        public TargetType TargetType { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? ApprovalDate { get; set; }
         public bool? IsApproved { get; set; }

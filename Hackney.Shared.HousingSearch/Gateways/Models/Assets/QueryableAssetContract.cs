@@ -2,6 +2,7 @@
 using Hackney.Shared.HousingSearch.Gateways.Models.Contract;
 using Nest;
 using System.Collections.Generic;
+using Hackney.Shared.HousingSearch.Domain.Contract;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
 {
@@ -10,7 +11,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         [Text(Name = "id")]
         public string Id { get; set; }
         public string TargetId { get; set; }
-        public string TargetType { get; set; }
+        public TargetType TargetType { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? ApprovalDate { get; set; }
         public bool? IsApproved { get; set; }
