@@ -14,6 +14,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         public DateTime? StartDate { get; set; }
         public DateTime? ApprovalDate { get; set; }
         public bool? IsApproved { get; set; }
+        public bool? IsActive { get; set; }
         public IEnumerable<QueryableCharges> Charges { get; set; }
         public IEnumerable<QueryableRelatedPeople> RelatedPeople { get; set; }
     }
