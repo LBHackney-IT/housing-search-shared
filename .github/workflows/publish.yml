@@ -57,9 +57,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
-        run: docker-compose build hackney-shared-housing-search-test
+        run: docker compose build hackney-shared-housing-search-test
       - name: Run tests
-        run: docker-compose run hackney-shared-housing-search-test
+        run: docker compose run hackney-shared-housing-search-test
 
   publish-package:
     name: Publish Package
