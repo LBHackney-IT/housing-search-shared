@@ -2,27 +2,28 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
 {
     public class Asset
     {
-        public static Asset CreateAll(string id, string assetId, string assetType,
-            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds,
+        public static Asset CreateAll(string id, string assetId, string assetType, bool isAssetCautionaryAlerted,
+            AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds, string patchId, string areaId,
             AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation, bool isActive, Contract contract)
         {
-            return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, assetAddress, tenure, rootAsset,
-                parentAssetIds, assetCharacteristics, assetManagement, assetLocation, isActive, contract);
+            return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, assetAddress, tenure, rootAsset, patchId,
+                      areaId, parentAssetIds, assetCharacteristics, assetManagement, assetLocation, isActive, contract);
         }
 
-        public static Asset Create(string id, string assetId, string assetType,
-            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure,
-            AssetCharacteristics assetCharacteristics, string AssetStatus)
+        public static Asset Create(string id, string assetId, string assetType, bool isAssetCautionaryAlerted,
+                                   AssetAddress assetAddress, Tenure tenure, string patchId, string areaId,
+                                   AssetCharacteristics assetCharacteristics, string assetStatus)
         {
-            return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, assetAddress, tenure, assetCharacteristics, AssetStatus);
+            return new Asset(id, assetId, assetType, isAssetCautionaryAlerted, patchId, areaId, assetAddress, tenure, assetCharacteristics, assetStatus);
         }
 
         public Asset()
         {
 
         }
-        private Asset(string id, string assetId, string assetType,
-            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, AssetCharacteristics assetCharacteristics, string assetStatus)
+
+        private Asset(string id, string assetId, string assetType, bool isAssetCautionaryAlerted, string patchId, string areaId,
+                      AssetAddress assetAddress, Tenure tenure, AssetCharacteristics assetCharacteristics, string assetStatus)
         {
             Id = id;
             AssetId = assetId;
@@ -30,11 +31,14 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
             IsAssetCautionaryAlerted = isAssetCautionaryAlerted;
             AssetAddress = assetAddress;
             Tenure = tenure;
+            PatchId = patchId;
+            AreaId = areaId;
             AssetCharacteristics = assetCharacteristics;
             AssetStatus = assetStatus;
         }
+
         private Asset(string id, string assetId, string assetType,
-            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds,
+            bool isAssetCautionaryAlerted, AssetAddress assetAddress, Tenure tenure, string rootAsset, string parentAssetIds, string patchId, string areaId,
              AssetCharacteristics assetCharacteristics, AssetManagement assetManagement, AssetLocation assetLocation, bool isActive, Contract contract)
         {
             Id = id;
@@ -46,6 +50,8 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
             RootAsset = rootAsset;
             IsActive = isActive;
             ParentAssetIds = parentAssetIds;
+            PatchId = patchId;
+            AreaId = areaId;
             AssetCharacteristics = assetCharacteristics;
             AssetManagement = assetManagement;
             AssetLocation = assetLocation;
@@ -68,6 +74,9 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
 
         public bool IsActive { get; set; }
         public string ParentAssetIds { get; set; }
+
+        public string PatchId { get; set; }
+        public string AreaId { get; set; }
 
         public AssetCharacteristics AssetCharacteristics { get; set; }
 

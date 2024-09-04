@@ -72,6 +72,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                 IsAssetCautionaryAlerted,
                 assetAddress,
                 tenure,
+                PatchId,
+                AreaId,
                 assetCharacteristics,
                 AssetStatus
             );
@@ -168,6 +170,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                 tenure,
                 RootAsset,
                 ParentAssetIds,
+                PatchId,
+                AreaId,
                 assetCharacteristics,
                 assetManagement,
                 assetLocation,
@@ -199,6 +203,12 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
 
         [Text(Name = "assetStatus")]
         public string AssetStatus { get; set; }
+
+        [Text(Name = "patchId")]
+        public string PatchId { get; set; }
+
+        [Text(Name = "areaId")]
+        public string AreaId { get; set; }
 
         public QueryableAssetAddress AssetAddress { get; set; }
 
