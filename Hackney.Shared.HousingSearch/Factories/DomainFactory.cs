@@ -92,6 +92,7 @@ namespace Hackney.Shared.HousingSearch.Factories
                 StartDate = entity.StartDate,
                 ApprovalDate = entity.ApprovalDate,
                 IsApproved = entity.IsApproved,
+                ApprovalStatus = entity.ApprovalStatus,
                 IsActive = entity.IsActive,
                 Charges = entity.Charges?.ToDomain(),
                 RelatedPeople = entity.RelatedPeople?.ToDomain(),
