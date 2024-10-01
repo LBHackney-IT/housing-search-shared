@@ -6,5 +6,12 @@ services:
     build:
       context: .
       dockerfile: Hackney.Shared.HousingSearch.Tests/Dockerfile
-      args:
-        - LBHPACKAGESTOKEN=${LBHPACKAGESTOKEN}
+
+      # Mounts the secret at /run/secrets/LBHPACKAGESTOKEN.
+      # see https://docs.docker.com/compose/how-tos/use-secrets/#build-secrets
+      secrets:
+        - LBHPACKAGESTOKEN
+
+secrets:
+  LBHPACKAGESTOKEN:
+    environment: LBHPACKAGESTOKEN
