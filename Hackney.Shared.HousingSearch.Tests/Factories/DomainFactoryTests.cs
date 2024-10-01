@@ -61,6 +61,7 @@ namespace Hackney.Shared.HousingSearch.Tests.Factories
             domainContract.ApprovalDate.Should().Be(queryableAssetContract.ApprovalDate);
             domainContract.IsApproved.Should().Be(queryableAssetContract.IsApproved);
             domainContract.ApprovalStatus.Should().Be(queryableAssetContract.ApprovalStatus);
+            domainContract.ApprovalStatusReason.Should().Be(queryableAssetContract.ApprovalStatusReason);
             domainContract.IsActive.Should().Be(queryableAssetContract.IsActive);
             domainContract.Charges.Should().BeEquivalentTo(queryableAssetContract.Charges);
             domainContract.RelatedPeople.Should().BeEquivalentTo(queryableAssetContract.RelatedPeople);
