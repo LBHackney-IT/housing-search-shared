@@ -6,5 +6,3 @@ services:
     build:
       context: .
       dockerfile: Hackney.Shared.HousingSearch.Tests/Dockerfile
-      args:
-        - LBHPACKAGESTOKEN=${LBHPACKAGESTOKEN}
