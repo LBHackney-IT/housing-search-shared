@@ -2,9 +2,6 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0
 
 # disable microsoft telematry
 ENV DOTNET_CLI_TELEMETRY_OPTOUT='true'
-
-ARG LBHPACKAGESTOKEN
-ENV LBHPACKAGESTOKEN=$LBHPACKAGESTOKEN
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
@@ -13,8 +10,16 @@ COPY ./Hackney.Shared.HousingSearch/Hackney.Shared.HousingSearch.csproj ./Hackne
 COPY ./Hackney.Shared.HousingSearch.Tests/Hackney.Shared.HousingSearch.Tests.csproj ./Hackney.Shared.HousingSearch.Tests/
 COPY /nuget.config /root/.nuget/NuGet/NuGet.Config
 
-RUN dotnet restore ./Hackney.Shared.HousingSearch/Hackney.Shared.HousingSearch.csproj
-RUN dotnet restore ./Hackney.Shared.HousingSearch.Tests/Hackney.Shared.HousingSearch.Tests.csproj
+# We mount secrets so they can't end up in logs or build layers.
+# We chain both restore commands so we only make the token available
+# once and don't store it elsewhere.
+# see:
+#   - https://docs.docker.com/reference/dockerfile/#arg
+#   - https://docs.docker.com/compose/how-tos/use-secrets/ 
+RUN --mount=type=secret,id=LBHPACKAGESTOKEN \
+  export LBHPACKAGESTOKEN=$(cat /run/secrets/LBHPACKAGESTOKEN) && \
+  dotnet restore ./Hackney.Shared.HousingSearch/Hackney.Shared.HousingSearch.csproj && \
+  dotnet restore ./Hackney.Shared.HousingSearch.Tests/Hackney.Shared.HousingSearch.Tests.csproj
 
 # Copy everything else and build
 COPY . .
