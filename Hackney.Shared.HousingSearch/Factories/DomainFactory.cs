@@ -91,7 +91,7 @@ namespace Hackney.Shared.HousingSearch.Factories
                 TargetType = entity.TargetType,
                 StartDate = entity.StartDate,
                 EndDate = entity.EndDate,
-                EndReason= entity.EndReason,
+                EndReason = entity.EndReason,
                 ApprovalDate = entity.ApprovalDate,
                 IsApproved = entity.IsApproved,
                 ApprovalStatus = entity.ApprovalStatus,
