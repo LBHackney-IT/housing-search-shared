@@ -14,6 +14,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         public string TargetType { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? ApprovalDate { get; set; }
+        public DateTime? EndDate { get; set; }
+        public string EndReason { get; set; }        
         public bool? IsApproved { get; set; }
         public ApprovalStatus ApprovalStatus { get; set; }
         public string ApprovalStatusReason { get; set; }
