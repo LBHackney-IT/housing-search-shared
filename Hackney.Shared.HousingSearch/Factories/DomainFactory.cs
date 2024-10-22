@@ -93,7 +93,6 @@ namespace Hackney.Shared.HousingSearch.Factories
                 EndDate = entity.EndDate,
                 EndReason = entity.EndReason,
                 ApprovalDate = entity.ApprovalDate,
-                IsApproved = entity.IsApproved,
                 ApprovalStatus = entity.ApprovalStatus,
                 ApprovalStatusReason = entity.ApprovalStatusReason,
                 IsActive = entity.IsActive,
