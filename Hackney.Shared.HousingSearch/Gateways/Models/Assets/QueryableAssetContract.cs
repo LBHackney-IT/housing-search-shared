@@ -1,6 +1,5 @@
 ﻿using System;
 using Hackney.Shared.HousingSearch.Gateways.Models.Contract;
-using Hackney.Shared.HousingSearch.Domain.Enums;
 using Nest;
 using System.Collections.Generic;
 
@@ -17,7 +16,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         public DateTime? EndDate { get; set; }
         public string EndReason { get; set; }
         public bool? IsApproved { get; set; }
-        public ApprovalStatus ApprovalStatus { get; set; }
+        public string ApprovalStatus { get; set; }
         public string ApprovalStatusReason { get; set; }
         public bool? IsActive { get; set; }
         public IEnumerable<QueryableCharges> Charges { get; set; }
