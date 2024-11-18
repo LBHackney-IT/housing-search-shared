@@ -3,6 +3,7 @@ using DomainProcess = Hackney.Shared.HousingSearch.Domain.Process.Process;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using Hackney.Shared.HousingSearch.Domain.Asset;
 using Hackney.Shared.HousingSearch.Domain.Contract;
 using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
 using PatchAssignment = Hackney.Shared.HousingSearch.Domain.Process.PatchAssignment;
@@ -10,6 +11,7 @@ using Hackney.Shared.HousingSearch.Domain.Tenure;
 using Hackney.Shared.HousingSearch.Gateways.Models.Assets;
 using Hackney.Shared.HousingSearch.Gateways.Models.Contract;
 using Hackney.Shared.HousingSearch.Gateways.Models.Tenures;
+using Contract = Hackney.Shared.HousingSearch.Domain.Asset.Contract;
 
 namespace Hackney.Shared.HousingSearch.Factories
 {
@@ -129,9 +131,14 @@ namespace Hackney.Shared.HousingSearch.Factories
             };
         }
 
+
         public static IEnumerable<RelatedPeople> ToDomain(this IEnumerable<QueryableRelatedPeople> relatedPeople)
         {
             return relatedPeople.Select(x => x.ToDomain());
+        }
+        public static IEnumerable<Contract> ToDomain(this IEnumerable<QueryableAssetContract> contracts)
+        {
+            return contracts.Select(x => x.ToDomain());
         }
     }
 }
