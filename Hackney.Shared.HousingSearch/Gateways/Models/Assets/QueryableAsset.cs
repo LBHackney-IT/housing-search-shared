@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Hackney.Shared.HousingSearch.Factories;
 using Nest;
 using Asset = Hackney.Shared.HousingSearch.Domain.Asset.Asset;
@@ -157,7 +158,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     AssetLocation.FloorNo
                 );
 
-            var contract = AssetContract?.ToDomain();
+            var contracts = AssetContracts?.ToDomain();
 
             return Asset.CreateAll(
                 Id,
@@ -172,7 +173,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                 assetManagement,
                 assetLocation,
                 IsActive,
-                contract
+                contracts
             );
         }
 
@@ -210,6 +211,6 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
 
         public QueryableAssetLocation AssetLocation { get; set; }
 
-        public QueryableAssetContract AssetContract { get; set; }
+        public List<QueryableAssetContract> AssetContracts { get; set; }
     }
 }
