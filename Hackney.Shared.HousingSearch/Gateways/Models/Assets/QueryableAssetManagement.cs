@@ -16,5 +16,6 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         public bool IsTemporaryAccomodation { get; set; }
         public bool? IsTemporaryAccommodationBlock { get; set; }
         public Guid? TemporaryAccommodationParentAssetId { get; set; }
+        public bool? IsPartOfTemporaryAccommodationBlock { get; set; }
     }
 }

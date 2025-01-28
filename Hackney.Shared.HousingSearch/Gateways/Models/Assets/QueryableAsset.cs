@@ -151,7 +151,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     AssetManagement.IsNoRepairsMaintenance,
                     AssetManagement.IsTemporaryAccomodation,
                     AssetManagement.IsTemporaryAccommodationBlock,
-                    AssetManagement.TemporaryAccommodationParentAssetId
+                    AssetManagement.TemporaryAccommodationParentAssetId,
+                    AssetManagement.IsPartOfTemporaryAccommodationBlock
                 );
 
             var assetLocation = AssetLocation == null
