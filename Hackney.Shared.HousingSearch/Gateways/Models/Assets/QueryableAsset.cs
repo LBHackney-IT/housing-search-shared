@@ -1,6 +1,6 @@
-using System.Collections.Generic;
 using Hackney.Shared.HousingSearch.Factories;
 using Nest;
+using System.Collections.Generic;
 using Asset = Hackney.Shared.HousingSearch.Domain.Asset.Asset;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
@@ -149,7 +149,10 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     AssetManagement.IsTMOManaged,
                     AssetManagement.PropertyOccupiedStatus,
                     AssetManagement.IsNoRepairsMaintenance,
-                    AssetManagement.IsTemporaryAccomodation
+                    AssetManagement.IsTemporaryAccomodation,
+                    AssetManagement.IsTemporaryAccommodationBlock,
+                    AssetManagement.TemporaryAccommodationParentAssetId,
+                    AssetManagement.IsPartOfTemporaryAccommodationBlock
                 );
 
             var assetLocation = AssetLocation == null
