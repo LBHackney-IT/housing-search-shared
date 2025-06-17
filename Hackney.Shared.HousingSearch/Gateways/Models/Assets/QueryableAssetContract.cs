@@ -18,7 +18,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         public string ApprovalStatus { get; set; }
         public string ApprovalStatusReason { get; set; }
         public bool? IsActive { get; set; }
-        public string Stage { get; set; }
+        public int Stage { get; set; }
         public IEnumerable<QueryableCharges> Charges { get; set; }
         public IEnumerable<QueryableRelatedPeople> RelatedPeople { get; set; }
     }
