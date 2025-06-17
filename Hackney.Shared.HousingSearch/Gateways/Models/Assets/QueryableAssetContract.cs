@@ -1,6 +1,6 @@
-﻿using System;
-using Hackney.Shared.HousingSearch.Gateways.Models.Contract;
+﻿using Hackney.Shared.HousingSearch.Gateways.Models.Contract;
 using Nest;
+using System;
 using System.Collections.Generic;
 
 namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
@@ -18,6 +18,7 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
         public string ApprovalStatus { get; set; }
         public string ApprovalStatusReason { get; set; }
         public bool? IsActive { get; set; }
+        public int? Stage { get; set; }
         public IEnumerable<QueryableCharges> Charges { get; set; }
         public IEnumerable<QueryableRelatedPeople> RelatedPeople { get; set; }
     }

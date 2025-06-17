@@ -1,16 +1,16 @@
-using Hackney.Shared.HousingSearch.Gateways.Models.Processes;
-using DomainProcess = Hackney.Shared.HousingSearch.Domain.Process.Process;
-using System.Collections.Generic;
-using System.Linq;
-using System;
-using Contract = Hackney.Shared.HousingSearch.Domain.Asset.Contract;
 using Hackney.Shared.HousingSearch.Domain.Contract;
-using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
-using PatchAssignment = Hackney.Shared.HousingSearch.Domain.Process.PatchAssignment;
 using Hackney.Shared.HousingSearch.Domain.Tenure;
 using Hackney.Shared.HousingSearch.Gateways.Models.Assets;
 using Hackney.Shared.HousingSearch.Gateways.Models.Contract;
+using Hackney.Shared.HousingSearch.Gateways.Models.Processes;
 using Hackney.Shared.HousingSearch.Gateways.Models.Tenures;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Contract = Hackney.Shared.HousingSearch.Domain.Asset.Contract;
+using DomainProcess = Hackney.Shared.HousingSearch.Domain.Process.Process;
+using PatchAssignment = Hackney.Shared.HousingSearch.Domain.Process.PatchAssignment;
+using RelatedEntity = Hackney.Shared.HousingSearch.Domain.Process.RelatedEntity;
 
 namespace Hackney.Shared.HousingSearch.Factories
 {
@@ -99,6 +99,7 @@ namespace Hackney.Shared.HousingSearch.Factories
                 IsActive = entity.IsActive,
                 Charges = entity.Charges?.ToDomain(),
                 RelatedPeople = entity.RelatedPeople?.ToDomain(),
+                Stage = entity.Stage
             };
         }
 

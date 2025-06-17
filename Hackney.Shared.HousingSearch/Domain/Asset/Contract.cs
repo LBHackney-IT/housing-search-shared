@@ -16,6 +16,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         public string ApprovalStatus { get; set; }
         public string ApprovalStatusReason { get; set; }
         public bool? IsActive { get; set; }
+        public int? Stage { get; set; }
         public IEnumerable<Charges> Charges { get; set; }
         public IEnumerable<RelatedPeople> RelatedPeople { get; set; }
     }

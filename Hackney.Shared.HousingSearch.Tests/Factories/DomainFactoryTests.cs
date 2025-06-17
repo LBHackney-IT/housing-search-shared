@@ -66,6 +66,7 @@ namespace Hackney.Shared.HousingSearch.Tests.Factories
             domainContract.IsActive.Should().Be(queryableAssetContract.IsActive);
             domainContract.Charges.Should().BeEquivalentTo(queryableAssetContract.Charges);
             domainContract.RelatedPeople.Should().BeEquivalentTo(queryableAssetContract.RelatedPeople);
+            domainContract.Stage.Should().Be(queryableAssetContract.Stage);
         }
 
         [Fact]

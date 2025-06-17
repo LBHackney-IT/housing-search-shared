@@ -16,6 +16,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Contract
         public string ApprovalStatus { get; set; }
         public string ApprovalStatusReason { get; set; }
         public bool? IsActive { get; set; }
+        public int? Stage { get; set; }
         public IEnumerable<QueryableCharges> Charges { get; set; }
         public IEnumerable<QueryableRelatedPeople> RelatedPeople { get; set; }
     }
