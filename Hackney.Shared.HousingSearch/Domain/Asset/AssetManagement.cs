@@ -6,7 +6,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
     {
         public static AssetManagement Create(string agent, string areaOfficeName, bool isCouncilProperty, string managingOrganisation,
             Guid managingOrganisationId, string owner, bool isTMOManaged, string propertyOccupiedStatus, bool isNoRepairsMaintenance,
-            bool isTemporaryAccomodation, bool? isTemporaryAccommodationBlock, Guid? temporaryAccommodationParentAssetId, bool? isPartOfTemporaryAccommodationBlock)
+            bool isTemporaryAccomodation, bool? isTemporaryAccommodationBlock, Guid? temporaryAccommodationParentAssetId, bool? isPartOfTemporaryAccommodationBlock, bool? isTAWithoutUPRN)
         {
             return new AssetManagement(
                 agent,
@@ -21,14 +21,15 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
                 isTemporaryAccomodation,
                 isTemporaryAccommodationBlock,
                 temporaryAccommodationParentAssetId,
-                isPartOfTemporaryAccommodationBlock
+                isPartOfTemporaryAccommodationBlock,
+                isTAWithoutUPRN
             );
         }
         public AssetManagement() { }
 
         private AssetManagement(string agent, string areaOfficeName, bool isCouncilProperty, string managingOrganisation,
             Guid managingOrganisationId, string owner, bool isTMOManaged, string propertyOccupiedStatus, bool isNoRepairsMaintenance,
-            bool isTemporaryAccomodation, bool? isTemporaryAccommodationBlock, Guid? temporaryAccommodationParentAssetId, bool? isPartOfTemporaryAccommodationBlock)
+            bool isTemporaryAccomodation, bool? isTemporaryAccommodationBlock, Guid? temporaryAccommodationParentAssetId, bool? isPartOfTemporaryAccommodationBlock, bool? isTAWithoutUPRN)
         {
             Agent = agent;
             AreaOfficeName = areaOfficeName;
@@ -43,6 +44,7 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
             IsTemporaryAccommodationBlock = isTemporaryAccommodationBlock;
             TemporaryAccommodationParentAssetId = temporaryAccommodationParentAssetId;
             IsPartOfTemporaryAccommodationBlock = isPartOfTemporaryAccommodationBlock;
+            IsTAWithoutUPRN = isTAWithoutUPRN;
         }
 
         public string Agent { get; set; }
@@ -58,5 +60,6 @@ namespace Hackney.Shared.HousingSearch.Domain.Asset
         public bool? IsTemporaryAccommodationBlock { get; set; }
         public Guid? TemporaryAccommodationParentAssetId { get; set; }
         public bool? IsPartOfTemporaryAccommodationBlock { get; set; }
+        public bool? IsTAWithoutUPRN { get; set; }
     }
 }

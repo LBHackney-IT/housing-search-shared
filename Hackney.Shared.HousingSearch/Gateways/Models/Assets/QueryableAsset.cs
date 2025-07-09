@@ -152,7 +152,8 @@ namespace Hackney.Shared.HousingSearch.Gateways.Models.Assets
                     AssetManagement.IsTemporaryAccomodation,
                     AssetManagement.IsTemporaryAccommodationBlock,
                     AssetManagement.TemporaryAccommodationParentAssetId,
-                    AssetManagement.IsPartOfTemporaryAccommodationBlock
+                    AssetManagement.IsPartOfTemporaryAccommodationBlock,
+                    AssetManagement.IsTAWithoutUPRN
                 );
 
             var assetLocation = AssetLocation == null
